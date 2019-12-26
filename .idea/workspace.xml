@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,15 +45,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -108,7 +109,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ceci est le commit du fichier testgit.html" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="70" key="#Deployment" />
-    <state x="361" y="70" key="#Deployment/0.0.1536.824@0.0.1536.824" />
+    <state x="361" y="70" key="#Deployment" timestamp="1577364031823" />
+    <state x="361" y="70" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1577364031823" />
+    <state x="100" y="87" width="1240" height="787" key="DirDiffDialog" timestamp="1577364234287">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state x="100" y="87" width="1240" height="787" key="DirDiffDialog/0.23.1440.801@0.23.1440.801" timestamp="1577364234287" />
+    <state x="385" y="196" key="search.everywhere.popup" timestamp="1577364065796">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1577364065796" />
   </component>
 </project>
