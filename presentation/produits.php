@@ -1,39 +1,28 @@
 
 <?php
-require_once '../persistance/DialogueBD.php';
+$titre=("Liste des produits");
+include("include.php");
+
 try {
     $id_cat=$_GET['categ'];
     $undlg = new DialogueBD();
-    $mesproduits = $undlg->getTousLesProduits();
-    $mesCategories = $undlg->getToutesLesCategories();
+    $unecat = new Categorie();
+    $unProduit = new Product();
+    $mesproduits = $unProduit->getTousLesProduits();
+    $mesCategories = $unecat->getToutesLesCategories();
     $mesProduitsDeLaCat = $undlg->getTousLesProduitsDeLaCat($id_cat);
 }
 catch (Exception $e) {
     $erreur = $e->getMessage(); }
-?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css" />
-    <title>Liste des produits</title>
-</head>
-<body>
-<?php
 if (isset($msgErreur)) {
     echo "Erreur : $msgErreur"; }
 ?>
 
 <div class="container">
-
-    <?php include('header.inc.php'); ?>
-
+    <?php getHeader(); ?>
     <div class="row">
-
-        <?php include('aside1.inc.php'); ?>
-
+        <?php getAside1(); ?>
         <section class="col-lg-8">
             <h2>Liste des produits</h2>
             <ul>
@@ -56,17 +45,10 @@ if (isset($msgErreur)) {
                 ?>
             </ul>
 
-            <?php include ('footer.inc.php')?>
+            <?php getFooter();?>
         </section>
 
-        <div class="col-lg-2">
-            <div class="row">
-                <aside class="col-lg-12">
-                    <!-- Peut etre enlevé mais a voir si on peut y mettre des choses -->
-                    Aside
-                </aside>
-            </div>
-        </div>
+        <?php getAside2();?>
 
     </div>
 

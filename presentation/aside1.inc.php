@@ -1,8 +1,8 @@
 <?php
-require_once '../persistance/DialogueBD.php';
+require_once '../Model/DialogueBD.php';
 try {
-    $undlg = new DialogueBD();
-    $mesCategories = $undlg->getToutesLesCategories();
+    $uneCat = new Categorie();
+    $mesCategories = $uneCat->getToutesLesCategories();
 }
 catch (Exception $e) {
     $erreur = $e->getMessage(); }
