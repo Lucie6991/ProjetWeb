@@ -1,27 +1,33 @@
 <?php
+/*$path= File::build_path(array('config','Conf.php'));
+require_once ($path);*/
 
+require_once ('../config/Conf.php');
 
 class Connexion
 {
-    private $cnx=null;
-    private $dbhost;
-    private $dbbase;
-    private $dbuser;
-    private $dbpwd;
+    public static $cnx;
 
     public static function getConnexion() {
-        $dbhost = '127.0.0.1';
-        $dbbase = 'hortfyi_web4shop';
-        $dbuser = 'hortfyi_usersio';
-        $dbpwd = 'userepul69';
+        $dbhost = Conf::getHostname();
+        $dbbase = Conf::getDatabase();
+        $dbuser = Conf::getUser();
+        $dbpwd = Conf::getPassword();
+
         try {
-            $cnx = new PDO("mysql:host=$dbhost;dbname=$dbbase", $dbuser, $dbpwd);
-            $cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $cnx->exec('SET CHARACTER SET utf8');
-        } catch (PDOException $e) {
-            $erreur = $e->getMessage();
+
+            self::$cnx = new PDO("mysql:host=$dbhost;dbname=$dbbase", $dbuser, $dbpwd, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            self::$cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+           // self::$cnx->exec('SET CHARACTER SET utf8');
+
+        } catch(PDOException $e){
+            if (Conf::getDebug()) {
+            echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
         }
-        return $cnx;
     }
 
     public static function deConnexion() {
@@ -32,3 +38,4 @@ class Connexion
         }
     }
 }
+Connexion::getConnexion();
