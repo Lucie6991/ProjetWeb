@@ -1,11 +1,8 @@
 <?php
-/*ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-$path= File::build_path(array('model','Connexion.php'));
+
+$path= File::build_path(array('model','Model.php'));
 require_once ($path);
-*/
-require_once ('Connexion.php');
+
 class Categorie
 {
     private $id;
@@ -13,13 +10,13 @@ class Categorie
     private $description;
     private $image;
 
-    public static function getToutesLesCategories() {
+    public static function getAllCategories() {
         try {
             $sql = "SELECT * FROM categories ";
-            $rep =Connexion::$cnx->query($sql);
-            $rep->execute(array());
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute();
             $rep->setFetchMode(PDO::FETCH_CLASS, 'Categorie');
-            $tabcategories = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $tabcategories = $rep->fetchAll();
             return $tabcategories;
         }
         catch(PDOException $e){

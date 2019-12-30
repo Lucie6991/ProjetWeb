@@ -2,22 +2,31 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <link href="view/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="view/CSS/style.css" />
+    <title><?php echo $page_title; ?></title>
 </head>
 <body>
-<?php
-/*
-include("fonctions.php");
-getHeader();
-require_once ('../controller/controllerProduct.php');
-require_once ('produits.php');
-
-//Problème au niveau de File
-/*$filepath = File::build_path(array("view", "$view.php"));
-require $filepath;*/
-
-//getFooter();
-
+<?php include("fonctions.php");
+$cart=new Cart();
 ?>
+<div class="container">
+
+    <?php getHeader();?>
+    <div class="row">
+        <?php getAside();?>
+        <section class="col-lg-9">
+            <br>
+            <?php
+            //$filepath = File::build_path(array("view", $controller, "$view.php"));    // si on a des sous dossiers dans view
+            $filepath = File::build_path(array("view", "$view.php"));
+            require $filepath;
+
+            getFooter();
+            ?>
+        </section>
+    </div>
+</div>
+
 </body>
 </html>

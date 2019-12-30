@@ -1,11 +1,7 @@
 <?php
-/*ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-$path= File::build_path(array('model','Connexion.php'));
-require_once ($path);*/
 
-require_once ('Connexion.php');
+$path= File::build_path(array('model','Model.php'));
+require_once ($path);
 
 class Product
 {
@@ -15,14 +11,15 @@ class Product
     private $description;
     private $image;
     private $price;
+    private $quantity;
 
-    public static function getTousLesProduits() {
+    public static function getAllProducts() {
         try {
             $sql = "SELECT * FROM products";
-            $rep = Connexion::$cnx->query($sql);
-            $rep->execute(array());
+            $rep = Model::$pdo->prepare($sql);
+            $rep->execute();
             $rep->setFetchMode(PDO::FETCH_CLASS, 'Product');
-            $tab_prod = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $tab_prod = $rep->fetchAll();
             return $tab_prod;
         }
         catch(PDOException $e){
@@ -37,11 +34,11 @@ class Product
 
     public static function getProduit($id_Produit){
         try {
-            $sql = "SELECT * FROM products WHERE id=$id_Produit";
-            $rep = Connexion::$cnx->query($sql);
+            $sql = "SELECT * FROM products WHERE id= ? ";
+            $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($id_Produit));
-            $rep->setFetchMode(PDO::FETCH_CLASS, 'Produit');
-            $tabProduit = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $rep->setFetchMode(PDO::FETCH_CLASS,'Product');
+            $tabProduit = $rep->fetchAll();
             return $tabProduit;
         }
         catch(PDOException $e){
@@ -54,14 +51,14 @@ class Product
         }
     }
 
-    public static function getTousLesProduitsDeLaCat($id_Cat)
+    public static function getAllProductsCat($id_Cat)
     {
         try {
-            $sql = "SELECT * FROM products WHERE cat_id =$id_Cat";
-            $rep =Connexion::$cnx->query($sql);
-            $rep->execute(array());
-            $rep->setFetchMode(PDO::FETCH_CLASS, 'Produit');
-            $tabProduitCat = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $sql = "SELECT * FROM products WHERE cat_id =?";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($id_Cat));
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'Product');
+            $tabProduitCat = $rep->fetchAll();
             return $tabProduitCat;
         }
         catch(PDOException $e){
@@ -97,5 +94,9 @@ class Product
 
     public function getPrice(){
         return $this->price;
+    }
+
+    public function getQuantity(){
+        return $this->quantity;
     }
 }

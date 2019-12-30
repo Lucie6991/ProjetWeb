@@ -1,5 +1,5 @@
 <?php
-require_once ('../model/Connexion.php');
+require_once('../model/Connexion.php');
 
 class controllerConnexion
 {

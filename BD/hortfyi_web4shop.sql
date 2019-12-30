@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  jeu. 26 déc. 2019 à 16:49
--- Version du serveur :  10.4.8-MariaDB
--- Version de PHP :  7.1.32
+-- Hôte : localhost:3306
+-- Généré le :  lun. 30 déc. 2019 à 16:45
+-- Version du serveur :  10.3.21-MariaDB
+-- Version de PHP :  7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -172,20 +172,21 @@ CREATE TABLE `products` (
   `name` varchar(150) NOT NULL,
   `description` text NOT NULL,
   `image` varchar(30) NOT NULL,
-  `price` decimal(5,2) NOT NULL
+  `price` decimal(5,2) NOT NULL,
+  `quantity` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `products`
 --
 
-INSERT INTO `products` (`id`, `cat_id`, `name`, `description`, `image`, `price`) VALUES
-(1, 1, 'Saveur Impériale', 'Sachet de thé de qualité supérieure.200 sachets par boite', 'theImperial.jpg', '4.99'),
-(2, 1, 'Jus d’Orange de Floride', 'Bouteille d’un litre.', 'bestorange-juice.jpg', '2.95'),
-(3, 1, 'Dosette Café', 'Mélange goût italien', 'dosetteCafe.jpg', '3.75'),
-(4, 2, 'Assortiment de biscuits secs', 'Description a ajouter', 'assortimentBiscuitsSec.jpg', '12.90'),
-(5, 2, 'Biscuits de Noël', 'Description a ajouter', 'biscuitNoel.jpg', '10.50'),
-(6, 2, 'Biscuits aux raisins ', 'Description a ajouter', 'biscuitRaisin.jpg', '6.90');
+INSERT INTO `products` (`id`, `cat_id`, `name`, `description`, `image`, `price`, `quantity`) VALUES
+(1, 1, 'Saveur Impériale', 'Sachet de thé de qualité supérieure.200 sachets par boite', 'theImperial.jpg', 4.99, 7),
+(2, 1, 'Jus d’Orange de Floride', 'Bouteille d’un litre.', 'bestorange-juice.jpg', 2.95, 5),
+(3, 1, 'Dosette Café', 'Mélange goût italien', 'dosetteCafe.jpg', 3.75, 2),
+(4, 2, 'Assortiment de biscuits secs', 'Description a ajouter', 'assortimentBiscuitsSec.jpg', 12.90, 0),
+(5, 2, 'Biscuits de Noël', 'Description a ajouter', 'biscuitNoel.jpg', 10.50, 12),
+(6, 2, 'Biscuits aux raisins ', 'Description a ajouter', 'biscuitRaisin.jpg', 6.90, 3);
 
 --
 -- Index pour les tables déchargées

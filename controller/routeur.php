@@ -1,12 +1,11 @@
 <?php
 
-/*$path = File::build_path(array('controller','controllerProduct.php'));
+$path = File::build_path(array('controller','controllerProduct.php'));
 require_once ($path);
-*/
 
-require_once ('../controller/controllerProduct.php');
+
 if (!isset($_GET['action'])){
-    $action='read';
+    $action='readCategories';
 }else{
     $action =$_GET['action'];
 }

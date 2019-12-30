@@ -5,17 +5,19 @@ class Conf
 {
     static private $debug = True;
     static private $databases = array(
+        'dbhost' => '127.0.0.1',
+        'dbbase' => 'hortfyi_web4shop',
+        'dbuser' => 'hortfyi_usersio',
+        'dbpwd' => 'userepul69'
+        /*
         'dbhost' => 'localhost',
         'dbbase' => 'hortfyi_web4shop',
         'dbuser' => 'usersio',
         'dbpwd' => 'sio'
+        */
 
-       /*
-        'dbhost' => '127.0.0.1';
-        'dbbase' => 'hortfyi_web4shop';
-        'dbuser' => 'hortfyi_usersio';
-        'dbpwd'' => 'userepul69';
-       */
+
+
     );
 
     static public function getUser() {
