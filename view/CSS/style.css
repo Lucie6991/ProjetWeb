@@ -7,3 +7,16 @@ header{
     text-align: center;
     color: white;
 }
+
+.image_produit{
+    width : 180px;
+    box-shadow: 1px 1px 12px #555;
+}
+
+.stars{
+    width:20px;
+}
+
+.photoUser{
+    width:100px;
+}

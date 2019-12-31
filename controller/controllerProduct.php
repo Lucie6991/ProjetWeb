@@ -3,8 +3,9 @@ $path= File::build_path(array('model','Product.php'));
 require_once ($path);
 $path3= File::build_path(array('model','Categorie.php'));
 require_once ($path3);
-$path4= File::build_path(array('model','Cart.php'));
-require_once ($path4);
+
+$path5= File::build_path(array('model','Review.php'));
+require_once ($path5);
 
 class controllerProduct
 {
@@ -44,6 +45,7 @@ class controllerProduct
         $id_product = $_GET['id'];
         $product = new Product();
         $tab_product = $product->getProduit($id_product);
+        $tab_review = Review::getReviewProduct($id_product);
         if (empty ($tab_product)){
             $path2 = File::build_path(array('view','error.php'));
         }
@@ -59,32 +61,6 @@ class controllerProduct
         $view='home';
         $page_title='Liste des Catégories';
         $lesCategories = Categorie::getAllCategories();
-
-        //require_once ('../view/aside1.inc.php');
-        $path2= File::build_path(array('view','view.php'));
-        require ($path2);
-
-    }
-
-    public static function addToCart(){
-        $view='addedToCart';
-        $page_title='Ajouté au panier';;
-        Cart::addToCart($_GET['id'], $_GET['q']);
-        $path2= File::build_path(array('view','view.php'));
-        require ($path2);
-    }
-
-    public static function emptyCart(){
-        $view ='cart';
-        $page_title='Panier vidé';
-        $_SESSION['cart'] = array();
-        $path2= File::build_path(array('view','view.php'));
-        require ($path2);
-    }
-
-    public static function seeCart(){
-        $view ='cart';
-        $page_title='Mon panier';
         $path2= File::build_path(array('view','view.php'));
         require ($path2);
 

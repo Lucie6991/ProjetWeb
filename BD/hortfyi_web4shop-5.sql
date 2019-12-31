@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  lun. 30 déc. 2019 à 16:45
+-- Généré le :  mar. 31 déc. 2019 à 17:27
 -- Version du serveur :  10.3.21-MariaDB
 -- Version de PHP :  7.3.6
 
@@ -181,12 +181,68 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `cat_id`, `name`, `description`, `image`, `price`, `quantity`) VALUES
-(1, 1, 'Saveur Impériale', 'Sachet de thé de qualité supérieure.200 sachets par boite', 'theImperial.jpg', 4.99, 7),
 (2, 1, 'Jus d’Orange de Floride', 'Bouteille d’un litre.', 'bestorange-juice.jpg', 2.95, 5),
 (3, 1, 'Dosette Café', 'Mélange goût italien', 'dosetteCafe.jpg', 3.75, 2),
 (4, 2, 'Assortiment de biscuits secs', 'Description a ajouter', 'assortimentBiscuitsSec.jpg', 12.90, 0),
 (5, 2, 'Biscuits de Noël', 'Description a ajouter', 'biscuitNoel.jpg', 10.50, 12),
-(6, 2, 'Biscuits aux raisins ', 'Description a ajouter', 'biscuitRaisin.jpg', 6.90, 3);
+(6, 2, 'Biscuits aux raisins ', 'Description a ajouter', 'biscuitRaisin.jpg', 6.90, 3),
+(7, 3, 'Pruneaux secs bio ', 'Sachet de 500g. Pruneaux issus d agricultures biologiques', 'pruneauxSecs.jpg', 7.90, 6),
+(8, 3, 'Sachet d\'abricots secs ', 'Sachet d\'un kilogramme. Produit recommandé par de nombreux nutritionnistes.', 'abricotsSecs.jpg', 15.50, 12),
+(9, 3, 'Plateau de fruits secs ', 'Plateau de 1kg composé d\'abricots secs, de noix de cajous, pruneaux secs, bananes sèches, copeaux de noix de coco...', 'plateauFruitsSecs.jpg', 32.00, 10),
+(10, 3, 'Mélange de fruits secs', 'Composés de différents sachets de 250g : des marrons, des cacahouètes, des amandes grillés et des noisettes.', 'melangeMarrons.jpg', 25.00, 8),
+(11, 3, 'Mélange de noisettes', 'Sachet de 500g composé de noisettes, noix et amandes grillées.', 'melangeNoisettes.jpg', 8.30, 3),
+(12, 3, 'Sachet d\'amandes grillées', 'Sachet de 500g, grillées au four et issues d\'agriculture biologiques. .', 'amandes.jpg', 9.90, 17),
+(13, 1, 'Jus de citron', 'Bouteille d\'un litre de jus de citron frais', 'jusCitron.jpg', 5.20, 13),
+(14, 1, 'Jus de pommes', 'Pommes issues d\'agricultures biologiques.\r\nBouteille d\'un litre', 'jusPomme.jpg', 3.20, 9),
+(15, 1, 'Jus de pamplemousse', 'Bouteille d\'un litre et demi', 'jusPamplemousse.jpg', 7.30, 12),
+(16, 1, 'Jus d\'orange', 'Oranges provenant d\'agricultures locales et biologiques.\r\nBouteille d\'un litre', 'jusOrange.jpg', 4.60, 22),
+(17, 1, 'Sachet de café en grain', 'sachet d\'un kilogramme', 'cafeGrain.jpg', 15.00, 14),
+(18, 1, 'Capsules de café', 'Paquet de 50 capsules ', 'cafeCapsule.jpg', 45.00, 13),
+(19, 1, 'Dosettes de café', 'Paquet de 30 dosettes de café.', 'dosetteCafe.png', 28.10, 12),
+(20, 1, 'Sachets de thé à la cadelle', '15 sachets à l\'authentique gout de thé à la cannelle', 'theCannelle.jpg', 10.50, 10),
+(21, 1, 'Infusion à la verveine', 'Recommandé pour profiter de nuits calmes.\r\nVendus par paquet de 15 sachets.', 'infusionVerveine.jpg', 8.90, 5),
+(22, 1, 'Thé vert', '20 sachets de thé vert ', 'theVert.jpg', 13.90, 15),
+(23, 1, 'Infusion au citron', 'Paquet de 20 sachets d\'infusion au citron pour partager un moment unique. ', 'infusionCitron.jpg', 15.30, 16),
+(24, 2, 'Macarons tout chocolat', 'Macarons uniques au chocolat. Vendus par 10 macarons.', 'macaronChocolat.jpg', 20.50, 20),
+(25, 2, 'Boules de neige', 'Boules aromatisées à la noix de coco.\r\nPlateau de 200g ', 'bouleDeNeigeCoco.jpg', 10.80, 8),
+(26, 2, 'Cookies au pépites de chocolat', 'Cookies croquants préparés avec de l\'avoine et des pépites de chocolat fondantes.\r\nPaquet de 15 cookies', 'cookiesChocolat', 12.30, 12),
+(27, 2, 'Biscuits étoile à la cannelle', 'Biscuits secs pour noël à l\'authentique goût de la cannelle. ', 'biscuitsCannelle.jpg', 13.50, 14),
+(28, 2, 'Biscuits en forme de tortue', 'Paquet de 20 petits biscuits en forme de tortue. Goût chocolat vanille', 'biscuitsTortue.jpg', 25.30, 20);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id_product` int(2) NOT NULL,
+  `name_user` varchar(50) NOT NULL,
+  `photo_user` varchar(50) NOT NULL,
+  `stars` int(1) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `description` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `reviews`
+--
+
+INSERT INTO `reviews` (`id_product`, `name_user`, `photo_user`, `stars`, `title`, `description`) VALUES
+(28, 'Gerard', 'homme.jpg', 5, 'Trop top', 'Trop beau et trop bon '),
+(13, 'Michelle', 'femme.png', 3, 'super', 'cool'),
+(4, 'Charlène', 'femme.png', 5, 'Excellent !', 'Ils sont trop bons, je recommande vraiment ces biscuits secs, je ne peux plus m\'en passer ! '),
+(24, 'Helène', 'femme.png', 4, 'Vraiment excellent ', 'Je recommande vivement ces macarons, ils ont un gout authentiques et en plus ils ne sont pas très chers '),
+(26, 'Marc', 'homme.jpg', 4, 'Très bon rapport qualité prix', 'Ils sont vraiment excellents. Je ne sais pas cuisiner alors je les achète et on dirait vraiment des cookies faits maison !'),
+(26, 'Sylvie', 'femme.png', 3, 'Je recommande !', 'Vraiment bons et très craquants, j\'en rachèterai '),
+(16, 'Mélanie', 'femme.png', 5, 'Tellement bon ! ', 'Ce jus est incroyablement bon c\'est un plaisir de déjeuner le matin avec un jus d\'orange si frais '),
+(23, 'Lilian', 'homme.jpg', 3, 'Je suis fan', 'Moi qui suis fan d\'infusion, c\'est vraiment de la qualité ! peut être un peu cher mais vraiment le prix a payer pour bénéficier de si bonnes infusions'),
+(15, 'Elise', 'femme.png', 5, 'Tellement bon !!', 'Je recommande vivement, j\'achète toujours ce bon jus et il fait l\'unanimité à la maison'),
+(25, 'Jean', 'homme.jpg', 4, 'Bon goût de noix de coco', 'Vraiment bon, pour les fêtes de Noël, chaque années elles sont très appréciées'),
+(11, 'Christophe', 'homme.jpg', 4, 'Trop bon et livraison rapide', 'Ces fruits secs sont vraiment à croquer, et ils sont très vite virés à la maison '),
+(12, 'Christine', 'femme.png', 3, 'Trop bon ! ', 'Les amandes sont vraiment bonnes, le paquet ne fait pas longtemps à la maison ! je recommande '),
+(7, 'Marie', 'femme.png', 4, 'Une qualité inégalable', 'Les pruneaux sont vraiment excellents je recommande'),
+(21, 'Léa', 'femme.png', 4, 'Des très bonnes infusions', 'Un goût intensément bon et une livraison rapide');
 
 --
 -- Index pour les tables déchargées
@@ -241,6 +297,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD KEY `review/product` (`id_product`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -290,7 +352,17 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD CONSTRAINT `review/product` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
