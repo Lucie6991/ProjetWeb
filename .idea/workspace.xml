@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/controllerCart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerConnexion.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerConnexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/routeur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Connexion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/aside1.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/aside1.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/choixPanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/choixPanier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/produits.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/produits.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/header.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/header.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +90,8 @@
       <workItem from="1576770309788" duration="1078000" />
       <workItem from="1577375853152" duration="736000" />
       <workItem from="1577437774771" duration="23000" />
-      <workItem from="1577807606984" duration="1944000" />
+      <workItem from="1577807606984" duration="2059000" />
+      <workItem from="1577885478367" duration="12343000" />
     </task>
     <task id="LOCAL-00001" summary="Ceci est le commit du fichier testgit.html">
       <created>1576752675465</created>
@@ -139,10 +142,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="421" y="282" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1577808739378" />
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1577437774914">
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1577885478392">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1577437774914" />
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1577885478392" />
     <state x="591" y="354" key="publish.login" timestamp="1577375890053">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

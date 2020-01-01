@@ -1,12 +1,5 @@
 <?php
 
-//require_once('../model/Product.php');
-
-//Récupération de l'id de la vue produits.php
-//$id_product = $_GET['id'];
-//Ligne de code bizarre ??
-//$monProduit=Product::getProduit($id_product);
-
 foreach ($tab_product as $ligne) {
     $nom = $ligne->getName();
     echo "<h2 class ='nom_produit'> $nom </h2>";
@@ -51,7 +44,7 @@ foreach ($tab_product as $ligne) {
                      <div class='row'>
                     <br />
                          <?php
-                         echo "<a href='?action=addToCart&id=".$id."&q=1' class='btn btn-warning'> Ajouter au panier</a>"
+                         echo "<a href='?action=addToCart&id=".$id."&q=1' class='btn btn-warning' > <span class='glyphicon glyphicon-shopping-cart'></span> Ajouter au panier</a>"
                          ?>
                 </div></div>
                 <div class ='col-lg-2'>

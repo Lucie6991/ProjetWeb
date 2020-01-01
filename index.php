@@ -9,8 +9,6 @@ $DS = DIRECTORY_SEPARATOR;
 
 session_start();
 
-
-
 // on require File pour pouvoir utiliser la fonction BuildPath
 require ($ROOT_FOLDER.$DS.'lib'.$DS.'File.php');
 $path= File::build_path(array('controller','routeur.php'));

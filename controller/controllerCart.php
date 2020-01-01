@@ -16,7 +16,7 @@ class controllerCart
     public static function emptyCart(){
         $view ='cart';
         $page_title='Panier vidé';
-        $_SESSION['cart'] = array();
+        Cart::emptyCart();
         $path2= File::build_path(array('view','view.php'));
         require ($path2);
     }
@@ -24,9 +24,16 @@ class controllerCart
     public static function seeCart(){
         $view ='cart';
         $page_title='Mon panier';
+        //$myCart = Cart::getCart();
+        $tab_cart = Cart::getProducts();
         $path2= File::build_path(array('view','view.php'));
         require ($path2);
 
     }
 
+    public static function delete(){
+        $order = $_GET["order"];
+        Cart::delete($order);
+        self::seeCart();
+    }
 }

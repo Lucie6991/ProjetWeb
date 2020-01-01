@@ -9,7 +9,6 @@
 </head>
 <body>
 <?php include("fonctions.php");
-$cart=new Cart();
 ?>
 <div class="container">
 
@@ -23,7 +22,6 @@ $cart=new Cart();
             $filepath = File::build_path(array("view", "$view.php"));
             require $filepath;
 
-            echo "<a href='view/connexion.php'>connecter</a>";
             getFooter();
             ?>
         </section>

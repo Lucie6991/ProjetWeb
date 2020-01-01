@@ -2,10 +2,23 @@ aside{
     background-color: lightgrey;
 }
 
-header{
+.entete{
+    background-color: lightgrey;
+    text-align: center;
+}
+
+.web4shop{
     background-color: #818181;
     text-align: center;
     color: white;
+    border: #818181 1px solid;
+}
+
+.trait
+{
+    background-color: #818181;
+    height: 2pt;
+    width: 100%;
 }
 
 .image_produit{
@@ -19,4 +32,18 @@ header{
 
 .photoUser{
     width:100px;
+}
+
+.panier{
+    width : 130px;
+    box-shadow: 1px 1px 12px #555;
+}
+
+.tabCart{
+    border: grey solid 1px;
+    background-color: #f2f2f2;
+}
+
+.textePanier{
+    text-align: center;
 }

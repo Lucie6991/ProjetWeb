@@ -22,5 +22,12 @@ class controllerConnexion
         require_once ($path2);
     }
 
+    public static function connect(){
+        $view='connexion';
+        $page_title='Connexion';
+        $path2 = File::build_path(array('view','view.php'));
+        require_once ($path2);
+    }
+
 
 }

@@ -11,4 +11,8 @@ foreach ($lesCategories as $ligne) {
     $nom = $ligne->getName();
     echo "<li> <a href='?categ=".$id."&action=readProductsCat'>$nom </a> </li>";
 }
+echo "<br>";
+echo "<div class='trait'></div>";
+echo "<br>";
+echo "<a href='?action=connect' class='seConnecter'>Se connecter</a>";
 echo"</aside>";
