@@ -5,6 +5,7 @@
     <link href="view/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="view/CSS/style.css" />
     <title><?php echo $page_title; ?></title>
+    <script type="text/javascript" src="view/functionsJS.js"></script>
 </head>
 <body>
 <?php include("fonctions.php");
@@ -22,6 +23,7 @@ $cart=new Cart();
             $filepath = File::build_path(array("view", "$view.php"));
             require $filepath;
 
+            echo "<a href='view/connexion.php'>connecter</a>";
             getFooter();
             ?>
         </section>

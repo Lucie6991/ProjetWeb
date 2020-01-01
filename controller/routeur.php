@@ -11,11 +11,16 @@ if (!isset($_GET['action'])){
 }else{
     $action =$_GET['action'];
 }
+
 if ($action == "addToCart" || $action == "emptyCart" || $action == "seeCart" ){
     controllerCart::$action();
 }
 else if ($action== 'readAllProducts' || $action == 'readProductsCat' || $action == 'read' || $action == 'readCategories'  ){
     controllerProduct::$action();
+}
+
+else if ($action == 'getUtilisateurCon'){
+    controllerConnexion::$action();
 }
 
 ?>

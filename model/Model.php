@@ -7,12 +7,12 @@ class Model
 {
 
     public static $pdo;
+    // Initialisation de la connexion
     public static function Init(){
         $hostname = Conf::getHostname();
         $database_name = Conf::getDatabase();
         $login = Conf::getUser();
         $password = Conf::getPassword();
-
 
         try{
             self::$pdo = new PDO("mysql:host=$hostname;dbname=$database_name", $login, $password,
@@ -29,6 +29,27 @@ class Model
         }
 
     }
+
+    public static function deInit() {
+        try {
+            $pdo = null;
+        }
+        catch (PDOException $e)
+        {
+            echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+        }
+    }
+
+    public static function getPdo()
+    {
+        return self::$pdo;
+    }
+
+    public function getLogin(){
+        $login = Conf::getUser();
+        return $login;
+    }
+
 
 }
 Model::Init();
