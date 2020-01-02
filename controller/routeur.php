@@ -30,7 +30,7 @@ else if ( $action == 'readCategories' ||$action=="addedCat" ){
 else if ($action == 'readCustomer' || $action == "connect" || $action=='readLogin' || $action=='addedCustomer' || $action=='add' || $action=='deconnect'){
     controllerConnexion::$action();
 }
-else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewProduct") {
+else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewProduct" || $action=="readOrder" || $action=="confirmOrder" || $action == "seeBill") {
     controllerAdmin::$action();
 }
 

@@ -2,38 +2,132 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/controllerAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/controllerCategorie.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Orders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/addedCat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/addedProd.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/formAddCat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/formAddProduct.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/listOrders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/viewAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/aside2.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/headerAdmin.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/FAQ.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/changelog.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/__construct.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/acceptpagebreak.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/addfont.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/addlink.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/addpage.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/aliasnbpages.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/cell.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/close.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/error.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/footer.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/getpageheight.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/getpagewidth.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/getstringwidth.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/getx.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/gety.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/header.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/image.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/line.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/link.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/ln.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/multicell.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/output.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/pageno.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/rect.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setauthor.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setautopagebreak.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setcompression.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setcreator.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setdisplaymode.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setdrawcolor.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setfillcolor.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setfont.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setfontsize.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setkeywords.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setleftmargin.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setlinewidth.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setlink.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setmargins.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setrightmargin.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setsubject.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/settextcolor.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/settitle.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/settopmargin.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setx.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/setxy.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/sety.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/text.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/doc/write.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/courier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/courierb.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/courierbi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/courieri.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/helvetica.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/helveticab.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/helveticabi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/helveticai.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/symbol.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/times.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/timesb.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/timesbi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/timesi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/font/zapfdingbats.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/fpdf.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/fpdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/install.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/cp1250.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/cp1251.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/cp1252.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/cp1253.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/cp1254.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/cp1255.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/cp1257.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/cp1258.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/cp874.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/iso-8859-1.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/iso-8859-11.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/iso-8859-15.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/iso-8859-16.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/iso-8859-2.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/iso-8859-4.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/iso-8859-5.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/iso-8859-7.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/iso-8859-9.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/koi8-r.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/koi8-u.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/makefont.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/makefont/ttfparser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/20k_c1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/20k_c2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/calligra.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/calligra.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/calligra.z" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/makefont.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/pays.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto1.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto2.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto3.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto4.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto5.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto5.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto6.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto6.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto7.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto7.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/detailOrder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/testBill.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerConnexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerAdmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/routeur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/FormAdress.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/FormAdress.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/TestConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/TestConnexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/addedToCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/addedToCart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/DeliveryAdress.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/DeliveryAdress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/listOrders.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/listOrders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/aside1.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/aside1.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/choixPanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/choixPanier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/error.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/error.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/fonctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/fonctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/footer.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/footer.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/produits.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/produits.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,16 +169,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/view" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/admin" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/view/user" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/admin" />
+      <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/view" />
       <recent name="$PROJECT_DIR$/model" />
       <recent name="$PROJECT_DIR$/controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/user" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -116,7 +212,9 @@
       <workItem from="1577437774771" duration="23000" />
       <workItem from="1577807606984" duration="2059000" />
       <workItem from="1577885478367" duration="12463000" />
-      <workItem from="1577974859322" duration="4515000" />
+      <workItem from="1577974859322" duration="4750000" />
+      <workItem from="1577980589717" duration="950000" />
+      <workItem from="1578001591507" duration="1069000" />
     </task>
     <task id="LOCAL-00001" summary="Ceci est le commit du fichier testgit.html">
       <created>1576752675465</created>

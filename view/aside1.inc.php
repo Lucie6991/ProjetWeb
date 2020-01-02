@@ -1,5 +1,4 @@
 <?php
-
 $lesCategories = Categorie::getAllCategories();
 echo "<aside class='col-lg-3'>";
 foreach ($lesCategories as $ligne) {
@@ -7,6 +6,7 @@ foreach ($lesCategories as $ligne) {
     $nom = $ligne->getName();
     echo "<li> <a href='?categ=".$id."&action=readProductsCat'>$nom </a> </li>";
 }
+
 echo "<br>";
 echo "<div class='trait'></div>";
 echo "<br>";

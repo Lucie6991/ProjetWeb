@@ -125,4 +125,11 @@ class Cart
             die();
         }
     }
+
+    public static function deleteOrderItem($id_order){
+        $sql = "DELETE FROM orderitems WHERE order_id = ? ";
+        $rep =Model::$pdo->prepare($sql);
+        $rep->execute(array($id_order));
+    }
+
 }

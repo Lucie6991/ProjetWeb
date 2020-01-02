@@ -51,18 +51,34 @@ class Orders
         }
     }
 
-    public function getPaymentType()
-    {
-        return $this->payment_type;
+    public static function getOrder($id_order){
+        try {
+            $sql = "SELECT * FROM orders WHERE id = ? ";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($id_order));
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'Orders');
+            $tab_order = $rep->fetchAll();
+            return $tab_order;
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
     }
 
-    public function getTotal()
-    {
-        return $this->total;
+    public static function deleteOrder($id_order){
+        $sql = "DELETE FROM orders WHERE id = ? ";
+        $rep =Model::$pdo->prepare($sql);
+        $rep->execute(array($id_order));
     }
 
-    public function getId()
-    {
-        return $this->id;
+    public function get($nom_attribut) {
+        if (property_exists($this, $nom_attribut))
+            return $this->$nom_attribut;
+        return false;
     }
 }

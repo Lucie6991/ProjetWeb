@@ -30,4 +30,30 @@ class DeliveryAdress
             $this->email = $e;
         }
     }
+
+    //getter général
+    public function get($nom_attribut) {
+        if (property_exists($this, $nom_attribut))
+            return $this->$nom_attribut;
+        return false;
+    }
+
+    public static function getDelivery_adress($id){
+        try {
+            $sql = "SELECT a.* FROM delivery_addresses a, orders o WHERE a.id = o.delivery_add_id AND o.id =? ";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($id));
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'DeliveryAddress');
+            $tab_adress = $rep->fetchAll();
+            return $tab_adress;
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
 }

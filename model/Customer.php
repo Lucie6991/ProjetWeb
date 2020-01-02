@@ -13,6 +13,7 @@ class Customer
     private $postcode;
     private $phone;
     private $email;
+    private $registered;
 
     public static function getUtilisateurCo($log, $mdp)
     {
@@ -74,5 +75,30 @@ class Customer
     public function getId()
     {
         return $this->id;
+    }
+
+    public static function getCustomer($id_order){
+        try {
+            $sql = "SELECT c.* FROM customers c, orders o WHERE o.customer_id =c.id AND o.id=?";
+            $rep = Model::$pdo->prepare($sql);
+            $rep->execute(array($id_order));
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'Customers');
+            $tab_customer = $rep->fetchAll();
+            return $tab_customer;
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+    public function get($nom_attribut) {
+        if (property_exists($this, $nom_attribut))
+            return $this->$nom_attribut;
+        return false;
     }
 }
