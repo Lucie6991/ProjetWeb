@@ -1,13 +1,15 @@
-<form method="post" action="testAjoutAdress.php">
+<?php
+if (empty($_SESSION['username'])){ ?>
+<form action="?action=addedCustomer" method="post">
     <fieldset>
-        <legend>Renseigner une adresse de Livraison :</legend>
+        <legend>Renseigner les informations suivantes :</legend>
         <p>
-            <label for="id_firstname">Prenom</label> :
-            <input type="text" name="firstname" id="id_firstanme" required/>
+            <label for="id_surname">Prenom</label> :
+            <input type="text" name="forname" id="id_forname" required/>
         </p>
         <p>
-            <label for="id_lastname">Nom </label> :
-            <input type="text" name="firstname" id="id_firstanme" required/>
+            <label for="id_surname">Nom </label> :
+            <input type="text" name="surname" id="id_surname" required/>
         </p>
         <p>
             <label for="id_add1">Adresse 1</label> :
@@ -33,8 +35,20 @@
             <label for="id_email">Email</label> :
             <input type="text" name="email" id="id_email" required/>
         </p>
-        <p>
-            <input type="submit" value="Valider"/>
-        </p>
+        <label for="champNom">Login :</label>
+        <input type="text" name="login" id="username" required />
+        <p></p>
+
+        <label for="champMdp">Mot de passe :</label>
+        <input type="password" name="password" id="password" required />
+        <p></p>
+        <input type="submit" value="Créer">
     </fieldset>
 </form>
+<?php
+}
+
+else {
+    echo "<p> Vous ne pouvez pas créer de compte actuellement car vous êtes déjà connecté avec un compte. <br/> Deconnectez-vous !</p>";
+}
+?>

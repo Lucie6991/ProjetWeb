@@ -4,19 +4,14 @@ class Login
 {
     private $login;
     private $mdp;
-    private $customerid;
+    private $customer_id;
     private $id;
 
-    public function __construct()
-    {
-
-    }
-
-    public static function readLogin($log){
+    public static function getLoginUser($log, $mdp){
         try {
-            $sql = "SELECT * FROM logins WHERE username=?  ";
+            $sql = "SELECT * FROM logins WHERE username=? and password=? ";
             $rep = Model::$pdo->prepare($sql);
-            $rep->execute(array($log));
+            $rep->execute(array($log, $mdp));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Login');
             $tab_log = $rep->fetchAll(PDO::FETCH_ASSOC);
             //$tab_log = $rep->fetchAll();
@@ -32,25 +27,22 @@ class Login
         }
     }
 
-    public function getUtilisateurCon ($log, $mdp)
-    {
+    public static function addLogin($id, $un, $pw){
         try {
-            $sql = "SELECT c.* FROM logins l, customers c WHERE l.username=? and l.password=? and l.id=c.id";
-            $rep = Model::$pdo->prepare($sql);
-            $rep->execute(array($log, $mdp));
-            $rep->setFetchMode(PDO::FETCH_CLASS,'Login');
-            $customer = $rep->fetchAll(PDO::FETCH_ASSOC);
-            return $customer;
+            $sql = 'INSERT INTO logins VALUES (NULL,?,?,?)';
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->execute(array($id,$un,$pw));
         }
         catch(PDOException $e){
             if (Conf::getDebug()) {
-                echo $e->getMessage(); // affiche un message d'erreur
+                return false;
             } else {
                 echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
             }
             die();
         }
     }
+
 
     public function getId()
     {
@@ -59,7 +51,7 @@ class Login
 
     public function getCustomerid()
     {
-        return $this->customerid;
+        return $this->customer_id;
     }
 
     public function getLogin()

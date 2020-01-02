@@ -1,6 +1,6 @@
 
 <div class="cnx">
-    <form class="FormConnexion" action="?action=readLogin" method="post">
+    <form class="FormConnexion" action="?action=readCustomer" method="post">
         <h1>Se connecter</h1>
 
         <label for="champNom">Login :</label>
@@ -8,9 +8,10 @@
         <p></p>
 
         <label for="champMdp">Mot de passe :</label>
-        <input type="password" name="mdp" id="password" required />
+        <input type="password" name="password" id="password" required />
         <p></p>
 
         <input type="submit" id="connexion" value="Connexion"/>
+
     </form>
 </div>

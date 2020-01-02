@@ -27,7 +27,7 @@ else if ($action== 'readAllProducts' || $action == 'readProductsCat' || $action 
 else if ( $action == 'readCategories' ||$action=="addedCat" ){
     controllerCategorie::$action();
 }
-else if ($action == 'getUtilisateurCon' || $action == "connect" || $action=='readLogin'){
+else if ($action == 'readCustomer' || $action == "connect" || $action=='readLogin' || $action=='addedCustomer' || $action=='add' || $action=='deconnect'){
     controllerConnexion::$action();
 }
 else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewProduct") {
