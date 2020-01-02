@@ -21,7 +21,7 @@ else if ($action== 'readAllProducts' || $action == 'readProductsCat' || $action 
     controllerProduct::$action();
 }
 
-else if ($action == 'getUtilisateurCon' || $action == "connect"){
+else if ($action == 'getUtilisateurCon' || $action == "connect" || $action=='readLogin'){
     controllerConnexion::$action();
 }
 

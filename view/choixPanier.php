@@ -11,7 +11,7 @@ foreach ($tab_product as $ligne) {
 
     echo "<div class ='row'>";
         // Première partie de la page centrale
-        echo "<div class ='col-lg-5'>";
+        echo "<div class ='col-lg-7'>";
 
             if ($quantity ==0){
                  echo "<h3 class='ProdRupture'>  Produit en rupture de stock </h3>";
@@ -35,23 +35,42 @@ foreach ($tab_product as $ligne) {
         echo "</div>";
 
             echo "<div class ='col-lg-7'>";
-                echo "Prix : $prix <br> "; ?>
-                 <div class ='col-lg-2'>
-                     <button class='btn btn-dark' onclick="clic_moins();"> <span class='glyphicon glyphicon-minus'></span></button>
-                 </div>
-                <div class ='col-lg-3'>
-                     <input class="form-control" id="quantite" type="text" value="1" placeholder="1" readonly>
-                     <div class='row'>
-                    <br />
-                         <?php
-                         echo "<a href='?action=addToCart&id=".$id."&q=1' class='btn btn-warning' > <span class='glyphicon glyphicon-shopping-cart'></span> Ajouter au panier</a>"
-                         ?>
-                </div></div>
-                <div class ='col-lg-2'>
-                    <button class='btn btn-dark' onclick="clic_plus();"> <span class='glyphicon glyphicon-plus'></span></button>
-                </div>
-        <?php
-        echo"</div>";
+                echo "Prix : $prix <br> ";
+
+                if ($quantity > 0){?>
+                   <div class ='col-lg-2'>
+                       <button class='btn btn-dark' onclick="clic_moins();"> <span class='glyphicon glyphicon-minus'></span></button>
+                   </div>
+                   <div class ='col-lg-3'>
+                       <input class="form-control" id="quantite" type="text" value="1" placeholder="1" readonly>
+                       <div class='row'>
+                           <br />
+                           <?php
+                           echo "<a href='?action=addToCart&id=".$id."&q=1' class='btn btn-warning' > <span class='glyphicon glyphicon-shopping-cart'></span> Ajouter au panier</a>"
+                           ?>
+                       </div></div>
+                   <div class ='col-lg-2'>
+                       <button class='btn btn-dark' onclick="clic_plus(quantity);"> <span class='glyphicon glyphicon-plus'></span></button>
+                   </div>
+               <?php
+                }
+               // Si le produit n'est pas disponible => pas possible de le mettre au panier
+                else { ?>
+                   <div class ='col-lg-2'>
+                       <button class='btn btn-dark'> <span class='glyphicon glyphicon-minus'></span></button>
+                   </div>
+                   <div class ='col-lg-3'>
+                       <input class="form-control" id="quantite" type="text" value="0" placeholder="1" readonly>
+                   </div>
+                   <div class ='col-lg-2'>
+                       <button class='btn btn-dark'> <span class='glyphicon glyphicon-plus'></span></button>
+                   </div>
+
+                    <div class="row"> </div>
+                    <p class ='messageRupture'> Le produit est momentanément insdiponible. </p>
+                    <?php
+                }
+            echo"</div>";
     echo"</div>";
 }
 
@@ -75,7 +94,8 @@ foreach($tab_review as $review) :
             for ($j=$stars; $j<5; $j++){
                 echo "<img class='stars' src='view/images/review_gray.png'> ";
             }
-            echo "<br><strong>$name_user :</strong> $title <br> <em>$description</em> <br>"?>
+            echo "<br><strong>$name_user :</strong> $title <br> <em>$description</em> <br>";
+            ?>
         </div>
     </div>
     <br>

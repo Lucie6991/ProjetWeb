@@ -1,10 +1,10 @@
 <?php
-$path= File::build_path(array('model','Model.php'));
+$path= File::build_path(array('model','Login.php'));
 require_once ($path);
 
 class controllerConnexion
 {
-    public static function readUtilisateur(){
+  /*  public static function readUtilisateur(){
         $controller='connexion';
         $view='TestConnexion';
         $page_title='Connexion';
@@ -20,6 +20,21 @@ class controllerConnexion
             $path2 = File::build_path(array('view','view.php'));
         }
         require_once ($path2);
+    }*/
+
+    public static function readLogin(){
+        $view='TestConnexion';
+        $page_title='Connexion';
+        $log=$_POST['login'];
+        $tab_log = Login::readLogin($log);
+        if (empty($tab_log)){
+            $path2 = File::build_path(array('view','error.php'));
+            require_once ($path2);
+        }
+        else {
+            $path2 = File::build_path(array('view', 'view.php'));
+            require_once($path2);
+        }
     }
 
     public static function connect(){
