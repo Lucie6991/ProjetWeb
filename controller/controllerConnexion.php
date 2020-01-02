@@ -25,14 +25,15 @@ class controllerConnexion
     public static function readLogin(){
         $view='TestConnexion';
         $page_title='Connexion';
+        $controller = "user";
         $log=$_POST['login'];
         $tab_log = Login::readLogin($log);
         if (empty($tab_log)){
-            $path2 = File::build_path(array('view','error.php'));
+            $path2 = File::build_path(array('view',$controller,'error.php'));
             require_once ($path2);
         }
         else {
-            $path2 = File::build_path(array('view', 'view.php'));
+            $path2 = File::build_path(array('view', $controller,'view.php'));
             require_once($path2);
         }
     }
@@ -40,7 +41,8 @@ class controllerConnexion
     public static function connect(){
         $view='connexion';
         $page_title='Connexion';
-        $path2 = File::build_path(array('view','view.php'));
+        $controller = "user";
+        $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }
 

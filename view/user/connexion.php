@@ -1,7 +1,4 @@
-<?php
-$view = "TestConnexion";
-$page_title='Connecté';
-?>
+
 <div class="cnx">
     <form class="FormConnexion" action="?action=readLogin" method="post">
         <h1>Se connecter</h1>
@@ -15,6 +12,5 @@ $page_title='Connecté';
         <p></p>
 
         <input type="submit" id="connexion" value="Connexion"/>
-        <input type="hidden" name="action" value="readLogin"/>
     </form>
 </div>

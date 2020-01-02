@@ -1,6 +1,4 @@
 <?php
-$path= File::build_path(array('model','Model.php'));
-require_once ($path);
 
 class Login
 {
@@ -21,6 +19,7 @@ class Login
             $rep->execute(array($log));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Login');
             $tab_log = $rep->fetchAll(PDO::FETCH_ASSOC);
+            //$tab_log = $rep->fetchAll();
             return $tab_log;
         }
         catch(PDOException $e){

@@ -12,5 +12,12 @@ function getAside(){
     include("aside1.inc.php");
 }
 
+function getAsideAdmin(){
+    include("aside2.inc.php");
+}
+
+function getHeaderAdmin(){
+    include("headerAdmin.inc.php");
+}
 
 ?>

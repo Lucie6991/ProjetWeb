@@ -71,6 +71,21 @@ class Product
         }
     }
 
+    public static function addProduct($cat,$name,$desc,$img,$price,$qte){
+        try {
+            $sql = 'INSERT INTO products VALUES (NULL,?,?,?,?,?,?)';
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->execute(array($cat,$name,$desc,$img,$price,$qte));
+        }catch(PDOException $e){
+            if (Conf::getDebug()) {
+                return false;
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
     // Les GETTER
     public function getId(){
         return $this->id;

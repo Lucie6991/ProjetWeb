@@ -1,8 +1,4 @@
 <?php
-//require_once('../model/Categorie.php');
-//require_once ('../index.php');
-//$path= File::build_path(array('model','categorie.php'));
-//require_once ($path);
 
 $lesCategories = Categorie::getAllCategories();
 echo "<aside class='col-lg-3'>";
@@ -14,5 +10,6 @@ foreach ($lesCategories as $ligne) {
 echo "<br>";
 echo "<div class='trait'></div>";
 echo "<br>";
-echo "<a href='?action=connect' class='seConnecter'>Se connecter</a>";
+echo "<a href='?action=connect' class='seConnecter'>Se connecter</a><br>";
+echo "<a href='?action=readAllOrders' class='seConnecter'> Session Admin</a>";
 echo"</aside>";

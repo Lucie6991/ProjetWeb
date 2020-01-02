@@ -46,4 +46,19 @@ class Categorie
         return $this->image;
     }
 
+    public static function addCategorie($name){
+        try {
+            $sql = 'INSERT INTO categories(`id`, `name`) VALUES (NULL,?)';
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->execute(array($name));
+        }catch(PDOException $e){
+            if (Conf::getDebug()) {
+                return false;
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
 }

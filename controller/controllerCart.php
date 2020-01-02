@@ -16,17 +16,18 @@ class controllerCart
     public static function emptyCart(){
         $view ='cart';
         $page_title='Panier vidé';
+        $controller = "user";
         Cart::emptyCart();
-        $path2= File::build_path(array('view','view.php'));
+        $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }
 
     public static function seeCart(){
         $view ='cart';
         $page_title='Mon panier';
-        //$myCart = Cart::getCart();
+        $controller = "user";
         $tab_cart = Cart::getProducts();
-        $path2= File::build_path(array('view','view.php'));
+        $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
 
     }

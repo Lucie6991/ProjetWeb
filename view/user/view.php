@@ -10,7 +10,9 @@
 
 </head>
 <body>
-<?php include("fonctions.php");
+<?php
+$path = File::build_path(array("view", "fonctions.php"));
+include($path);
 ?>
 <div class="container">
 
@@ -20,8 +22,7 @@
         <section class="col-lg-9">
             <br>
             <?php
-            //$filepath = File::build_path(array("view", $controller, "$view.php"));    // si on a des sous dossiers dans view
-            $filepath = File::build_path(array("view", "$view.php"));
+            $filepath = File::build_path(array("view", $controller, "$view.php"));
             require $filepath;
             echo "<br/>";
             getFooter();
