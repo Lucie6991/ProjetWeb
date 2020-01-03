@@ -6,11 +6,11 @@ require_once ($path);
 class DeliveryAdress
 {
     private $id;
-    private $firstname;
-    private $lastname;
+    private $forename;
+    private $surname;
     private $add1;
     private $add2;
-    private $city;
+    private $add3;
     private $postcode;
     private $phone;
     private $email;
@@ -20,11 +20,11 @@ class DeliveryAdress
     {
         if (!is_null($fn) && !is_null($ln) && !is_null($ad1) && !is_null($c) && !is_null($pc) && !is_null($p) && !is_null($e)) {
 
-            $this->firstname = $fn;
-            $this->lastname = $ln;
+            $this->forename = $fn;
+            $this->surname = $ln;
             $this->add1 = $ad1;
             $this->add2 = $ad2;
-            $this->city = $c;
+            $this->add3 = $c;
             $this->postcode = $pc;
             $this->phone = $p;
             $this->email = $e;
@@ -43,7 +43,7 @@ class DeliveryAdress
             $sql = "SELECT a.* FROM delivery_addresses a, orders o WHERE a.id = o.delivery_add_id AND o.id =? ";
             $rep =Model::$pdo->prepare($sql);
             $rep->execute(array($id));
-            $rep->setFetchMode(PDO::FETCH_CLASS, 'DeliveryAddress');
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'DeliveryAdress');
             $tab_adress = $rep->fetchAll();
             return $tab_adress;
         }

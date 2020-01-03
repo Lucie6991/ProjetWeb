@@ -1,65 +1,78 @@
-
-<?php
-foreach ($tab_order as $order){
-    $date = $order->get("date");
-    $payment_type = $order->get("payment_type");
-    $total = $order->get("total");
-}
-foreach ($tab_adress as $add){
-    $surnameA = $add->get("surname");
-    $forenameA = $add->get("forename");
-    $add1A = $add->get("add1");
-    $add2A = $add->get("add2");
-    $add3A = $add->get("add3");
-    $postcodeA = $add->get("postcode");
-    $phoneA = $add->get("phone");
-    $emailA = $add->get("email");
-}
-
-foreach ($tab_customer as $customer){
-    $surnameC = $customer->get("surname");
-    $forenameC = $customer->get("forename");
-    $add1C = $customer->get("add1");
-    $add2C = $customer->get("add2");
-    $add3C = $customer->get("add3");
-    $postcodeC = $customer->get("postcode");
-    $phoneC = $customer->get("phone");
-    $emailC = $customer->get("email");
-    $registeredC = $customer->get("registered");
-}
-?>
 <h1> Détail de la commande : </h1>
-<h2> Infos du client : </h2>
+<h2> Récapitulatif de la commande : </h2>
 <?php
-echo "$surnameC <br>";
-echo "$forenameC <br>";
-echo "$add1C <br>";
-echo "$add2C <br>";
-echo "$add3C <br>";
-echo "$postcodeC <br>";
-echo "$phoneC <br>";
-echo "$emailC <br>";
-echo "$payment_type <br>";
-echo "$date <br>";
+$filePath = File::build_path(array('view',"admin","files_users",$nameFile.'.txt'));
+$fileUser = fopen($filePath, 'a+');
+$col_customers = array("forename","surname","add1","add2","add3","postcode","phone","email");
+$col_adresse = array("forename","surname","add1","add2","add3","postcode","phone","email");
+$title_add = array("Nom : ","Prénom : ","Adresse : ","Télephone : ","Email : ");
+$col_orders = array("id","payment_type","date","total");
+$title_orders = array("Numéro de commande", "Type de paiement","Date","Total de la commande");
+
+foreach ($tab_order as $order){
+    for ($i=0; $i<count($col_orders); $i++){
+        $data = $order->get($col_orders[$i]);
+        $title = $title_orders[$i];
+        echo "<strong> $title :</strong> $data <br>";
+        fputs($fileUser, $title." : ".$data.";");
+    }
+    //fputs($fileUser, "\n");
+}
 ?>
+<h2> Informations du client : </h2>
+<?php
+foreach ($tab_customer as $customer){
+
+    for ($i=0; $i<count($col_customers); $i++){
+        $data = $customer->get($col_customers[$i]);
+        if( $i ==3 || $i ==4 ||$i ==5){
+            $title = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+            echo "<strong> $title</strong> $data <br>";
+            $title ="";
+        }
+        else {
+            if( $i ==6 || $i ==7){
+                $title = $title_add[$i-3];
+            }
+            else{
+                $title = $title_add[$i];
+            }
+            echo "<strong> $title</strong> $data <br>";
+        }
+        if ($data == ""){
+            $data = " ";
+        }
+        fputs($fileUser, $title.$data.";");
+    }
+    //fputs($fileUser, "\n");
+}
+?>
+
 <h2> Adresse de livraison :</h2>
 <?php
-if (empty($tab_address)){
-    echo "Adresse non indiquée";    // a enleer ca ce ne sera pas possible
+foreach ($tab_adress as $add){
+    for ($i=0; $i<count($col_adresse); $i++){
+        $data = $add->get($col_adresse[$i]);
+        if( $i ==3 || $i ==4 ||$i ==5){
+            $title = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+            echo "<strong> $title</strong> $data <br>";
+            $title ="";
+        }
+        else {
+            if( $i ==6 || $i ==7){
+                $title = $title_add[$i-3];
+            }
+            else{
+                $title = $title_add[$i];
+            }
+            echo "<strong> $title</strong> $data <br>";
+        }
+        if ($data == ""){
+            $data = " ";
+        }
+        fputs($fileUser, $title.$data.";");
+    }
 }
-else{
-    echo "$surnameA <br>";
-    echo "$forenameA <br>";
-    echo "$add1A <br>";
-    echo "$add2A <br>";
-    echo "$add3A <br>";
-    echo "$postcodeA <br>";
-    echo "$phoneA <br>";
-    echo "$emailA <br>";
-    echo "$payment_type <br>";
-    echo "$date <br>";
-}
-
 ?>
 
 <h2> Les produits de la commande :</h2>
@@ -102,11 +115,12 @@ foreach ($tab_order_item as $ligne):
         </span>
 
     </div>
-        <br>
+    <br>
 
-   <?php  endforeach ?>
+<?php  endforeach ?>
 
 <?php
+fclose($fileUser);
 echo "<a href='?action=seeBill&order=".$id_order."' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Télécharger la facture </a><br><br>";
 echo "<a href='?action=confirmOrder&order=".$id_order."' class='btn btn-success' > <span class='glyphicon glyphicon-send'></span>  Confirmer le paiment</a>";
 ?>

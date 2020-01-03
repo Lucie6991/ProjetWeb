@@ -49,6 +49,7 @@ class controllerAdmin
             $tab_order_item = Orders::getOrderItems($id_order);
             $tab_order= Orders::getOrder($id_order);
             $tab_adress = DeliveryAdress::getDelivery_adress($id_order);
+            $nameFile = "order".$id_order;
         }
         $path2 = File::build_path(array('view', $controller,'viewAdmin.php'));
         require_once ($path2);
@@ -66,6 +67,10 @@ class controllerAdmin
     public static function seeBill(){
         $view = "testBill";
         $controller = "admin";
+        if (isset ($_GET['order'])){
+            $id_order=$_GET["order"];
+            $nameFile= "order".$id_order;
+        }
         $page_title="Facture de la commande";
         $path2 = File::build_path(array('view', $controller,'viewAdmin.php'));
         require_once ($path2);
