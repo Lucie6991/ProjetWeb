@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/fpdf/Web4SHOP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/Web4SHOP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/files_users/order1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/files_users/order2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/files_users/user.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/DeliveryAdress.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/DeliveryAdress.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/detailOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/detailOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/testBill.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/testBill.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/aside2.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/aside2.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/routeur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Orders.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +95,7 @@
       <workItem from="1577980589717" duration="950000" />
       <workItem from="1578001591507" duration="1069000" />
       <workItem from="1578036817109" duration="1850000" />
-      <workItem from="1578064256103" duration="1098000" />
+      <workItem from="1578064256103" duration="5329000" />
     </task>
     <task id="LOCAL-00001" summary="Ceci est le commit du fichier testgit.html">
       <created>1576752675465</created>
