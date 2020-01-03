@@ -7,9 +7,10 @@ class controllerCart
 
     public static function addToCart(){
         $view='addedToCart';
-        $page_title='Ajouté au panier';;
+        $page_title='Ajouté au panier';
+        $controller = "user";
         Cart::addToCart($_GET['id'], $_GET['q']);
-        $path2= File::build_path(array('view','view.php'));
+        $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }
 

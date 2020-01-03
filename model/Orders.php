@@ -34,11 +34,10 @@ class Orders
 
     public static function getOrderItems($id){
         try {
-            $sql = "SELECT i.* FROM orders o, order_items i WHERE o.id = i.order_id AND o.id = ?";
-            $rep = Model::$pdo->prepare($sql);
+            $sql = "SELECT p.* , o.quantity 'qte' , o.id 'order' FROM products p, orderitems o WHERE o.order_id = ? AND p.id =o.product_id";
+            $rep =Model::$pdo->prepare($sql);
             $rep->execute(array($id));
-            $rep->setFetchMode(PDO::FETCH_CLASS, 'Cart');
-            $tab_items = $rep->fetchAll();
+            $tab_items = $rep->fetchAll(PDO::FETCH_ASSOC);
             return $tab_items;
         }
         catch(PDOException $e){

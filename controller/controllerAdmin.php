@@ -2,7 +2,7 @@
 
 $path= File::build_path(array('model','Orders.php'));
 require_once ($path);
-$path2= File::build_path(array('model','Customers.php'));
+$path2= File::build_path(array('model','Customer.php'));
 require_once ($path2);
 $path3= File::build_path(array('model','DeliveryAdress.php'));
 require_once ($path3);
@@ -45,7 +45,7 @@ class controllerAdmin
         $controller = "admin";
         if (isset($_GET["order"])){
             $id_order=$_GET["order"];
-            $tab_customer = Customers::getCustomer($id_order);
+            $tab_customer = Customer::getCustomer($id_order);
             $tab_order_item = Orders::getOrderItems($id_order);
             $tab_order= Orders::getOrder($id_order);
             $tab_adress = DeliveryAdress::getDelivery_adress($id_order);

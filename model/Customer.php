@@ -82,7 +82,7 @@ class Customer
             $sql = "SELECT c.* FROM customers c, orders o WHERE o.customer_id =c.id AND o.id=?";
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($id_order));
-            $rep->setFetchMode(PDO::FETCH_CLASS, 'Customers');
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'Customer');
             $tab_customer = $rep->fetchAll();
             return $tab_customer;
         }
