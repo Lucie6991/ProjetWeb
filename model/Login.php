@@ -43,14 +43,15 @@ class Login
         }
     }
 
-    public static function getIdOfUser($username){
+    public static function getCustomerIdOfUser($username){
         try {
-            $sql = "SELECT * FROM logins WHERE username=? ";
+            $sql = "SELECT customer_id FROM logins WHERE username=? ";
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($username));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Login');
-            $tab_log = $rep->fetchAll(PDO::FETCH_ASSOC);
-            return $tab_log;
+            $tab = $rep->fetchAll();
+            $customerID = $tab[0]->getCustomerid();
+            return $customerID;
         }
         catch(PDOException $e){
             if (Conf::getDebug()) {

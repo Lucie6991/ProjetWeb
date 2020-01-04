@@ -4,9 +4,13 @@
     <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/controllerCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerConnexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/routeur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Customer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/cart.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +100,7 @@
       <workItem from="1578001591507" duration="1069000" />
       <workItem from="1578036817109" duration="1850000" />
       <workItem from="1578064256103" duration="5329000" />
+      <workItem from="1578151756929" duration="8288000" />
     </task>
     <task id="LOCAL-00001" summary="Ceci est le commit du fichier testgit.html">
       <created>1576752675465</created>
@@ -153,10 +158,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1577979057208" />
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1578036976444">
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1578151757082">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1578036976444" />
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1578151757082" />
     <state x="591" y="354" key="publish.login" timestamp="1577375890053">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

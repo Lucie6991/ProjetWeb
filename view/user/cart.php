@@ -1,5 +1,5 @@
 <?php
-if (empty(Cart::getCart())){
+if (empty($tab_cart)){
     echo "<h3> Votre panier est vide</h3>";
 }
 else{
@@ -52,7 +52,7 @@ else{
             </span>
                         </div>
             <div class ='col-lg-1'>
-                <?php echo "<br><br><a style='color: grey; font-size: 50px' href='?action=delete&order=".$order."'> <span  class='glyphicon glyphicon-trash'></span></a>"; ?>
+                <?php echo "<br><br><a style='color: grey; font-size: 50px' href='?action=delete&prod=".$order."'> <span  class='glyphicon glyphicon-trash'></span></a>"; ?>
             </div>
         </span>
 

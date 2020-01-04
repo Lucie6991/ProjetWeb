@@ -1,6 +1,5 @@
 <?php
-//var_dump(session_id());
-//var_dump($_SESSION["username"]);
+
 $path = File::build_path(array('controller','controllerProduct.php'));
 require_once ($path);
 $path2 = File::build_path(array('controller','controllerCart.php'));

@@ -19,7 +19,16 @@ class controllerConnexion
             $customer =  Customer::getUtilisateurCo($log, $mdp);
         $_SESSION['username'] = $log;
        // }
-
+        $customer_id = Login::getCustomerIdOfUser($log);
+        // si il existe un panier à son nom alors on recupere l'order ID et changer le customerID
+        if ( Orders::existsOrder($customer_id)){
+            $order_id = Orders::getOrderID($customer_id) ;
+            Orders::updateCustomerId($customer_id, $order_id);
+        }
+        else if (Orders::existsOrder(session_id())){
+            $order_id = Orders::getOrderID(session_id()) ;
+            Orders::updateCustomerId($customer_id, $order_id);
+        }
         if (empty ($customer)){
             $path2 = File::build_path(array('view',$controller,'error.php'));   //error car ca veut dire il n'y a pas de clients avec ces identifiants
         }

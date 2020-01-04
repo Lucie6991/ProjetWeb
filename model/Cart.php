@@ -3,30 +3,12 @@
 
 class Cart
 {
-
-    private $nbArticles;
-    private $price;
-
-    /*
-    public function __construct()
-    {
-        //if (!isset($_SESSION)) {
-         //   session_start();
-       // }
-        if (!isset($_SESSION['cart'])){
-            $_SESSION['cart'] = array();
-        }
-        $nbArticle = 0;
-        $price = 0;
-
-    }
-    */
-
-    public static function addToCart($id, $quantity){
+    
+    public static function addToCart($order_id,$id, $quantity){
         try {
             $sql = "INSERT INTO orderitems VALUES (NULL,?,?,?) ";
             $rep =Model::$pdo->prepare($sql);
-            $rep->execute(array(1,$id,$quantity));
+            $rep->execute(array($order_id,$id,$quantity));
         }
         catch(PDOException $e){
             if (Conf::getDebug()) {
@@ -38,11 +20,11 @@ class Cart
         }
     }
 
-    public static function emptyCart(){
+    public static function emptyCart($orderID){
         try {
             $sql = "DELETE FROM orderitems WHERE order_id = ? ";
             $rep =Model::$pdo->prepare($sql);
-            $rep->execute(array(1));
+            $rep->execute(array($orderID));
         }
         catch(PDOException $e){
             if (Conf::getDebug()) {
@@ -54,19 +36,11 @@ class Cart
         }
     }
 
-    public function addPrice($price2){
-        $this->price += $price2;
-    }
-
-    public function addArticles($nb){
-        $this->nbArticles += $nb;
-    }
-
-    public static function delete($order){
+    public static function delete($orderID,$product){
         try {
             $sql = "DELETE FROM orderitems WHERE order_id = ? AND id =? ";
             $rep =Model::$pdo->prepare($sql);
-            $rep->execute(array(1, $order));
+            $rep->execute(array($orderID, $product));
         }
         catch(PDOException $e){
             if (Conf::getDebug()) {
@@ -78,41 +52,12 @@ class Cart
         }
     }
 
-    /// Les getters
-    public function getNbArticles()
-    {
-        return $this->nbArticles;
-    }
 
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    public static function getCart(){
-        try {
-            $sql = "SELECT * FROM orderitems WHERE order_id = ? ";
-            $rep =Model::$pdo->prepare($sql);
-            $rep->execute(array(1));
-            $rep->setFetchMode(PDO::FETCH_CLASS, 'Cart');
-            $tabCart = $rep->fetchAll();
-            return $tabCart;
-        }
-        catch(PDOException $e){
-            if (Conf::getDebug()) {
-                echo $e->getMessage(); // affiche un message d'erreur
-            } else {
-                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
-            }
-            die();
-        }
-    }
-
-    public static function getProducts(){
+    public static function getProducts($orderID){
         try {
             $sql = "SELECT p.* , o.quantity 'qte' , o.id 'order' FROM products p, orderitems o WHERE o.order_id = ? AND p.id =o.product_id";
             $rep =Model::$pdo->prepare($sql);
-            $rep->execute(array(1));
+            $rep->execute(array($orderID));
             $tabCart = $rep->fetchAll(PDO::FETCH_ASSOC);
             return $tabCart;
         }
