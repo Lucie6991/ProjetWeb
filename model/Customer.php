@@ -41,8 +41,8 @@ class Customer
             $sql = "SELECT id FROM customers WHERE forname=? and surname=? and add1=? and add2=? and add3=? and postcode=? and phone=? and email=?";
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($fn,$sn,$ad1,$ad2,$c, $pc, $p, $e));
-            $rep->setFetchMode(PDO::FETCH_CLASS,'Customer');
-            $id = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $tab = $rep->setFetchMode();
+            $id = $tab[0]["id"];
             return $id;
         }
         catch(PDOException $e){
@@ -54,14 +54,14 @@ class Customer
             die();
         }
     }
+
+
     public static function addCustomer($fn,$sn,$ad1,$ad2 = NULL,$c, $pc, $p, $e){
         try {
-            $sql = 'INSERT INTO customers VALUES (NULL,?,?,?,?,?,?,?,?,1)';
+            $sql = 'INSERT INTO customers VALUES (?,?,?,?,?,?,?,?,1)';
             $req_prep = Model::$pdo->prepare($sql);
             $req_prep->execute(array($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e));
-            $req_prep->setFetchMode(PDO::FETCH_CLASS,'Customer');
-            $customer = $req_prep->fetchAll(PDO::FETCH_ASSOC);
-            return $customer;
+
         }catch(PDOException $e){
             if (Conf::getDebug()) {
                 return false;
@@ -71,6 +71,7 @@ class Customer
             die();
         }
     }
+
 
     public function getId()
     {
@@ -85,6 +86,25 @@ class Customer
             $rep->setFetchMode(PDO::FETCH_CLASS, 'Customer');
             $tab_customer = $rep->fetchAll();
             return $tab_customer;
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+    public static function getAdress($id){
+        try {
+            $sql = "SELECT * FROM customers WHERE id=? ";
+            $rep = Model::$pdo->prepare($sql);
+            $rep->execute(array($id));
+            $rep->setFetchMode(PDO::FETCH_CLASS,'Customer');
+            $tab_adress = $rep->fetchAll(PDO::FETCH_ASSOC);
+            return $tab_adress;
         }
         catch(PDOException $e){
             if (Conf::getDebug()) {

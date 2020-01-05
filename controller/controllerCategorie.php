@@ -9,6 +9,7 @@ class controllerCategorie
         $controller = "user";
         $view='home';
         $page_title='Liste des Catégories';
+        $message = "";
         $lesCategories = Categorie::getAllCategories();
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
@@ -23,6 +24,7 @@ class controllerCategorie
         $view='addedCat';
         $controller="admin";
         $page_title='Catégorie ajoutée';
+        $message = "";
         $path2 = File::build_path(array('view',$controller,'viewAdmin.php'));
         require ($path2);
     }

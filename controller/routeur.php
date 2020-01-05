@@ -10,7 +10,8 @@ $path4 = File::build_path(array('controller','controllerAdmin.php'));
 require_once ($path4);
 $path5 = File::build_path(array('controller','controllerCategorie.php'));
 require_once ($path5);
-
+$path6 = File::build_path(array('controller','controllerAdress.php'));
+require_once ($path6);
 
 if (!isset($_GET['action'])){
     $action='readCategories';
@@ -33,6 +34,8 @@ else if ($action == 'readCustomer' || $action == "connect" || $action=='readLogi
 else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewProduct" || $action=="readOrder" || $action=="confirmOrder" || $action == "seeBill") {
     controllerAdmin::$action();
 }
-
+else if ($action == "readAdress"){
+    controllerAdress::$action();
+}
 
 ?>

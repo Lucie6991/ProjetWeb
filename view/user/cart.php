@@ -63,5 +63,5 @@ else{
     <?php $totalpriceStr = number_format($totalprice,2);
     echo "<h3> Prix total du panier : $totalpriceStr €</h3>"; ?>
 
-    <a class='btn btn-success'> Passer la commande</a>
+    <a class='btn btn-success'> Passer la commande<a/>
 <?php  }?>

@@ -3,43 +3,63 @@ $path= File::build_path(array('model','Login.php'));
 require_once ($path);
 $path3= File::build_path(array('model','Customer.php'));
 require_once ($path3);
-
+$path4= File::build_path(array('model','Admin.php'));
+require_once ($path4);
 class controllerConnexion
 {
     public static function readCustomer(){
         $view='TestConnexion';
         $page_title='Connexion';
         $controller = "user";
+        $message="";
 
+        //On récupère les identifiants
         $log = $_POST['login'];
         $mdp = $_POST['password'];
-        $tab_log = Login::getLoginUser($log, $mdp);
 
-        //if (isset ($_POST['login']) && isset($_POST['mdp'])){
-            $customer =  Customer::getUtilisateurCo($log, $mdp);
-        $_SESSION['username'] = $log;
-       // }
-        $customer_id = Login::getCustomerIdOfUser($log);
-        // si il existe un panier à son nom alors on recupere l'order ID et changer le customerID
-        if ( Orders::existsOrder($customer_id)){
-            $order_id = Orders::getOrderID($customer_id) ;
-            Orders::updateCustomerId($customer_id, $order_id);
+        //On cherche si un login customer correspond
+        $tab_log = Login::getLoginUser($log, $mdp);
+        //On regarde si ce n'est pas un admin
+        $admin = Admin::getAdmin($log, $mdp);
+        //On récupère les informations du clients associés
+        $customer = Customer::getUtilisateurCo($log, $mdp);
+
+        //Si login customer pas vide
+        if (!empty($tab_log) && empty($admin)) {
+
+            $_SESSION['username'] = $log;
+            $path2 = File::build_path(array('view', $controller, 'view.php'));
+
+            $customer_id = Login::getCustomerIdOfUser($log);
+            // si il existe un panier à son nom alors on recupere l'order ID et changer le customerID
+            if ( Orders::existsOrder($customer_id)){
+                $order_id = Orders::getOrderID($customer_id) ;
+                Orders::updateCustomerId($customer_id, $order_id);
+            }
+            else if (Orders::existsOrder(session_id())){
+                $order_id = Orders::getOrderID(session_id()) ;
+                Orders::updateCustomerId($customer_id, $order_id);
+            }
         }
-        else if (Orders::existsOrder(session_id())){
-            $order_id = Orders::getOrderID(session_id()) ;
-            Orders::updateCustomerId($customer_id, $order_id);
-        }
-        if (empty ($customer)){
-            $path2 = File::build_path(array('view',$controller,'error.php'));   //error car ca veut dire il n'y a pas de clients avec ces identifiants
-        }
-        else{
+        //Si c'est un admin
+        else if (empty($tab_log) && !empty($admin)){
+            $_SESSION['admin'] = $log;
             $path2 = File::build_path(array('view',$controller,'view.php'));
         }
+
+        //Si ce n'est aucun des deux
+        else if (empty ($tab_log) && empty ($admin)){
+            $view='errorConnexion';
+            $path2 = File::build_path(array('view',$controller,'view.php'));   //error car ca veut dire il n'y a pas de clients avec ces identifiants
+        }
+
+
         require_once ($path2);
     }
 
     public static function addedCustomer(){
         if (isset($_POST["forname"]) && isset($_POST["surname"])){
+
             $fn = $_POST["forname"];
             $sn = $_POST["surname"];
             $ad1 = $_POST["add1"];
@@ -50,13 +70,15 @@ class controllerConnexion
             $e = $_POST["email"];
             $un = $_POST["login"];
             $pw = $_POST["password"];
-            $customer=Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
+
+            Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
             $customer_id=Customer::getCustomerID($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
-            Login::addLogin($customer_id, $un, $pw);
+            Login::addLogin($customer_id,$un, $pw);
         }
         $view='addedCustomer';
         $controller="user";
         $page_title='Client ajouté';
+        $message="";
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }
@@ -65,11 +87,18 @@ class controllerConnexion
         $view='TestConnexion';
         $page_title='Connexion';
         $controller = "user";
+        $message="";
+
         $log=$_POST['login'];
         $mdp = $_POST['password'];
         $tab_log = Login::getLoginUser($log, $mdp);
+
         if (empty($tab_log)){
-            $path2 = File::build_path(array('view',$controller,'error.php'));
+            $username = Login::getUsername($log);
+            $password = Login::getPassword($mdp);
+            $message = "Problème de connexion";
+            $view='errorConnexion';
+            $path2 = File::build_path(array('view',$controller,'view.php'));
             require_once ($path2);
         }
         else {
@@ -82,6 +111,7 @@ class controllerConnexion
         $view='connexion';
         $page_title='Connexion';
         $controller = "user";
+        $message = "";
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }
@@ -90,6 +120,7 @@ class controllerConnexion
         $view='FormCustomer';
         $page_title='Ajout d\'un client';
         $controller = "user";
+        $message="";
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }
@@ -98,8 +129,10 @@ class controllerConnexion
         $view='deconnexion';
         $page_title='Deconnexion';
         $controller = "user";
+        $message="";
         $_SESSION['username'] = "";
-        $_SESSION['customer_id'] = NULL;
+        $_SESSION['customer_id'] = "";
+        $_SESSION['admin'] = "";
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }

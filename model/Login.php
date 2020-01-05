@@ -1,5 +1,6 @@
 <?php
-
+$path= File::build_path(array('model','Model.php'));
+require_once ($path);
 class Login
 {
     private $login;
@@ -27,9 +28,9 @@ class Login
         }
     }
 
-    public static function addLogin($id, $un, $pw){
+    public static function addLogin($id,$un, $pw){
         try {
-            $sql = 'INSERT INTO logins VALUES (NULL,?,?,?)';
+            $sql = 'INSERT INTO logins (`customer_id`, `username`, `password`) VALUES (?,?,?)';
             $req_prep = Model::$pdo->prepare($sql);
             $req_prep->execute(array($id,$un,$pw));
         }
@@ -54,6 +55,45 @@ class Login
             return $customerID;
         }
         catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+    public static function getUsername($username){
+        try {
+            $sql = "SELECT * FROM logins WHERE username=? ";
+            $rep = Model::$pdo->prepare($sql);
+            $rep->execute(array($username));
+            $rep->setFetchMode(PDO::FETCH_CLASS,'Login');
+            $tab_username = $rep->fetchAll(PDO::FETCH_ASSOC);
+            return $tab_username;
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+    public static function getPassword($mdp)
+    {
+        try {
+            $sql = "SELECT * FROM logins WHERE password=? ";
+            $rep = Model::$pdo->prepare($sql);
+            $rep->execute(array($mdp));
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'Login');
+            $tab_password = $rep->fetchAll(PDO::FETCH_ASSOC);
+            return $tab_password;
+
+        } catch (PDOException $e) {
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
             } else {

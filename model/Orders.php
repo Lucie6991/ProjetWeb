@@ -82,7 +82,7 @@ class Orders
             $rep =Model::$pdo->prepare($sql);
             $rep->execute(array($id_customer));
             $tab_order = $rep->fetchAll();
-            var_dump($tab_order);
+            //var_dump($tab_order);
             if (empty($tab_order)){
                 return false;
             }
