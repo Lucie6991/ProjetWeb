@@ -49,6 +49,8 @@ class controllerConnexion
 
         //Si ce n'est aucun des deux
         else if (empty ($tab_log) && empty ($admin)){
+            $username = Login::getUsername($log);
+            $password = Login::getPassword($mdp);
             $view='errorConnexion';
             $path2 = File::build_path(array('view',$controller,'view.php'));   //error car ca veut dire il n'y a pas de clients avec ces identifiants
         }
