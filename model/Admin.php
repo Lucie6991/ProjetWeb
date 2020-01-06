@@ -14,7 +14,7 @@ class Admin
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($log, $mdp));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Admin');
-            $tab_admin = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $tab_admin = $rep->fetchAll();
             //$tab_log = $rep->fetchAll();
             return $tab_admin;
         }
@@ -26,5 +26,10 @@ class Admin
             }
             die();
         }
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }

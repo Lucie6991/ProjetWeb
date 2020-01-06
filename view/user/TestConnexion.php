@@ -2,28 +2,27 @@
 
 //var_dump($tab_log);
 foreach ($tab_log as $ligne){
-    $id = $ligne['id'];
-    $customId = $ligne['customer_id'];
-    $login = $ligne['username'];
-    $mdp = $ligne['password'];
+    $id = $ligne->getId();
+    $customId = $ligne->getCustomerid();
+    $login = $ligne->getLogin();
+    $mdp = $ligne->getMdp();
 
 }
 foreach($customer as $ligne){
-    $forname = $ligne['forname'];
-    $surname = $ligne['surname'];
+    $forname = $ligne->get('forname');
+    $surname = $ligne->get('surname');
     echo "Bonjour " . $forname. " ". $surname;
     echo "<br />";
     echo "Votre identifiant client est : " . $customId;
     echo "<br/>";
 
     // Définition des variables de sessions
-    $_SESSION['customer_id'] = $customId;
-    //echo $_SESSION['customer_id'];
+    //$_SESSION['customer_id'] = $customId;
 }
 
 foreach($admin as $ligne){
-    $username = $ligne['username'];
-    $id = $ligne['id'];
+    $username = $ligne->getUsername();
+    $id = $ligne->getId();
     echo "Bonjour " . $username;
     echo "<br />";
 

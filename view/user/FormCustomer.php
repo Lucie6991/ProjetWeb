@@ -33,7 +33,7 @@ if (empty($_SESSION['username'])){ ?>
         </p>
         <p>
             <label for="id_email">Email</label> :
-            <input type="text" name="email" id="id_email" required/>
+            <input type="email" name="email" id="id_email" required/>
         </p>
         <label for="champNom">Login :</label>
         <input type="text" name="login" id="username" required />

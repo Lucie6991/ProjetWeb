@@ -50,7 +50,7 @@ foreach ($tab_product as $ligne) {
                            ?>
                        </div></div>
                    <div class ='col-lg-2'>
-                       <button class='btn btn-dark' onclick="clic_plus(quantity);"> <span class='glyphicon glyphicon-plus'></span></button>
+                       <button class='btn btn-dark' onclick="clic_plus();"> <span class='glyphicon glyphicon-plus'></span></button>
                    </div>
                <?php
                 }

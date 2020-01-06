@@ -14,7 +14,7 @@ class Login
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($log, $mdp));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Login');
-            $tab_log = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $tab_log = $rep->fetchAll();
             //$tab_log = $rep->fetchAll();
             return $tab_log;
         }
@@ -70,7 +70,7 @@ class Login
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($username));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Login');
-            $tab_username = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $tab_username = $rep->fetchAll();
             return $tab_username;
         }
         catch(PDOException $e){
@@ -90,7 +90,7 @@ class Login
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($mdp));
             $rep->setFetchMode(PDO::FETCH_CLASS, 'Login');
-            $tab_password = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $tab_password = $rep->fetchAll();
             return $tab_password;
 
         } catch (PDOException $e) {

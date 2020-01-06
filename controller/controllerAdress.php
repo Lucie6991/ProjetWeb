@@ -9,6 +9,7 @@ class controllerAdress
         $page_title='Adresse';
         $controller = "user";;
         $message = "";
+        var_dump($_SESSION['customer_id']);
         $tab_adress = Customer::getAdress($_SESSION['customer_id']);
         $path2 = File::build_path(array('view',$controller,'view.php'));
 

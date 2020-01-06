@@ -10,7 +10,12 @@ foreach ($lesCategories as $ligne) {
 echo "<br>";
 echo "<div class='trait'></div>";
 echo "<br>";
-echo "<a href='?action=connect' class='seConnecter'>Se connecter</a><br>";
+
+echo $_SESSION['customer_id']. "<br/>";
+if (empty($_SESSION['customer_id']) || $_SESSION['customer_id']="") {
+    echo "<a href='?action=connect' class='seConnecter'>Se connecter</a><br>";
+}
+
 echo "<a href='?action=add' class='AjoutClient'>Créer un compte</a><br>";
 echo "<br/>";
 

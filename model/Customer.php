@@ -22,7 +22,7 @@ class Customer
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($log, $mdp));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Customer');
-            $customer = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $customer = $rep->fetchAll();
             return $customer;
         }
         catch(PDOException $e){
@@ -41,9 +41,11 @@ class Customer
             $sql = "SELECT id FROM customers WHERE forname=? and surname=? and add1=? and add2=? and add3=? and postcode=? and phone=? and email=?";
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($fn,$sn,$ad1,$ad2,$c, $pc, $p, $e));
-            $tab = $rep->setFetchMode();
+            $tab = $rep->FetchAll();
             $id = $tab[0]["id"];
+
             return $id;
+
         }
         catch(PDOException $e){
             if (Conf::getDebug()) {
@@ -58,7 +60,7 @@ class Customer
 
     public static function addCustomer($fn,$sn,$ad1,$ad2 = NULL,$c, $pc, $p, $e){
         try {
-            $sql = 'INSERT INTO customers VALUES (?,?,?,?,?,?,?,?,1)';
+            $sql = 'INSERT INTO customers (`forname`, `surname`, `add1`, `add2`, `add3`, `postcode`, `phone`, `email`, `registered`) VALUES (?,?,?,?,?,?,?,?,1)';
             $req_prep = Model::$pdo->prepare($sql);
             $req_prep->execute(array($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e));
 
@@ -103,7 +105,7 @@ class Customer
             $rep = Model::$pdo->prepare($sql);
             $rep->execute(array($id));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Customer');
-            $tab_adress = $rep->fetchAll(PDO::FETCH_ASSOC);
+            $tab_adress = $rep->fetchAll();
             return $tab_adress;
         }
         catch(PDOException $e){

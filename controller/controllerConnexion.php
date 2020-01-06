@@ -5,6 +5,7 @@ $path3= File::build_path(array('model','Customer.php'));
 require_once ($path3);
 $path4= File::build_path(array('model','Admin.php'));
 require_once ($path4);
+
 class controllerConnexion
 {
     public static function readCustomer(){
@@ -31,6 +32,7 @@ class controllerConnexion
             $path2 = File::build_path(array('view', $controller, 'view.php'));
 
             $customer_id = Login::getCustomerIdOfUser($log);
+            $_SESSION['customer_id'] = $customer_id;
             // si il existe un panier à son nom alors on recupere l'order ID et changer le customerID
             if ( Orders::existsOrder($customer_id)){
                 $order_id = Orders::getOrderID($customer_id) ;
@@ -44,6 +46,8 @@ class controllerConnexion
         //Si c'est un admin
         else if (empty($tab_log) && !empty($admin)){
             $_SESSION['admin'] = $log;
+            //Récupérer admin de id
+            //$_SESSION['customer_id'] = $id;
             $path2 = File::build_path(array('view',$controller,'view.php'));
         }
 
@@ -54,8 +58,6 @@ class controllerConnexion
             $view='errorConnexion';
             $path2 = File::build_path(array('view',$controller,'view.php'));   //error car ca veut dire il n'y a pas de clients avec ces identifiants
         }
-
-
         require_once ($path2);
     }
 
@@ -114,6 +116,9 @@ class controllerConnexion
         $page_title='Connexion';
         $controller = "user";
         $message = "";
+        $_SESSION['username'] = "";
+        $_SESSION['customer_id'] = "";
+        $_SESSION['admin'] = "";
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }
