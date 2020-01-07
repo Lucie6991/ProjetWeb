@@ -27,7 +27,8 @@ class controllerCart
         else {
             $id_order = Orders::getOrderID($id_customer);
         }
-        Cart::addToCart(number_format($id_order),$_GET['id'] ,$_GET['q']);
+        Cart::addToCart(number_format($id_order),$_GET['id'] ,$_POST['quantite']);
+        $tab_product = Product::getProduit($_GET['id']);
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }

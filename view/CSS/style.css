@@ -26,6 +26,15 @@ aside{
     box-shadow: 1px 1px 12px #555;
 }
 
+.nom_produit{
+    border-radius: 10px ;
+    margin-bottom: 30px;
+    background-color: #74dbec;
+    padding: 10px;
+    color: grey;
+    text-align: center;
+}
+
 .stars{
     width:20px;
 }
@@ -100,3 +109,24 @@ input[type=submit]:hover {
     border: 1px solid #26C4EC;
 }
 
+h4 .priceHT{
+    font-size: 0.7em;
+    color: grey;
+    text-decoration: none;
+}
+
+h4 .titlePrice{
+    color: #2aabd2;
+    text-decoration: underline;
+    margin-left: 20px;
+}
+
+h4 .priceTTC{
+    color: black;
+    text-decoration: none;
+}
+
+.bouton{
+    margin-right: 50px;
+    margin-left: 50px;
+}
