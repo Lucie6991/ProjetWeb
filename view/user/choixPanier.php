@@ -11,7 +11,7 @@ foreach ($tab_product as $ligne) {
     $quantity = $ligne->getQuantity();?>
     <div class ='row'>
         <div class ='col-lg-5'>
-            <?php echo "<img class ='image_produit' src='view/images/$image'/>";?>
+            <?php echo "<img class ='image_produit_choixPanier' src='view/images/$image'/>";?>
         </div>
         <div class ='col-lg-7'>
             <?php

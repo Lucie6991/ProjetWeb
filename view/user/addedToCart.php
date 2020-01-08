@@ -38,15 +38,24 @@ foreach ($tab_product as $ligne){
     <a class="btn btn-warning" href='?action=emptyCart'> <span class='glyphicon glyphicon-trash'></span>  Vider Panier</a>
 </span>
 <br>
-
-<?php
-/*
-echo "<h3> Nos clients ont aussi consulté : </h3>";
-$tab_product_cat = Product::getAllProductsCat($catID);
-foreach ($tab_product_cat as $prod){
-    $image = $prod->getImage();
-    echo "<a><img class ='image_produit' href='#' src='view/images/$image' > </a>";
-}
-*/
-?>
+<h3> Nos clients ont aussi consulté : </h3>
+<div class="row">
+    <div class="col-lg-1"></div>
+    <?php
+    $tab_product = Product::getAllProducts();
+    for ($i=0;$i<3;$i++) {
+        if($id+$i > count($tab_product) ){
+            $image= $tab_product[$id+$i-10]->getImage();
+            $id_prod = $id+$i-8;
+        }
+        else{
+            $image= $tab_product[$id+$i]->getImage();
+            $id_prod = $id+$i+2;
+        }
+        echo "<div class='col-lg-3'>";
+        echo "<a href='?action=read&id=".$id_prod."'><img class ='image_produit_consult'  src='view/images/$image' > </a>";
+        echo "</div>";
+    }
+    ?>
+</div>
 

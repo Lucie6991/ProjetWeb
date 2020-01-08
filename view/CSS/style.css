@@ -1,5 +1,7 @@
 aside{
     background-color: lightgrey;
+    height: 100%;
+    position: fixed;
 }
 
 .entete{
@@ -10,14 +12,23 @@ aside{
 .web4shop{
     background-color: #818181;
     text-align: center;
-    color: white;
-    border: #818181 1px solid;
+}
+
+.web4shop img{
+    height: 100px;
+}
+
+
+.btnAside {
+    width: 150px;
+    margin-bottom : 10px;
+    margin-left: 20%;
 }
 
 .trait
 {
     background-color: #818181;
-    height: 2pt;
+    height: 3pt;
     width: 100%;
 }
 
@@ -26,12 +37,23 @@ aside{
     box-shadow: 1px 1px 12px #555;
 }
 
+.image_produit_choixPanier{
+    width : 300px;
+    box-shadow: 1px 1px 12px #555;
+}
+
+.image_produit_consult{
+    width : 200px;
+    box-shadow: 1px 1px 12px #555;
+}
+
 .nom_produit{
     border-radius: 10px ;
     margin-bottom: 30px;
-    background-color: #74dbec;
+    background-color: #5bc0de;
+    border-color: #46b8da;
     padding: 10px;
-    color: grey;
+    color: white;
     text-align: center;
 }
 
@@ -84,7 +106,7 @@ aside{
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -116,7 +138,7 @@ h4 .priceHT{
 }
 
 h4 .titlePrice{
-    color: #2aabd2;
+    color: #5bc0de;
     text-decoration: underline;
     margin-left: 20px;
 }
@@ -129,4 +151,8 @@ h4 .priceTTC{
 .bouton{
     margin-right: 50px;
     margin-left: 50px;
+}
+
+a{
+    color :#5bc0de;
 }

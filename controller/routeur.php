@@ -12,6 +12,8 @@ $path5 = File::build_path(array('controller','controllerCategorie.php'));
 require_once ($path5);
 $path6 = File::build_path(array('controller','controllerAdress.php'));
 require_once ($path6);
+$path7 = File::build_path(array('controller','controllerHome.php'));
+require_once ($path7);
 
 if (!isset($_GET['action'])){
     $action='readCategories';
@@ -36,6 +38,9 @@ else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewP
 }
 else if ($action == "readAdress"){
     controllerAdress::$action();
+}
+else if($action == "recrut" || $action == "contact"){
+    controllerHome::$action();
 }
 
 ?>

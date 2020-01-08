@@ -2,26 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controller/controllerHome.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/images/Web4ShopHeader.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/user/contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/user/recrut.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/routeur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/CSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/css/bootstrap-theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bootstrap/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/bootstrap/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/aside1.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/aside1.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/header.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/header.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/user/addedToCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/addedToCart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/user/choixPanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/choixPanier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,18 +55,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/images" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/view/user" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/images" />
+      <recent name="$PROJECT_DIR$/view/user" />
+      <recent name="$PROJECT_DIR$/controller" />
       <recent name="$PROJECT_DIR$/lib/fpdf" />
       <recent name="$PROJECT_DIR$/view/admin" />
-      <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$/view" />
-      <recent name="$PROJECT_DIR$/model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/user" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -113,7 +105,9 @@
       <workItem from="1578064256103" duration="5329000" />
       <workItem from="1578151756929" duration="8384000" />
       <workItem from="1578323955750" duration="1433000" />
-      <workItem from="1578426608154" duration="311000" />
+      <workItem from="1578426608154" duration="513000" />
+      <workItem from="1578476714189" duration="138000" />
+      <workItem from="1578505449380" duration="466000" />
     </task>
     <task id="LOCAL-00001" summary="Ceci est le commit du fichier testgit.html">
       <created>1576752675465</created>
@@ -171,10 +165,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1577979057208" />
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1578323960223">
+    <state x="374" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1578476716508">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1578323960223" />
+    <state x="374" y="278" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1578476716508" />
     <state x="591" y="354" key="publish.login" timestamp="1577375890053">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
