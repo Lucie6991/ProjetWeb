@@ -24,6 +24,9 @@ include($path);
             <?php
             $filepath = File::build_path(array("view", $controller, "$view.php"));
             require $filepath;
+            if (isset($message)){
+                echo $message;
+            }
             echo "<br/>";
             getFooter();
             ?>

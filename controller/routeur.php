@@ -36,10 +36,10 @@ else if ($action == 'readCustomer' || $action == "connect" || $action=='readLogi
 else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewProduct" || $action=="readOrder" || $action=="confirmOrder" || $action == "seeBill") {
     controllerAdmin::$action();
 }
-else if ($action == "readAdress"){
+else if ($action == "readAdress" || $action == "newAdressFact" || $action == "sameAdd" || $action == "addLivDiff" || $action == "addAdrFact"){
     controllerAdress::$action();
 }
-else if($action == "recrut" || $action == "contact"){
+else if($action == "recrut" || $action == "contact" ){
     controllerHome::$action();
 }
 

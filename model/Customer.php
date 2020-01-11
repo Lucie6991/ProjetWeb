@@ -118,6 +118,21 @@ class Customer
         }
     }
 
+    public static function updateAdrCustomer($customer_id, $fn, $sn, $ad1, $ad2 = NULL, $c, $pc, $p,$e)
+    {
+        try {
+            $sql = "UPDATE customers SET forname = ?, surname = ?, add1=?, add2=?, add3=?, postcode=?, phone=?, email=? WHERE id = ? ";
+            $rep = Model::$pdo->prepare($sql);
+            $rep->execute(array($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e, $customer_id));
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
 
     public function get($nom_attribut) {
         if (property_exists($this, $nom_attribut))

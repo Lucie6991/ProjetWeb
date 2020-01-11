@@ -14,7 +14,6 @@ class controllerProduct
         $controller = "user";
         $view='testReadProduits';
         $page_title='Liste des Produits';
-        $message="";
         $mesProduits = Product::getAllProducts();
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
@@ -25,7 +24,6 @@ class controllerProduct
         $controller = "user";
         $view='produits';
         $page_title='Liste des produits d\'une catégorie';
-        $message="";
 
         if (isset ($_GET['categ'])){
             $id_cat = $_GET['categ'];
@@ -48,7 +46,6 @@ class controllerProduct
         $view='choixPanier';
         $page_title='Le choix de votre panier';
         $controller = "user";
-        $message="";
 
         $id_product = $_GET['id'];
         $product = new Product();
@@ -78,7 +75,6 @@ class controllerProduct
         $view='addedProd';
         $controller="admin";
         $page_title='Produit ajouté';
-        $message="";
         $path2 = File::build_path(array('view',$controller,'viewAdmin.php'));
         require ($path2);
     }

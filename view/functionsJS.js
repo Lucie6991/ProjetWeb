@@ -13,3 +13,20 @@ function clic_moins(){
         quantite.value = qte;
     }
 }
+
+function masquer_div(){
+    var coche = document.getElementById("addLivraison").checked;
+    if (coche)
+    {
+        document.getElementById("FormAMasquer").style.display = "block";
+        document.getElementById("btnNewAdd").style.visibility = "hidden";
+        document.getElementById("btnPayment").style.visibility = "hidden";
+
+    }
+    else
+    {
+        document.getElementById("FormAMasquer").style.display = "none";
+        document.getElementById("btnNewAdd").style.visibility = "visible";
+        document.getElementById("btnPayment").style.visibility = "visible";
+    }
+}

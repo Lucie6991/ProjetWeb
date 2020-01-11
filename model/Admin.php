@@ -15,7 +15,7 @@ class Admin
             $rep->execute(array($log, $mdp));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Admin');
             $tab_admin = $rep->fetchAll();
-            //$tab_log = $rep->fetchAll();
+
             return $tab_admin;
         }
         catch(PDOException $e){
@@ -31,5 +31,10 @@ class Admin
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
     }
 }

@@ -5,6 +5,8 @@ $path3= File::build_path(array('model','Customer.php'));
 require_once ($path3);
 $path4= File::build_path(array('model','Admin.php'));
 require_once ($path4);
+$path5= File::build_path(array('model','Cart.php'));
+require_once ($path5);
 
 class controllerConnexion
 {
@@ -12,7 +14,6 @@ class controllerConnexion
         $view='TestConnexion';
         $page_title='Connexion';
         $controller = "user";
-        $message="";
 
         //On récupère les identifiants
         $log = $_POST['login'];
@@ -29,10 +30,12 @@ class controllerConnexion
         if (!empty($tab_log) && empty($admin)) {
 
             $_SESSION['username'] = $log;
+
             $path2 = File::build_path(array('view', $controller, 'view.php'));
 
             $customer_id = Login::getCustomerIdOfUser($log);
             $_SESSION['customer_id'] = $customer_id;
+
             // si il existe un panier à son nom alors on recupere l'order ID et changer le customerID
             if ( Orders::existsOrder($customer_id)){
                 $order_id = Orders::getOrderID($customer_id) ;
@@ -46,8 +49,7 @@ class controllerConnexion
         //Si c'est un admin
         else if (empty($tab_log) && !empty($admin)){
             $_SESSION['admin'] = $log;
-            //Récupérer admin de id
-            //$_SESSION['customer_id'] = $id;
+            $_SESSION['username'] = $log;
             $path2 = File::build_path(array('view',$controller,'view.php'));
         }
 
@@ -62,6 +64,9 @@ class controllerConnexion
     }
 
     public static function addedCustomer(){
+        $view='addedCustomer';
+        $controller="user";
+        $page_title='Client ajouté';
         if (isset($_POST["forname"]) && isset($_POST["surname"])){
 
             $fn = $_POST["forname"];
@@ -75,14 +80,20 @@ class controllerConnexion
             $un = $_POST["login"];
             $pw = $_POST["password"];
 
-            Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
-            $customer_id=Customer::getCustomerID($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
-            Login::addLogin($customer_id,$un, $pw);
+            $tab_log=Login::getLoginUser($un, $pw);
+            if (!empty($tab_log)){
+                $view='error';
+                $controller="user";
+                $page_title='Erreur';
+                $message='Un client existe déjà avec ce nom d\'utilisateur et ce mot de passe';
+            }
+            else {
+                Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
+                $customer_id=Customer::getCustomerID($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
+                Login::addLogin($customer_id,$un, $pw);
+            }
         }
-        $view='addedCustomer';
-        $controller="user";
-        $page_title='Client ajouté';
-        $message="";
+
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }
@@ -91,7 +102,6 @@ class controllerConnexion
         $view='TestConnexion';
         $page_title='Connexion';
         $controller = "user";
-        $message="";
 
         $log=$_POST['login'];
         $mdp = $_POST['password'];
@@ -115,7 +125,6 @@ class controllerConnexion
         $view='connexion';
         $page_title='Connexion';
         $controller = "user";
-        $message = "";
         $_SESSION['username'] = "";
         $_SESSION['customer_id'] = "";
         $_SESSION['admin'] = "";
@@ -127,7 +136,6 @@ class controllerConnexion
         $view='FormCustomer';
         $page_title='Ajout d\'un client';
         $controller = "user";
-        $message="";
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }
@@ -136,7 +144,18 @@ class controllerConnexion
         $view='deconnexion';
         $page_title='Deconnexion';
         $controller = "user";
-        $message="";
+
+        // Suppression du panier lorsque le client se deconnecte de son compte
+        if (!empty($_SESSION['username'])){
+            $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
+        }
+        else{
+            $id_customer=session_id();
+        }
+        $id_order = Orders::getOrderID($id_customer);
+        Cart::emptyCart($id_order);
+
+        // Suppression des variables de session
         $_SESSION['username'] = "";
         $_SESSION['customer_id'] = "";
         $_SESSION['admin'] = "";

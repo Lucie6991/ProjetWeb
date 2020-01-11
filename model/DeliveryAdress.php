@@ -57,4 +57,41 @@ class DeliveryAdress
         }
     }
 
+    public static function addAdress($fn, $ln, $ad1, $ad2=NULL, $c, $pc, $p, $e){
+        try {
+            $sql = 'INSERT INTO delivery_addresses(`id`, `firstname`, `lastname`, `add1`, `add2`, `city`, `postcode`, `phone`, `email` ) VALUES (NULL,?,?,?,?,?,?,?,?)';
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->execute(array($fn, $ln, $ad1, $ad2, $c, $pc, $p, $e));
+        }catch(PDOException $e){
+            if (Conf::getDebug()) {
+                return false;
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+    public static function getAdressID($fn,$sn,$ad1,$ad2 = NULL,$c, $pc, $p, $e)
+    {
+        try {
+            $sql = "SELECT id FROM delivery_addresses WHERE firstname=? and lastname=? and add1=? and add2=? and city=? and postcode=? and phone=? and email=?";
+            $rep = Model::$pdo->prepare($sql);
+            $rep->execute(array($fn,$sn,$ad1,$ad2,$c, $pc, $p, $e));
+            $tab = $rep->FetchAll();
+            $id = $tab[0]["id"];
+
+            return $id;
+
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
 }

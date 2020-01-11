@@ -150,6 +150,22 @@ class Orders
         }
     }
 
+    public static function updateDeliveryAdId($customer_id, $delivery_Ad_id){
+        try {
+            $sql = "UPDATE orders SET delivery_add_id = ? WHERE customer_id = ? ";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($delivery_Ad_id, $customer_id));
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
     public function get($nom_attribut) {
         if (property_exists($this, $nom_attribut))
             return $this->$nom_attribut;

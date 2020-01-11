@@ -47,7 +47,9 @@ foreach ($tab_product as $ligne) {
                     <button class='btn btn-dark'> <span class='glyphicon glyphicon-plus'></span></button>
                 </div>
                 <div class="row"> </div>
-                <p class ='messageRupture'> Le produit est momentanément insdiponible. </p>
+                <div class="alert alert-danger">
+                    <strong>Attention !</strong> Le produit est momentanément indisponible !
+                </div>
 
             <?php } ?>
         </div>

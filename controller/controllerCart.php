@@ -11,7 +11,6 @@ class controllerCart
         $view='addedToCart';
         $page_title='Ajouté au panier';
         $controller = "user";
-        $message="";
         if (!empty($_SESSION['username'])){
             $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
             $registered = 1;
@@ -37,7 +36,6 @@ class controllerCart
         $view ='cart';
         $page_title='Panier vidé';
         $controller = "user";
-        $message="";
         if (!empty($_SESSION['username'])){
             $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
         }
@@ -54,13 +52,15 @@ class controllerCart
         $view ='cart';
         $page_title='Mon panier';
         $controller = "user";
-        $message="";
+
         if (!empty($_SESSION['username'])){
             $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
         }
         else{
             $id_customer=session_id();
+            $_SESSION['customer_id'] = $id_customer;
         }
+
         $id_order = Orders::getOrderID($id_customer);
         $tab_cart = Cart::getProducts($id_order);
         $path2= File::build_path(array('view',$controller,'view.php'));
