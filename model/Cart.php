@@ -3,7 +3,7 @@
 
 class Cart
 {
-    
+
     public static function addToCart($order_id,$id, $quantity){
         try {
             $sql = "INSERT INTO orderitems VALUES (NULL,?,?,?) ";
@@ -55,7 +55,7 @@ class Cart
 
     public static function getProducts($orderID){
         try {
-            $sql = "SELECT p.* , o.quantity 'qte' , o.id 'order' FROM products p, orderitems o WHERE o.order_id = ? AND p.id =o.product_id";
+            $sql = "SELECT p.* , o.quantity 'qte' , o.id 'order' FROM products p, orderitems o, orders ord WHERE o.order_id = ? AND p.id =o.product_id AND o.order_id = ord.id AND ord.status = 0";
             $rep =Model::$pdo->prepare($sql);
             $rep->execute(array($orderID));
             $tabCart = $rep->fetchAll(PDO::FETCH_ASSOC);
@@ -71,10 +71,5 @@ class Cart
         }
     }
 
-    public static function deleteOrderItem($id_order){
-        $sql = "DELETE FROM orderitems WHERE order_id = ? ";
-        $rep =Model::$pdo->prepare($sql);
-        $rep->execute(array($id_order));
-    }
 
 }

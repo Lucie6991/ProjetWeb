@@ -5,8 +5,7 @@
     <link href="view/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="view/CSS/style.css" />
     <title><?php echo $page_title; ?></title>
-    <script type="text/javascript" src="view/functionsJS.js">
-    </script>
+    <script type="text/javascript" src="view/functionsJS.js"></script>
 
 </head>
 <body>

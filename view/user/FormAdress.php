@@ -1,10 +1,10 @@
 
 <?php if (empty($_SESSION['username'])){ ?>
-    <form method="post" action="?action=addLivDiff">
-<?php }
-else { ?>
+<form method="post" action="?action=addLivDiff">
+    <?php }
+    else { ?>
     <form method="post" action="?action=addAdrFact">
-<?php } ?>
+        <?php } ?>
         <fieldset>
             <legend>Renseigner une adresse :</legend>
             <p>

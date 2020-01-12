@@ -46,7 +46,6 @@ class controllerProduct
         $view='choixPanier';
         $page_title='Le choix de votre panier';
         $controller = "user";
-
         $id_product = $_GET['id'];
         $product = new Product();
         $tab_product = $product->getProduit($id_product);
@@ -72,9 +71,10 @@ class controllerProduct
             $qte = $_POST["qte"];
             Product::addProduct($cat,$name,$desc,$img,$price,$qte);
         }
-        $view='addedProd';
-        $controller="admin";
+        $view = "formAddProduct";
+        $controller = "admin";
         $page_title='Produit ajouté';
+        $message = "Le produit a bien été ajouté à la base de donnée !";
         $path2 = File::build_path(array('view',$controller,'viewAdmin.php'));
         require ($path2);
     }

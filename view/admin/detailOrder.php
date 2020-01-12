@@ -1,22 +1,24 @@
 <h1> Détail de la commande : </h1>
 <h2> Récapitulatif de la commande : </h2>
 <?php
+//$directoryPath = File::build_path(array('view',"admin"));
+//chmod(File::build_path(array('view',"admin","files_users")), 777);
 $filePath = File::build_path(array('view',"admin","files_users",$nameFile.'.txt'));
-$fileUser = fopen($filePath, 'a+');
+$fileUser = fopen($filePath, 'c+b');
 $col_customers = array("forename","surname","add1","add2","add3","postcode","phone","email");
 $col_adresse = array("forename","surname","add1","add2","add3","postcode","phone","email");
 $title_add = array("Nom : ","Prénom : ","Adresse : ","Télephone : ","Email : ");
 $col_orders = array("id","payment_type","date","total");
 $title_orders = array("Numéro de commande", "Type de paiement","Date","Total de la commande");
-
+$texte = "";
 foreach ($tab_order as $order){
     for ($i=0; $i<count($col_orders); $i++){
         $data = $order->get($col_orders[$i]);
         $title = $title_orders[$i];
         echo "<strong> $title :</strong> $data <br>";
-        fputs($fileUser, $title." : ".$data.";");
+        //fputs($fileUser, $title." : ".$data.";");
+        $texte .= $title." : ".$data.";";
     }
-    //fputs($fileUser, "\n");
 }
 ?>
 <h2> Informations du client : </h2>
@@ -42,9 +44,9 @@ foreach ($tab_customer as $customer){
         if ($data == ""){
             $data = " ";
         }
-        fputs($fileUser, $title.$data.";");
+        //fputs($fileUser, $title.$data.";");
+        $texte.=$title.$data.";";
     }
-    //fputs($fileUser, "\n");
 }
 ?>
 
@@ -70,7 +72,8 @@ foreach ($tab_adress as $add){
         if ($data == ""){
             $data = " ";
         }
-        fputs($fileUser, $title.$data.";");
+        //fputs($fileUser, $title.$data.";");
+        $texte.=$title.$data.";";
     }
 }
 ?>
@@ -120,6 +123,7 @@ foreach ($tab_order_item as $ligne):
 <?php  endforeach ?>
 
 <?php
+fputs($fileUser,$texte);
 fclose($fileUser);
 echo "<a href='?action=seeBill&order=".$id_order."' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Télécharger la facture </a><br><br>";
 echo "<a href='?action=confirmOrder&order=".$id_order."' class='btn btn-success' > <span class='glyphicon glyphicon-send'></span>  Confirmer le paiment</a>";

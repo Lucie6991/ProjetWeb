@@ -44,7 +44,7 @@ foreach ($tab_product as $ligne){
     <?php
     $tab_product = Product::getAllProducts();
     for ($i=0;$i<3;$i++) {
-        if($id+$i > count($tab_product) ){
+        if($id+$i >= count($tab_product) ){
             $image= $tab_product[$id+$i-10]->getImage();
             $id_prod = $id+$i-8;
         }

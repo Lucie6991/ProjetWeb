@@ -52,7 +52,6 @@ class controllerCart
         $view ='cart';
         $page_title='Mon panier';
         $controller = "user";
-
         if (!empty($_SESSION['username'])){
             $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
         }
@@ -60,8 +59,12 @@ class controllerCart
             $id_customer=session_id();
             $_SESSION['customer_id'] = $id_customer;
         }
-
         $id_order = Orders::getOrderID($id_customer);
+        if (isset($_POST["codePromo"])){
+            if ($_POST["codePromo"] == "LivraisonFree"){
+                $code = true;
+            }
+        }
         $tab_cart = Cart::getProducts($id_order);
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
@@ -79,5 +82,23 @@ class controllerCart
         $id_order = Orders::getOrderID($id_customer);
         Cart::delete($id_order,$product);
         self::seeCart();
+    }
+
+    public static function toPay(){
+        if (isset($_POST['paiement'])){
+            if ($_POST['paiement'] == 'paypal'){
+                $status = 2;
+            }
+            else
+                $status = 1;
+            $id_order = Orders::getOrderID($_SESSION['customer_id']);
+            $order = Orders::getOrder($id_order);
+            $order[0]->lastUpdate(date ("Y/m/d") ,$_POST['paiement'],$status);
+        }
+        $view ='recapOrder';
+        $page_title='Commande validée';
+        $controller = "user";
+        $path2= File::build_path(array('view',$controller,'view.php'));
+        require ($path2);
     }
 }

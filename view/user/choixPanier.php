@@ -17,23 +17,23 @@ foreach ($tab_product as $ligne) {
             <?php
             echo "<p> <span style='font-size: 1.5em;'>&nbsp&nbsp&nbsp&nbsp $prix € TTC </span>( " . number_format($prixHT, 2) . " € HT )</p><br>  ";
             if ($quantity > 0){
-                ?>
-                <div class ='col-lg-2'>
-                    <button class='btn btn-dark' onclick="clic_moins();"> <span class='glyphicon glyphicon-minus'></span></button>
-                </div>
-                <div class ='col-lg-3'>
-                    <?php echo '<form action="?action=addToCart&id='.$id.'" method="post">' ?>
-                    <input class="form-control" name="quantite" id="quantite" type="text" value="1" placeholder="1" readonly>
-                    <div class='row'>
-                        <br />
-                        <button class='btn btn-warning' type="submit" ><span class='glyphicon glyphicon-shopping-cart'></span> Ajouter au panier</button>
+                if(empty($_SESSION["admin"])){?>
+                    <div class ='col-lg-2'>
+                        <button class='btn btn-dark' onclick="clic_moins();"> <span class='glyphicon glyphicon-minus'></span></button>
                     </div>
-                    <?php echo '</form>' ?>
-                </div>
-                <div class ='col-lg-2'>
-                    <button class='btn btn-dark' onclick="clic_plus();"> <span class='glyphicon glyphicon-plus'></span></button>
-                </div>
-                <?php
+                    <div class ='col-lg-3'>
+                        <?php echo '<form action="?action=addToCart&id='.$id.'" method="post">' ?>
+                        <input class="form-control" name="quantite" id="quantite" type="text" value="1" placeholder="1" readonly>
+                        <div class='row'>
+                            <br />
+                            <button class='btn btn-warning' type="submit" ><span class='glyphicon glyphicon-shopping-cart'></span> Ajouter au panier</button>
+                        </div>
+                        <?php echo '</form>' ?>
+                    </div>
+                    <div class ='col-lg-2'>
+                        <button class='btn btn-dark' onclick="clic_plus();"> <span class='glyphicon glyphicon-plus'></span></button>
+                    </div>
+                <?php }
             }
             // Si le produit n'est pas disponible => pas possible de le mettre au panier
             else { ?>

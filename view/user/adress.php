@@ -34,7 +34,7 @@ if (!empty($_SESSION['customer_id'])) {
 ?>
 
 <div class="alert alert-info">
-  <strong>Info!</strong> Si vous décidez de passer au payement, l'adresse de facturation sera prise en compte comme étant celle de la livraison. <br/>
+    <strong>Info!</strong> Si vous décidez de passer au paiement, l'adresse de facturation sera prise en compte comme étant celle de la livraison. <br/>
     Si vous ne voulez pas que ce soit le cas, merci de cocher la case qui suit.
 </div>
 
@@ -43,52 +43,52 @@ if (!empty($_SESSION['customer_id'])) {
 <br/><br/>
 
 <span class="bouton">
-    <a class='btn btn-success btnAdress' id="btnNewAdd" href="?action=newAdressFact">  Nouvelle Adresse de Facturation</a>
+    <a class='btn btn-success btnAdress' id="btnNewAdd" href="?action=newAdressFact">  Nouvelle adresse de facturation</a>
 </span>
 <br/><br/>
 <span class="bouton">
-    <a class='btn btn-success btnAdress' id="btnPayment" href='?action=sameAdd'>  Passer au payement</a>
+    <a class='btn btn-success btnAdress' id="btnPayment" href='?action=sameAdd'>  Passer au paiement</a>
 </span>
 
 <div id="FormAMasquer" class="FormOpt">
-        <form method="post" action="?action=addLivDiff">
-            <fieldset>
-                <legend>Renseigner une adresse de livraison:</legend>
-                <p>
-                    <label for="id_firstname">Prenom</label> :
-                    <input type="text" name="firstname" id="id_firstname" required/>
-                </p>
-                <p>
-                    <label for="id_lastname">Nom </label> :
-                    <input type="text" name="lastname" id="id_lastname" required/>
-                </p>
-                <p>
-                    <label for="id_add1">Adresse 1</label> :
-                    <input type="text" name="add1" id="id_add1" required/>
-                </p>
-                <p>
-                    <label for="id_add2">Adresse 2</label> :
-                    <input type="text" name="add2" id="id_add2" />
-                </p>
-                <p>
-                    <label for="id_city">Ville</label> :
-                    <input type="text" name="city" id="id_city" required/>
-                </p>
-                <p>
-                    <label for="id_postcode">Code Postal</label> :
-                    <input type="text" name="postcode" id="id_postcode" required/>
-                </p>
-                <p>
-                    <label for="id_phone">Numéro de téléphone</label> :
-                    <input type="text" name="phone" id="id_phone" required/>
-                </p>
-                <p>
-                    <label for="id_email">Email</label> :
-                    <input type="email" name="email" id="id_email" required/>
-                </p>
-                <p>
-                    <input type="submit" value="Payer">
-                </p>
-            </fieldset>
-        </form>
-    </div>
+    <form method="post" action="?action=addLivDiff">
+        <fieldset>
+            <legend>Renseigner une adresse de livraison:</legend>
+            <p>
+                <label for="id_firstname">Prenom</label> :
+                <input type="text" name="firstname" id="id_firstname" required/>
+            </p>
+            <p>
+                <label for="id_lastname">Nom </label> :
+                <input type="text" name="lastname" id="id_lastname" required/>
+            </p>
+            <p>
+                <label for="id_add1">Adresse 1</label> :
+                <input type="text" name="add1" id="id_add1" required/>
+            </p>
+            <p>
+                <label for="id_add2">Adresse 2</label> :
+                <input type="text" name="add2" id="id_add2" />
+            </p>
+            <p>
+                <label for="id_city">Ville</label> :
+                <input type="text" name="city" id="id_city" required/>
+            </p>
+            <p>
+                <label for="id_postcode">Code Postal</label> :
+                <input type="text" name="postcode" id="id_postcode" required/>
+            </p>
+            <p>
+                <label for="id_phone">Numéro de téléphone</label> :
+                <input type="text" name="phone" id="id_phone" required/>
+            </p>
+            <p>
+                <label for="id_email">Email</label> :
+                <input type="email" name="email" id="id_email" required/>
+            </p>
+            <p>
+                <input type="submit" value="Payer">
+            </p>
+        </fieldset>
+    </form>
+</div>

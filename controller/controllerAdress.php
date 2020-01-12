@@ -13,7 +13,12 @@ class controllerAdress
         $page_title='Adresse';
         $controller = "user";;
         $tab_adress = Customer::getAdress($_SESSION['customer_id']);
-
+        $id_order = Orders::getOrderID($_SESSION['customer_id']);
+        $order = Orders::getOrder($id_order);
+        if (isset($_POST["total"])){
+            $total = $_POST["total"];
+            $order[0]->updateTotal($total);
+        }
         $path2 = File::build_path(array('view',$controller,'view.php'));
 
         if (empty($tab_adress) && empty($_SESSION['username'])){
@@ -51,7 +56,8 @@ class controllerAdress
         DeliveryAdress::addAdress($prenom, $nom, $add1, $add2, $city, $postcode, $phone, $email);
         $id=DeliveryAdress::getAdressID($prenom, $nom, $add1, $add2, $city, $postcode, $phone, $email);
         Orders::updateDeliveryAdId($_SESSION['customer_id'], $id);
-
+        $id_order = Orders::getOrderID($_SESSION['customer_id']);
+        Orders::updateStatus(1,$id_order);
 
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
@@ -75,6 +81,8 @@ class controllerAdress
         DeliveryAdress::addAdress($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
         $id=DeliveryAdress::getAdressID($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
         Orders::updateDeliveryAdId($_SESSION['customer_id'], $id);
+        $id_order = Orders::getOrderID($_SESSION['customer_id']);
+        Orders::updateStatus(1,$id_order);
 
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);

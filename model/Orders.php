@@ -78,11 +78,10 @@ class Orders
 
     public static function existsOrder($id_customer){
         try {
-            $sql = "SELECT * FROM orders WHERE customer_id = ? ";
+            $sql = "SELECT * FROM orders WHERE customer_id = ? AND status=0";
             $rep =Model::$pdo->prepare($sql);
             $rep->execute(array($id_customer));
             $tab_order = $rep->fetchAll();
-            //var_dump($tab_order);
             if (empty($tab_order)){
                 return false;
             }
@@ -136,7 +135,7 @@ class Orders
 
     public static function updateCustomerId($newCID, $orderID){
         try {
-            $sql = "UPDATE orders SET customer_id = ? WHERE id = ? ";
+            $sql = "UPDATE orders SET customer_id = ?, registered=1 WHERE id = ? ";
             $rep =Model::$pdo->prepare($sql);
             $rep->execute(array($newCID,$orderID));
         }
@@ -166,9 +165,76 @@ class Orders
         }
     }
 
+    public static function getAllOrdersPaidByCheck(){
+        try {
+            $sql = "SELECT * FROM orders WHERE payment_type = 'cheque' AND status = 1";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute();
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'Orders');
+            $tab_order = $rep->fetchAll();
+            return $tab_order;
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+    public static function updateStatus($status, $id_order){
+        try {
+            $sql = "UPDATE orders SET status = ? WHERE id = ? ";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($status, $id_order));
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+    public function updateTotal($total){
+        try {
+            $sql = "UPDATE orders SET total = ? WHERE id = ? ";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($total, $this->get('id')));
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
     public function get($nom_attribut) {
         if (property_exists($this, $nom_attribut))
             return $this->$nom_attribut;
         return false;
+    }
+
+    public function lastUpdate($date, $type, $status){
+        try {
+            $sql = "UPDATE orders SET date= ?, payment_type=?, status = ? WHERE id = ? ";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($date,$type, $status, $this->get('id')));
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
     }
 }

@@ -24,6 +24,12 @@ aside{
     margin-left: 20%;
 }
 
+.btnAsideAdmin {
+    width: 200px;
+    margin-bottom : 10px;
+    margin-left: 12%;
+}
+
 .trait
 {
     background-color: #818181;
@@ -158,4 +164,12 @@ a{
 
 .FormOpt{
     display: none;
+}
+
+.barrePrix{
+    text-decoration: line-through;
+}
+
+.gratuit{
+    color: red;
 }

@@ -1,13 +1,12 @@
 <?php
 
-if (empty($tab_orders)){
-    echo "<h3> Il n'y a pas de commande en cours </h3>";
+if (empty($tab_cheque)){
+    echo "<h3> Il n'y a aucun chèque à receptionner </h3>";
 }
 else {
-    echo "<h1> Les commandes :</h1>";
-    foreach ($tab_orders as $ligne):
+    echo "<h1> Les commandes payées par chèque :</h1>";
+    foreach ($tab_cheque as $ligne):
         $total = $ligne->get("total");
-        $payment_type = $ligne->get("payment_type");
         $id = $ligne->get("id");
         $customer_id = $ligne->get("CustomerId");
         $date = $ligne->get("date");?>
@@ -17,11 +16,11 @@ else {
                 <?php
                 echo " <strong> Numéro de commande :</strong> $id <br>";
                 echo " <strong> Date de commande : </strong> $date <br>";
-                echo " <strong> Type de paiement : </strong> $payment_type <br>";
+                echo " <strong> Total de la commande : </strong> $total <br>";
                 ?>
             </div>
             <span class ='col-lg-2'>
-                <?php echo "<br><a style='color: grey; font-size: 50px' href='?action=readOrder&order=".$id . "'> <span class='glyphicon glyphicon-list-alt'></span></a> "?>
+                <?php echo "<br><a style='color: green; font-size: 50px' href='?action=validateCheck&order=".$id . "'> <span class='glyphicon glyphicon-check'></span></a> "?>
             </span>
         </span>
         </div>

@@ -1,8 +1,8 @@
 function clic_plus(){
     var quantite = document.getElementById("quantite");
     var qte = parseInt(quantite.value);
-        qte = 1 + qte;
-        quantite.value = qte;
+    qte = 1 + qte;
+    quantite.value = qte;
 }
 
 function clic_moins(){
@@ -28,5 +28,15 @@ function masquer_div(){
         document.getElementById("FormAMasquer").style.display = "none";
         document.getElementById("btnNewAdd").style.visibility = "visible";
         document.getElementById("btnPayment").style.visibility = "visible";
+    }
+}
+function paiement() {
+    if (document.getElementById("cheque").checked == true){
+        document.getElementById("chequeAmasquer").style.display = "block";
+        document.getElementById("paypalAmasquer").style.visibility ="hidden";
+    }
+    else if (document.getElementById("paypal") == true){
+        document.getElementById("paypalAmasquer").style.display = "block";
+        document.getElementById("chequeAmasquer").style.visibility ="hidden";
     }
 }

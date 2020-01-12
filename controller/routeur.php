@@ -21,7 +21,7 @@ if (!isset($_GET['action'])){
     $action =$_GET['action'];
 }
 
-if ($action == "addToCart" || $action == "emptyCart" || $action == "seeCart" || $action =="delete"){
+if ($action == "addToCart" || $action == "emptyCart" || $action == "seeCart" || $action =="delete" || $action=="toPay"){
     controllerCart::$action();
 }
 else if ($action== 'readAllProducts' || $action == 'readProductsCat' || $action == 'read' ||$action=="addedProd" ){
@@ -33,7 +33,8 @@ else if ( $action == 'readCategories' ||$action=="addedCat" ){
 else if ($action == 'readCustomer' || $action == "connect" || $action=='readLogin' || $action=='addedCustomer' || $action=='add' || $action=='deconnect'){
     controllerConnexion::$action();
 }
-else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewProduct" || $action=="readOrder" || $action=="confirmOrder" || $action == "seeBill") {
+else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewProduct" || $action=="readOrder" || $action=="confirmOrder"
+    || $action == "seeBill" || $action == "seeOrdersByChecks" || $action =="validateCheck" || $action == "addStock" || $action=="updateStock") {
     controllerAdmin::$action();
 }
 else if ($action == "readAdress" || $action == "newAdressFact" || $action == "sameAdd" || $action == "addLivDiff" || $action == "addAdrFact"){
@@ -41,6 +42,9 @@ else if ($action == "readAdress" || $action == "newAdressFact" || $action == "sa
 }
 else if($action == "recrut" || $action == "contact" ){
     controllerHome::$action();
+}
+else{
+    controllerCart::readCategories();
 }
 
 ?>

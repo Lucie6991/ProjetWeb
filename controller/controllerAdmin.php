@@ -58,14 +58,13 @@ class controllerAdmin
     public static function confirmOrder(){
         if (isset ($_GET['order'])){
             $id_order=$_GET['order'];
-            Orders::deleteOrder($id_order);
-            Cart::deleteOrderItem($id_order);
+            Orders::updateStatus(10,$id_order);
         }
         self::readAllOrders();
     }
 
     public static function seeBill(){
-        $view = "testBill";
+        $view = "bill";
         $controller = "admin";
         if (isset ($_GET['order'])){
             $id_order=$_GET["order"];
@@ -74,6 +73,47 @@ class controllerAdmin
         $page_title="Facture de la commande";
         $path2 = File::build_path(array('view', $controller,'viewAdmin.php'));
         require_once ($path2);
+    }
+
+    public static function seeOrdersByChecks(){
+        $view = "validateChecks";
+        $controller = "admin";
+        $page_title="Valider la réception des chèques";
+        $tab_cheque = Orders::getAllOrdersPaidByCheck();
+        $path2 = File::build_path(array('view', $controller,'viewAdmin.php'));
+        require_once ($path2);
+    }
+
+    public static function validateCheck(){
+        if (isset($_GET["order"])){
+            $id_order = $_GET["order"];
+            Orders::updateStatus(2, $id_order);
+        }
+        self::seeOrdersByChecks();
+    }
+
+    public static function addStock(){
+        $view = "addStock";
+        $controller = "admin";
+        $page_title="Ajouter du stock";
+        $tab_product = Product::getAllProducts();
+        $path2 = File::build_path(array('view', $controller,'viewAdmin.php'));
+        require_once ($path2);
+    }
+
+    public static function updateStock(){
+        if (isset ($_POST["stock"]) && isset($_POST["prod"])){
+            $product = Product::getProduit($_POST["prod"]);
+            $quantity = ($product[0]->getQuantity())+$_POST["stock"];
+            $product[0]->updateStock($quantity);
+            $page_title = "Stock ajouté";
+            $view = "addStock";
+            $controller = "admin";
+            $message ="Le stock pour le produit a été ajouté !";
+            $tab_product = Product::getAllProducts();
+            $path2 = File::build_path(array('view', $controller,'viewAdmin.php'));
+            require_once ($path2);
+        }
     }
 
 

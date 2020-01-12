@@ -86,6 +86,22 @@ class Product
         }
     }
 
+    public function updateStock($n){
+        $id = $this->id;
+        try {
+            $sql = "UPDATE products SET quantity = ? WHERE id = ? ";
+            $rep = Model::$pdo->prepare($sql);
+            $rep->execute(array($n,$id));
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
     // Les GETTER
     public function getId(){
         return $this->id;

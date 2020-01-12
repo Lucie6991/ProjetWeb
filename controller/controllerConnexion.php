@@ -36,7 +36,7 @@ class controllerConnexion
             $customer_id = Login::getCustomerIdOfUser($log);
             $_SESSION['customer_id'] = $customer_id;
 
-            // si il existe un panier à son nom alors on recupere l'order ID et changer le customerID
+            // si il existe un panier à son nom alors on recupere l'order ID et changer le customerID et registered=1
             if ( Orders::existsOrder($customer_id)){
                 $order_id = Orders::getOrderID($customer_id) ;
                 Orders::updateCustomerId($customer_id, $order_id);
@@ -146,14 +146,14 @@ class controllerConnexion
         $controller = "user";
 
         // Suppression du panier lorsque le client se deconnecte de son compte
-        if (!empty($_SESSION['username'])){
+        if (!empty($_SESSION['username']) && empty($_SESSION["admin"])){
             $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
         }
         else{
             $id_customer=session_id();
         }
         $id_order = Orders::getOrderID($id_customer);
-        Cart::emptyCart($id_order);
+        //Cart::emptyCart($id_order);
 
         // Suppression des variables de session
         $_SESSION['username'] = "";
