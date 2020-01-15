@@ -18,9 +18,9 @@ if (!empty($_SESSION['customer_id'])) {
         echo "<label name='CoordLabel'>  Adresse : </label> ";
         echo $add1;
         echo "<br />";
-        echo $add2;
+        echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$add2;
         echo "<br />";
-        echo $postcode . " " . $city;
+        echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$postcode . " " . $city;
         echo "<br />";
         echo "<label name='CoordLabel'>  Téléphone : </label> ";
         echo $phone;

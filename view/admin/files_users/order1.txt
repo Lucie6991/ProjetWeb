@@ -1,0 +1,1 @@
+Numéro de commande : 1;Type de paiement : 0;Date : 2020-01-13 00:00:00;Total de la commande : 143.8;Nom : lg;Prénom : luga;Adresse : add1;add2;nozay;91620;Télephone : 0102;Email : lg@gmail.com;Nom : lg;Prénom : luga;Adresse : add1;add2;nozay;91620;Télephone : 0102;Email : lg@gmail.com;

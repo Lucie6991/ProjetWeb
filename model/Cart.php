@@ -71,5 +71,21 @@ class Cart
         }
     }
 
-
+    public static function getProductsStock($orderID){
+        try {
+            $sql = "SELECT p.* , o.quantity 'qte' , o.id 'order' FROM products p, orderitems o, orders ord WHERE o.order_id = ? AND p.id =o.product_id AND o.order_id = ord.id AND ord.status = 1";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($orderID));
+            $tabCart = $rep->fetchAll(PDO::FETCH_ASSOC);
+            return $tabCart;
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
 }

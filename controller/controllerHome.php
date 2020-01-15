@@ -3,6 +3,13 @@
 
 class controllerHome
 {
+    public static function us(){
+        $view = "aboutUs";
+        $controller = "user";
+        $page_title = "Qui sommes-nous";
+        $path2 = File::build_path(array('view',$controller,'view.php'));
+        require ($path2);
+    }
 
     public static function contact(){
         $view = "contact";

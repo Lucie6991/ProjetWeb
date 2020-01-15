@@ -87,7 +87,7 @@ class controllerAdmin
     public static function validateCheck(){
         if (isset($_GET["order"])){
             $id_order = $_GET["order"];
-            Orders::updateStatus(2, $id_order);
+            Orders::updateStatus(3, $id_order);
         }
         self::seeOrdersByChecks();
     }
@@ -116,5 +116,32 @@ class controllerAdmin
         }
     }
 
+    public static function addAdmin(){
+        $view = "formAddAdmin";
+        $controller = "admin";
+        $page_title="Ajouter un admin";
+        $path2 = File::build_path(array('view',$controller,'viewAdmin.php'));
+        require_once ($path2);
+    }
 
+    public static function addedAdmin(){
+        $view = "formAddAdmin";
+        $controller = "admin";
+        $page_title="Ajouter un admin";
+        $log = $_POST['login'];
+        $pw = $_POST['password'];
+
+        $tab_admin = Admin::getAdmin($log, $pw);
+        if (!empty($tab_admin)){
+            $message="L'administrateur n'a pas été ajouté car il existe déjà";
+
+        }
+        else {
+            Admin::addAdmin($log, sha1($pw));
+            $message = "L'administrateur a bien été ajouté";
+        }
+
+        $path2 = File::build_path(array('view', $controller,'viewAdmin.php'));
+        require_once ($path2);
+    }
 }

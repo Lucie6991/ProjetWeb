@@ -1,0 +1,1 @@
+Numéro de commande : 4;Type de paiement : 1;Date : 0000-00-00 00:00:00;Total de la commande : 27.5;Nom : poly;Prénom : popo;Adresse : ici;ici;villeurbanne;69100;Télephone : 0404040404;Email : popo@yahoo.com;Nom : poly;Prénom : popo;Adresse : ici;ici;villeurbanne;69100;Télephone : 0404040404;Email : popo@yahoo.com;

@@ -4,7 +4,7 @@
         <div class="col-lg-4">
             <p>17 boulevard André Latarjet </p>
             <p> 69100 VILLEURBANNE</p>
-            <span style="font-size: 30px; margin-left: 60px;" class="glyphicon glyphicon-home icon_contact"></span>
+            <span id="icon_contact" class="glyphicon glyphicon-home icon_contact"></span>
         </div>
         <div class="col-lg-4">
             <p>04 77 15 20 32 </p>

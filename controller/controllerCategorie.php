@@ -9,6 +9,8 @@ class controllerCategorie
         $controller = "user";
         $view='home';
         $page_title='Liste des Catégories';
+        rand(0,10);
+        $tab_product = Product::getProduit(rand(2,10));
         $lesCategories = Categorie::getAllCategories();
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
@@ -20,7 +22,8 @@ class controllerCategorie
             $name =$_POST["nom"];
             Categorie::addCategorie($name);
         }
-        $view='addedCat';
+        $view='formAddCat';
+        $message = "La catégorie a été ajoutée avec succès !";
         $controller="admin";
         $page_title='Catégorie ajoutée';
         $path2 = File::build_path(array('view',$controller,'viewAdmin.php'));

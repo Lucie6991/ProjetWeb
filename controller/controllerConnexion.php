@@ -17,7 +17,7 @@ class controllerConnexion
 
         //On récupère les identifiants
         $log = $_POST['login'];
-        $mdp = $_POST['password'];
+        $mdp = sha1($_POST['password']);
 
         //On cherche si un login customer correspond
         $tab_log = Login::getLoginUser($log, $mdp);
@@ -63,40 +63,7 @@ class controllerConnexion
         require_once ($path2);
     }
 
-    public static function addedCustomer(){
-        $view='addedCustomer';
-        $controller="user";
-        $page_title='Client ajouté';
-        if (isset($_POST["forname"]) && isset($_POST["surname"])){
 
-            $fn = $_POST["forname"];
-            $sn = $_POST["surname"];
-            $ad1 = $_POST["add1"];
-            $ad2 = $_POST["add2"];
-            $c = $_POST["city"];
-            $pc = $_POST["postcode"];
-            $p = $_POST["phone"];
-            $e = $_POST["email"];
-            $un = $_POST["login"];
-            $pw = $_POST["password"];
-
-            $tab_log=Login::getLoginUser($un, $pw);
-            if (!empty($tab_log)){
-                $view='error';
-                $controller="user";
-                $page_title='Erreur';
-                $message='Un client existe déjà avec ce nom d\'utilisateur et ce mot de passe';
-            }
-            else {
-                Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
-                $customer_id=Customer::getCustomerID($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
-                Login::addLogin($customer_id,$un, $pw);
-            }
-        }
-
-        $path2 = File::build_path(array('view',$controller,'view.php'));
-        require ($path2);
-    }
 
     public static function readLogin(){
         $view='TestConnexion';
@@ -132,28 +99,24 @@ class controllerConnexion
         require_once ($path2);
     }
 
-    public static function add(){
-        $view='FormCustomer';
-        $page_title='Ajout d\'un client';
-        $controller = "user";
-        $path2 = File::build_path(array('view',$controller,'view.php'));
-        require_once ($path2);
-    }
 
     public static function deconnect(){
         $view='deconnexion';
         $page_title='Deconnexion';
         $controller = "user";
 
-        // Suppression du panier lorsque le client se deconnecte de son compte
-        if (!empty($_SESSION['username']) && empty($_SESSION["admin"])){
-            $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
+        if (empty($_SESSION["admin"])){
+            // Suppression du panier lorsque le client se deconnecte de son compte
+            if (!empty($_SESSION['username'])){
+                $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
+            }
+            else{
+                $id_customer=session_id();
+            }
+            $id_order = Orders::getOrderID($id_customer);
+            //Cart::emptyCart($id_order);
         }
-        else{
-            $id_customer=session_id();
-        }
-        $id_order = Orders::getOrderID($id_customer);
-        //Cart::emptyCart($id_order);
+
 
         // Suppression des variables de session
         $_SESSION['username'] = "";

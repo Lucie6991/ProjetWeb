@@ -102,6 +102,7 @@ class Product
         }
     }
 
+
     // Les GETTER
     public function getId(){
         return $this->id;

@@ -11,6 +11,7 @@ class controllerCart
         $view='addedToCart';
         $page_title='Ajouté au panier';
         $controller = "user";
+        // on donne l'attribut registered et id customer en fonction s'il est connecté ou non
         if (!empty($_SESSION['username'])){
             $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
             $registered = 1;
@@ -19,6 +20,7 @@ class controllerCart
             $id_customer=session_id();
             $registered = 0;
         }
+        // s'il n'existe pas de commande de status 0 à son nom, on en crée une
         if (!(Orders::existsOrder($id_customer))){
             Orders::createOrder($id_customer,$registered, session_id());
             $id_order = Orders::getOrderID($id_customer);
@@ -87,11 +89,23 @@ class controllerCart
     public static function toPay(){
         if (isset($_POST['paiement'])){
             if ($_POST['paiement'] == 'paypal'){
-                $status = 2;
+                $status = 3;
             }
             else
-                $status = 1;
-            $id_order = Orders::getOrderID($_SESSION['customer_id']);
+                $status = 2;
+
+            $id_order = Orders::getOrderID($_SESSION['customer_id'],1);
+            $tabCart = Cart::getProductsStock($id_order);
+
+            foreach ($tabCart as $product){
+                $id_product = $product["id"];
+                echo $id_product;
+                $stock = $product["quantity"];
+                echo $stock;
+                $qte = $product["qte"];
+                echo $qte;
+                Product::getProduit($id_product)[0]->updateStock($stock - $qte);
+            }
             $order = Orders::getOrder($id_order);
             $order[0]->lastUpdate(date ("Y/m/d") ,$_POST['paiement'],$status);
         }
@@ -101,4 +115,5 @@ class controllerCart
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }
+
 }

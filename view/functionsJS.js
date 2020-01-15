@@ -30,13 +30,16 @@ function masquer_div(){
         document.getElementById("btnPayment").style.visibility = "visible";
     }
 }
-function paiement() {
-    if (document.getElementById("cheque").checked == true){
-        document.getElementById("chequeAmasquer").style.display = "block";
-        document.getElementById("paypalAmasquer").style.visibility ="hidden";
+
+function pay() {
+    var cocheC = document.getElementById("cheque").checked;
+    var cocheP = document.getElementById("paypal").checked;
+    if (cocheC){
+        document.getElementById("chequeAmasquer").style.visibility = "visible";
+        document.getElementById("paypalAmasquer").style.visibility = "hidden";
     }
-    else if (document.getElementById("paypal") == true){
-        document.getElementById("paypalAmasquer").style.display = "block";
-        document.getElementById("chequeAmasquer").style.visibility ="hidden";
+    if (cocheP){
+        document.getElementById("paypalAmasquer").style.visibility = "visible";
+        document.getElementById("chequeAmasquer").style.visibility = "hidden";
     }
 }

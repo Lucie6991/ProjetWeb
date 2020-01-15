@@ -1,0 +1,1 @@
+Numéro de commande : 2;Type de paiement : 0;Date : 0000-00-00 00:00:00;Total de la commande : 17.2;Nom : Lulu;Prénom : gaga;Adresse : chez moi;chez moi;nono;69100;Télephone : 9998989525;Email : lg@hotmzil.fr;Nom : lucie;Prénom : gaga;Adresse : 5 allée des roses; ;Nozay;91620;Télephone : 0101010109;Email : lulu@gmail.com;

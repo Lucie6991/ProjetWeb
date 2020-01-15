@@ -2,45 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/admin/files_users/addStock.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/validateChecks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/images/jusPomme.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/images/melangeNoisettes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/user/recapOrder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/addStock.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/includeControllers.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/controllerAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerAdress.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerAdress.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/controllerCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerConnexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerCategorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCategorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCustomer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/routeur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Orders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/CSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/addedProd.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/detailOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/detailOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/formAddProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/formAddProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/listOrders.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/listOrders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/testBill.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/bill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/addedCat.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/formAddAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/formAddAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/formAddCat.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/formAddCat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/viewAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/viewAdmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/aside1.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/aside1.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/aside2.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/aside2.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/functionsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/functionsJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/header.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/header.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/headerAdmin.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/headerAdmin.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/images/jusCitron.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/view/images/jusCitron.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/images/jusOrange.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/view/images/jusOrange.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/images/jusPomme.dms" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/images/melangeMarrons.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/view/images/melangeMarrons.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/images/melangeNoisettes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/images/pruneauxSecs.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/images/theCannelle.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/view/images/theCannelle.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/addedToCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/addedToCart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/adress.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/adress.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/choixPanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/choixPanier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/myAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/myAccount.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,18 +60,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/admin" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/view/user" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/admin" />
       <recent name="$PROJECT_DIR$/view/user" />
       <recent name="$PROJECT_DIR$/view/images" />
-      <recent name="$PROJECT_DIR$/view/admin" />
       <recent name="$PROJECT_DIR$/view/admin/files_users" />
       <recent name="$PROJECT_DIR$/controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/user" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -136,6 +114,9 @@
       <workItem from="1578476714189" duration="138000" />
       <workItem from="1578505449380" duration="772000" />
       <workItem from="1578855840758" duration="1087000" />
+      <workItem from="1579004481416" duration="899000" />
+      <workItem from="1579006268955" duration="346000" />
+      <workItem from="1579019632047" duration="7499000" />
     </task>
     <task id="LOCAL-00001" summary="Ceci est le commit du fichier testgit.html">
       <created>1576752675465</created>
@@ -189,10 +170,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="421" y="282" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1577975301262" />
-    <state x="538" y="384" key="NewPhpFileDialog" timestamp="1577979057208">
+    <state x="538" y="384" key="NewPhpFileDialog" timestamp="1579029237244">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1577979057208" />
+    <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1579029237244" />
     <state x="374" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1578476716508">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

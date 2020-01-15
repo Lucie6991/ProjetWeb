@@ -15,7 +15,7 @@ class Orders
 
     public static function getAllOrders(){
         try {
-            $sql = "SELECT * FROM orders WHERE status = 2";
+            $sql = "SELECT * FROM orders WHERE status = 3";
             $rep = Model::$pdo->prepare($sql);
             $rep->execute();
             $rep->setFetchMode(PDO::FETCH_CLASS, 'Orders');
@@ -69,6 +69,27 @@ class Orders
         }
     }
 
+    public static function getOrderByCustomer($id_customer, $status){
+        try {
+            $sql = "SELECT * FROM orders WHERE customer_id = ? AND status = ?";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($id_customer, $status));
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'Orders');
+            $tab_order = $rep->fetchAll();
+            return $tab_order;
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+
+
     public static function deleteOrder($id_order){
         $sql = "DELETE FROM orders WHERE id = ? ";
         $rep =Model::$pdo->prepare($sql);
@@ -114,14 +135,37 @@ class Orders
         }
     }
 
-    public static function getOrderID($id_customer){
+    public static function getOrderID($id_customer, $status = 0){
         try {
-            $sql = "SELECT id FROM orders WHERE customer_id = ? ";
+            $sql = "SELECT id FROM orders WHERE customer_id = ? AND status = ?";
+            $rep =Model::$pdo->prepare($sql);
+            $rep->execute(array($id_customer,$status));
+            $tab_order = $rep->fetchAll();
+            // si aucune commande n'est créée avant de voir le panier : cela evite une erreur
+            if (!empty($tab_order)){
+                $id_order = $tab_order[0]["id"];
+                return $id_order;
+            }
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+    public static function getStatus($id_customer){
+        try {
+            $sql = "SELECT status FROM orders WHERE customer_id = ? ";
             $rep =Model::$pdo->prepare($sql);
             $rep->execute(array($id_customer));
             $tab_order = $rep->fetchAll();
-            $id_order = $tab_order[0]["id"];
-            return $id_order;
+            $status = $tab_order[0]["status"];
+
+            return $status;
         }
         catch(PDOException $e){
             if (Conf::getDebug()) {
@@ -167,7 +211,7 @@ class Orders
 
     public static function getAllOrdersPaidByCheck(){
         try {
-            $sql = "SELECT * FROM orders WHERE payment_type = 'cheque' AND status = 1";
+            $sql = "SELECT * FROM orders WHERE payment_type = 'cheque' AND status = 2";
             $rep =Model::$pdo->prepare($sql);
             $rep->execute();
             $rep->setFetchMode(PDO::FETCH_CLASS, 'Orders');

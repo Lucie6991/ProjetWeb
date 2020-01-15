@@ -5,8 +5,8 @@
 //chmod(File::build_path(array('view',"admin","files_users")), 777);
 $filePath = File::build_path(array('view',"admin","files_users",$nameFile.'.txt'));
 $fileUser = fopen($filePath, 'c+b');
-$col_customers = array("forename","surname","add1","add2","add3","postcode","phone","email");
-$col_adresse = array("forename","surname","add1","add2","add3","postcode","phone","email");
+$col_customers = array("forname","surname","add1","add2","add3","postcode","phone","email");
+$col_adresse = array("firstname","lastname","add1","add2","city","postcode","phone","email");
 $title_add = array("Nom : ","Prénom : ","Adresse : ","Télephone : ","Email : ");
 $col_orders = array("id","payment_type","date","total");
 $title_orders = array("Numéro de commande", "Type de paiement","Date","Total de la commande");

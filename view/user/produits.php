@@ -12,7 +12,11 @@
             echo "</div>";
             echo "<div class ='col-lg-9'>";
                 echo "<br>";
-                echo "$nom <br> $description <br> Notre prix : $prix <br> <a href='?action=read&id=" . $id . "'> Acheter</a> <br>";
+                echo "<h4>$nom <br> </h4>";
+                echo "$description <br>";
+                echo "Notre prix : ". $prix." €<br>";
+               // echo "<a href ='?action=read&id=" . $id ."' class='btn btn-success'"> Acheter</a> <br>";
+                echo "<a class='btn btn-success'  href='?action=read&id=".$id."'>Détails</a><br>";
             echo "</div>";
         echo "</div>";
         echo "<br>";

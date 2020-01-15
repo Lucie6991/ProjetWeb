@@ -28,6 +28,22 @@ class Admin
         }
     }
 
+    public static function addAdmin($un, $pw){
+        try {
+            $sql = 'INSERT INTO admin ( `username`, `password`) VALUES (?,?)';
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->execute(array($un,$pw));
+        }
+        catch(PDOException $e){
+            if (Conf::getDebug()) {
+                return false;
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
     public function getId()
     {
         return $this->id;
