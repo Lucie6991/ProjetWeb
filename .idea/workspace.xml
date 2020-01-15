@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/admin/addStock.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/includeControllers.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/controllerAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerCategorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCategorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controllerCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCustomer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/routeur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/addedCat.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/formAddAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/formAddAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/formAddCat.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/formAddCat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/viewAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/viewAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/aside1.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/aside1.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/aside2.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/aside2.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/bill.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/bill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/detailOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/detailOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/files_users/addStock.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/choixPanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/choixPanier.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/user/myAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/myAccount.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,15 +54,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/view/admin" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/user" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/view/admin" />
       <recent name="$PROJECT_DIR$/view/user" />
       <recent name="$PROJECT_DIR$/view/images" />
       <recent name="$PROJECT_DIR$/view/admin/files_users" />
       <recent name="$PROJECT_DIR$/controller" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/view/user" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -117,6 +108,7 @@
       <workItem from="1579004481416" duration="899000" />
       <workItem from="1579006268955" duration="346000" />
       <workItem from="1579019632047" duration="7499000" />
+      <workItem from="1579111253321" duration="8060000" />
     </task>
     <task id="LOCAL-00001" summary="Ceci est le commit du fichier testgit.html">
       <created>1576752675465</created>

@@ -64,14 +64,15 @@ class controllerAdmin
     }
 
     public static function seeBill(){
-        $view = "bill";
+        //$view = "bill";
         $controller = "admin";
         if (isset ($_GET['order'])){
             $id_order=$_GET["order"];
             $nameFile= "order".$id_order;
         }
         $page_title="Facture de la commande";
-        $path2 = File::build_path(array('view', $controller,'viewAdmin.php'));
+        //$path2 = File::build_path(array('view', $controller,'viewAdmin.php'));
+        $path2 = File::build_path(array('view', $controller,'bill.php'));
         require_once ($path2);
     }
 

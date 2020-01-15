@@ -64,5 +64,6 @@ class controllerCustomer
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }
+    
 
 }

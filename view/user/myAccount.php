@@ -41,10 +41,11 @@ if (!empty($tab_order_fini)){
         $date = $ligne->get('date');
         $status = $ligne->get('status');
         $total = $ligne->get('total');
+        $id_order= $ligne->get('id');
         echo "$date <br>";
         echo "$status";
 
-        echo 'cliquez ici pour voir votre facture';
+        echo "<a href='?action=seeBillUser&order=".$id_order."' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Télécharger la facture </a><br><br>";
     }
 }
 if (empty($tab_order_cheque) && empty($tab_order_prep) && empty($tab_order_liv) && empty($tab_order_fini) ){

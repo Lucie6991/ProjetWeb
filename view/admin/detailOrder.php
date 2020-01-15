@@ -13,10 +13,10 @@ $title_orders = array("Numéro de commande", "Type de paiement","Date","Total de
 $texte = "";
 foreach ($tab_order as $order){
     for ($i=0; $i<count($col_orders); $i++){
+        $totalCommande=$order->get('total');
         $data = $order->get($col_orders[$i]);
         $title = $title_orders[$i];
         echo "<strong> $title :</strong> $data <br>";
-        //fputs($fileUser, $title." : ".$data.";");
         $texte .= $title." : ".$data.";";
     }
 }
@@ -44,7 +44,6 @@ foreach ($tab_customer as $customer){
         if ($data == ""){
             $data = " ";
         }
-        //fputs($fileUser, $title.$data.";");
         $texte.=$title.$data.";";
     }
 }
@@ -72,7 +71,6 @@ foreach ($tab_adress as $add){
         if ($data == ""){
             $data = " ";
         }
-        //fputs($fileUser, $title.$data.";");
         $texte.=$title.$data.";";
     }
 }
@@ -93,7 +91,30 @@ foreach ($tab_adress as $add){
 </div>
 
 <?php
+$texte.="Montant HT :;TVA :;Sous total TTC: ;Frais de livraison: ;TOTAL TTC: ;";
+$soustotal=0;$price=0;$priceHT=0;$TVA=0;
 
+foreach ($tab_order_item as $ligne){
+    $quantiteCommande = $ligne['qte'];
+    $price = $ligne['price']*$quantiteCommande;
+    $priceHT+= $price/1.2;
+    $TVA += $price/6;
+    $soustotal+=$price;
+}
+var_dump(number_format($soustotal,2));
+var_dump(number_format($totalCommande,2));
+if (number_format($soustotal,2) == $totalCommande)
+    $delivery = 'GRATUIT';
+else
+    $delivery = '6,50';
+$texte.=number_format($priceHT,2).';'.number_format($TVA,2).';'.number_format($soustotal,2).';'.$delivery.';';
+if ($delivery == 'GRATUIT'){
+    $total=$soustotal;
+}
+else{
+    $total = $soustotal+6.5;
+}
+$texte.=number_format($total,2).';PRODUIT;QUANTITE;PRIX UNITAIRE;';
 foreach ($tab_order_item as $ligne):
     $id= $ligne['id'];
     $quantiteCommande = $ligne['qte'];
@@ -114,17 +135,21 @@ foreach ($tab_order_item as $ligne):
             <span class ='col-lg-2'>
                 <?php echo "<p><br><br> $quantiteCommande</p>"; ?>
             </span>
-                    </div>
+                </div>
         </span>
 
     </div>
     <br>
-
-<?php  endforeach ?>
+<?php
+$texte.=$name.';'.$quantiteCommande.';'.$price.';';
+endforeach ?>
 
 <?php
 fputs($fileUser,$texte);
 fclose($fileUser);
-echo "<a href='?action=seeBill&order=".$id_order."' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Télécharger la facture </a><br><br>";
+if (isset($facture)){
+    echo 'oui';
+}
+echo "<a href='?action=seeBill&order=".$id_order."' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Générer la facture </a><br><br>";
 echo "<a href='?action=confirmOrder&order=".$id_order."' class='btn btn-success' > <span class='glyphicon glyphicon-send'></span>  Confirmer le paiment</a>";
 ?>
