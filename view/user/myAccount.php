@@ -1,6 +1,38 @@
 <?php
 echo "<h1>Mon compte</h1>";
 
+echo "<h3>Vos informations personnelles : </h3>";
+//var_dump($tab_adress);
+foreach ($tab_adress as $ligne) {
+    $prenom = $ligne->get('forname');
+    $nom = $ligne->get('surname');
+    $add1 = $ligne->get('add1');
+    $add2 = $ligne->get('add2');
+    $city = $ligne->get('add3');
+    $postcode = $ligne->get('postcode');
+    $phone = $ligne->get('phone');
+    $email = $ligne->get('email');
+
+    echo "<label name='CoordLabel'>  Identité : </label> ";
+    echo $nom . " " . $prenom;
+    echo "<br />";
+    echo "<label name='CoordLabel'>  Adresse : </label> ";
+    echo $add1;
+    echo "<br />";
+    echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$add2;
+    echo "<br />";
+    echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$postcode . " " . $city;
+    echo "<br />";
+    echo "<label name='CoordLabel'>  Téléphone : </label> ";
+    echo $phone;
+    echo "<br />";
+    echo "<label name='CoordLabel'>  Email : </label> ";
+    echo $email;
+    echo "<br />";
+    echo "<br />";
+
+}
+
 if (!empty($tab_order_cheque)){
     echo "<h3> Vos commandes payées par chèques en attente de reception du chèque </h3>";
     echo "<p> A reforumuler je sais pas quoi dire mdr  </p>";

@@ -1,8 +1,12 @@
 function clic_plus(){
+    var quantityProduct = document.getElementById("quantity").value;
+
     var quantite = document.getElementById("quantite");
     var qte = parseInt(quantite.value);
-    qte = 1 + qte;
-    quantite.value = qte;
+    if (qte < quantityProduct){
+        qte = 1 + qte;
+        quantite.value = qte;
+    }
 }
 
 function clic_moins(){

@@ -39,11 +39,11 @@ class controllerConnexion
             // si il existe un panier à son nom alors on recupere l'order ID et changer le customerID et registered=1
             if ( Orders::existsOrder($customer_id)){
                 $order_id = Orders::getOrderID($customer_id) ;
-                Orders::updateCustomerId($customer_id, $order_id);
+                Orders::updateCustomerId($customer_id, 1,$order_id);
             }
             else if (Orders::existsOrder(session_id())){
                 $order_id = Orders::getOrderID(session_id()) ;
-                Orders::updateCustomerId($customer_id, $order_id);
+                Orders::updateCustomerId($customer_id, 1,$order_id);
             }
         }
         //Si c'est un admin

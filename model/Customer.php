@@ -58,11 +58,11 @@ class Customer
     }
 
 
-    public static function addCustomer($fn,$sn,$ad1,$ad2 = NULL,$c, $pc, $p, $e){
+    public static function addCustomer($fn,$sn,$ad1,$ad2 = NULL,$c, $pc, $p, $e, $r){
         try {
-            $sql = 'INSERT INTO customers (`forname`, `surname`, `add1`, `add2`, `add3`, `postcode`, `phone`, `email`, `registered`) VALUES (?,?,?,?,?,?,?,?,1)';
+            $sql = 'INSERT INTO customers (`forname`, `surname`, `add1`, `add2`, `add3`, `postcode`, `phone`, `email`, `registered`) VALUES (?,?,?,?,?,?,?,?,?)';
             $req_prep = Model::$pdo->prepare($sql);
-            $req_prep->execute(array($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e));
+            $req_prep->execute(array($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e,$r));
 
         }catch(PDOException $e){
             if (Conf::getDebug()) {
@@ -73,6 +73,7 @@ class Customer
             die();
         }
     }
+
 
 
     public function getId()

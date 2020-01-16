@@ -6,7 +6,6 @@ require_once ($path);
 
 class controllerCart
 {
-
     public static function addToCart(){
         $view='addedToCart';
         $page_title='Ajouté au panier';
@@ -95,23 +94,28 @@ class controllerCart
                 $status = 2;
 
             $id_order = Orders::getOrderID($_SESSION['customer_id'],1);
+            echo $_SESSION['customer_id'];
+            echo "<br>";
+            echo $id_order;
             $tabCart = Cart::getProductsStock($id_order);
 
             foreach ($tabCart as $product){
                 $id_product = $product["id"];
-                echo $id_product;
+                //echo $id_product;
                 $stock = $product["quantity"];
-                echo $stock;
+                //echo $stock;
                 $qte = $product["qte"];
-                echo $qte;
+                //echo $qte;
                 Product::getProduit($id_product)[0]->updateStock($stock - $qte);
             }
             $order = Orders::getOrder($id_order);
+            var_dump($order);
             $order[0]->lastUpdate(date ("Y/m/d") ,$_POST['paiement'],$status);
         }
         $view ='recapOrder';
         $page_title='Commande validée';
         $controller = "user";
+        //session_regenerate_id();
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }

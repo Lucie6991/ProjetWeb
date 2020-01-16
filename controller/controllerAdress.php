@@ -79,10 +79,14 @@ class controllerAdress
         $e = $_POST["email"];
 
         DeliveryAdress::addAdress($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
+        Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e,0);
+        $id_c = Customer::getCustomerID($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
         $id=DeliveryAdress::getAdressID($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
+
         Orders::updateDeliveryAdId($_SESSION['customer_id'], $id);
         $id_order = Orders::getOrderID($_SESSION['customer_id']);
         Orders::updateStatus(1,$id_order);
+        Orders::updateCustomerId($id_c, 0, $id_order);
 
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);

@@ -34,7 +34,7 @@ class controllerCustomer
             $un = $_POST["login"];
             $pw = $_POST["password"];
 
-            $tab_log=Login::getLoginUser($un, $pw);
+            $tab_log=Login::getLoginUser($un, sha1($pw));
             if (!empty($tab_log)){
                 $view='error';
                 $controller="user";
@@ -42,7 +42,7 @@ class controllerCustomer
                 $message='Un client existe déjà avec ce nom d\'utilisateur et ce mot de passe';
             }
             else {
-                Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
+                Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e,1);
                 $customer_id=Customer::getCustomerID($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e);
                 Login::addLogin($customer_id,$un, sha1($pw));
             }
@@ -55,8 +55,9 @@ class controllerCustomer
 
     public static function myAccount(){
         $view ="myAccount";
-        $page_title="Moi";
+        $page_title="Mon compte";
         $controller = "user";
+        $tab_adress = Customer::getAdress($_SESSION['customer_id']);
         $tab_order_cheque = Orders::getOrderByCustomer($_SESSION['customer_id'], 1);
         $tab_order_prep = Orders::getOrderByCustomer($_SESSION['customer_id'], 2);
         $tab_order_liv = Orders::getOrderByCustomer($_SESSION['customer_id'], 3);

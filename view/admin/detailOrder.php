@@ -101,8 +101,8 @@ foreach ($tab_order_item as $ligne){
     $TVA += $price/6;
     $soustotal+=$price;
 }
-var_dump(number_format($soustotal,2));
-var_dump(number_format($totalCommande,2));
+//var_dump(number_format($soustotal,2));
+//var_dump(number_format($totalCommande,2));
 if (number_format($soustotal,2) == $totalCommande)
     $delivery = 'GRATUIT';
 else

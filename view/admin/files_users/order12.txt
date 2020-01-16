@@ -1,0 +1,1 @@
+Numéro de commande : 12;Type de paiement : 0;Date : 2020-01-16 00:00:00;Total de la commande : 12.4;Nom : hfeee;Prénom : eeee;Adresse : eeee;eeee;eeee;1111;Télephone : 41111;Email : eee@eee.ee;Montant HT :;TVA :;Sous total TTC: ;Frais de livraison: ;TOTAL TTC: ;4.92;0.98;5.90;6,50;12.40;PRODUIT;QUANTITE;PRIX UNITAIRE;Jus d’Orange de Floride;2;2.95;;2;2.95;

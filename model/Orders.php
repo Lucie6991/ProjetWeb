@@ -177,11 +177,11 @@ class Orders
         }
     }
 
-    public static function updateCustomerId($newCID, $orderID){
+    public static function updateCustomerId($newCID, $r, $orderID){
         try {
-            $sql = "UPDATE orders SET customer_id = ?, registered=1 WHERE id = ? ";
+            $sql = "UPDATE orders SET customer_id = ?, registered= ? WHERE id = ? ";
             $rep =Model::$pdo->prepare($sql);
-            $rep->execute(array($newCID,$orderID));
+            $rep->execute(array($newCID, $r ,$orderID));
         }
         catch(PDOException $e){
             if (Conf::getDebug()) {

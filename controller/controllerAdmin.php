@@ -64,7 +64,7 @@ class controllerAdmin
     }
 
     public static function seeBill(){
-        //$view = "bill";
+        $view = "bill";
         $controller = "admin";
         if (isset ($_GET['order'])){
             $id_order=$_GET["order"];

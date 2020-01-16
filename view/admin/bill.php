@@ -1,5 +1,5 @@
 <?php
-//ob_end_clean();
+ob_end_clean();
 $path= File::build_path(array('lib',"fpdf",'fpdf.php'));
 require_once ($path);
 
