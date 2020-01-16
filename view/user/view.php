@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php
-$path = File::build_path(array("view", "fonctions.php"));
+$path = File::build_path(array("view", "utilitaire", "fonctions.php"));
 include($path);
 ?>
 <div class="container">

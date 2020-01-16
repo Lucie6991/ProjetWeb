@@ -1,3 +1,5 @@
+/* View.php */
+
 aside{
     background-color: lightgrey;
     height: 100%;
@@ -30,11 +32,6 @@ aside{
     margin-left: 12%;
 }
 
-.btnAdress{
-    width: 250px;
-    margin-bottom : 10px;
-}
-
 .trait
 {
     background-color: #818181;
@@ -42,20 +39,23 @@ aside{
     width: 100%;
 }
 
-.image_produit{
-    width : 180px;
-    box-shadow: 1px 1px 12px #555;
+.btnAdress{
+    width: 250px;
+    margin-bottom : 10px;
 }
 
-.image_produit_choixPanier{
-    width : 300px;
-    box-shadow: 1px 1px 12px #555;
-}
 
 .image_produit_consult{
     width : 200px;
     box-shadow: 1px 1px 12px #555;
 }
+
+.logo{
+    width: 30%;
+    margin-left: 35%;
+}
+
+/* Pour la page choixPanier.php */
 
 .nom_produit{
     border-radius: 10px ;
@@ -75,23 +75,29 @@ aside{
     width:100px;
 }
 
-.panier{
-    width : 130px;
-    box-shadow: 1px 1px 12px #555;
-}
-
-.tabCart{
-    border: grey solid 1px;
-    background-color: #f2f2f2;
-}
-
-.textePanier{
-    text-align: center;
-}
-
 .messageRupture {
     color: red;
     font-style: italic;
+}
+.image_produit{
+    width : 180px;
+    box-shadow: 1px 1px 12px #555;
+}
+
+.image_produit_choixPanier{
+    width : 300px;
+    box-shadow: 1px 1px 12px #555;
+}
+
+#descriptionProd{
+    border: 1px solid #a2a2a2;
+    background-color: #f2f2f2;
+    border-radius: 10px ;
+    padding: 10px;
+}
+
+#btn_detail{
+    margin-left: 30%;
 }
 
 /* CSS Page de Connexion */
@@ -141,18 +147,6 @@ input[type=submit]:hover {
     border: 1px solid #26C4EC;
 }
 
-h4 .priceHT{
-    font-size: 0.7em;
-    color: grey;
-    text-decoration: none;
-}
-
-h4 .titlePrice{
-    color: #5bc0de;
-    text-decoration: underline;
-    margin-left: 20px;
-}
-
 h4 .priceTTC{
     color: black;
     text-decoration: none;
@@ -175,6 +169,8 @@ a{
     display: none;
 }
 
+/* Page du panier  */
+
 .barrePrix{
     text-decoration: line-through;
 }
@@ -183,6 +179,33 @@ a{
     color: red;
 }
 
+h4 .priceHT{
+    font-size: 0.7em;
+    color: grey;
+    text-decoration: none;
+}
+
+h4 .titlePrice{
+    color: #5bc0de;
+    text-decoration: underline;
+    margin-left: 20px;
+}
+
+.panier{
+    width : 130px;
+    box-shadow: 1px 1px 12px #555;
+}
+
+.tabCart{
+    border: grey solid 1px;
+    background-color: #f2f2f2;
+}
+
+.textePanier{
+    text-align: center;
+}
+
+/* Page de paiement */
 .chequeAmasquer{
     visibility: visible;
 

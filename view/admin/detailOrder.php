@@ -101,8 +101,6 @@ foreach ($tab_order_item as $ligne){
     $TVA += $price/6;
     $soustotal+=$price;
 }
-//var_dump(number_format($soustotal,2));
-//var_dump(number_format($totalCommande,2));
 if (number_format($soustotal,2) == $totalCommande)
     $delivery = 'GRATUIT';
 else
@@ -140,8 +138,8 @@ foreach ($tab_order_item as $ligne):
 
     </div>
     <br>
-<?php
-$texte.=$name.';'.$quantiteCommande.';'.$price.';';
+    <?php
+    $texte.=$name.';'.$quantiteCommande.';'.$price.';';
 endforeach ?>
 
 <?php
@@ -150,6 +148,8 @@ fclose($fileUser);
 if (isset($facture)){
     echo 'oui';
 }
-echo "<a href='?action=seeBill&order=".$id_order."' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Générer la facture </a><br><br>";
+echo "<a href='?action=seeBill&order=".$id_order."' class='btn btn-info' onclick='bill();'> <span class='glyphicon glyphicon-save'></span>  Générer la facture </a><br><br>";
+echo '<div id="confirmer" class="confirmer"> ';
 echo "<a href='?action=confirmOrder&order=".$id_order."' class='btn btn-success' > <span class='glyphicon glyphicon-send'></span>  Confirmer le paiment</a>";
+echo'</div>';
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-$path = File::build_path(array('view','includeControllers.inc.php'));
+$path = File::build_path(array('view',"utilitaire",'includeControllers.inc.php'));
 require_once ($path);
 
 if (!isset($_GET['action'])){

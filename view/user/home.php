@@ -24,7 +24,6 @@
                     $quantity = $ligne->getQuantity();
                 }?>
                 <div class="row">
-                    <div class="col-lg-1"></div>
                     <?php
                     $tab_product = Product::getAllProducts();
                     for ($i=0;$i<3;$i++) {
@@ -41,4 +40,4 @@
                         echo "</div>";
                     }
                     ?>
-            </div>
+                </div>
