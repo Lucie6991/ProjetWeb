@@ -87,7 +87,7 @@ class controllerAdress
         $id_order = Orders::getOrderID($_SESSION['customer_id']);
         Orders::updateStatus(1,$id_order);
         Orders::updateCustomerId($id_c, 0, $id_order);
-
+        $_SESSION['customer_id'] =$id_c;
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }

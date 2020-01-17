@@ -26,7 +26,7 @@ if (isset($message)){
             <input class="form-control" name="stock" id="quantite" type="text" value="1" placeholder="1" readonly>
         </div>
         <div class ='col-lg-1'>
-            <button type="button" class='btn btn-dark' onclick="clic_plus();"> <span class='glyphicon glyphicon-plus'></span></button>
+            <button type="button" class='btn btn-dark' onclick="clic_plusA();"> <span class='glyphicon glyphicon-plus'></span></button>
         </div>
     </div>
 

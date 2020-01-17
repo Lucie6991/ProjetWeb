@@ -19,7 +19,13 @@ foreach ($tab_product as $ligne) {
     echo "<p> <span style='font-size: 1.5em;'>&nbsp&nbsp&nbsp&nbsp $prix € TTC </span>( " . number_format($prixHT, 2) . " € HT )</p><br>  ";
 
     if(empty($_SESSION["admin"])) {
-        if ($quantity > 0) { ?>
+        if ($quantity > 0) {
+            if ($quantity < 6) {
+                echo '<div class="alert alert-warning">';
+                echo '<strong>Attention !</strong> Le  produit est bientôt en rupture de stock, il en reste seulement ' . $quantity . ' !';
+                echo '</div>';
+            }
+            ?>
             <div class='col-lg-2'>
                 <button class='btn btn-dark' onclick="clic_moins();"><span class='glyphicon glyphicon-minus'></span>
                 </button>

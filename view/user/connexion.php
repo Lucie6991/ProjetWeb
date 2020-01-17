@@ -12,6 +12,7 @@
         <p></p>
 
         <input type="submit" id="connexion" value="Connexion"/>
+        <a href="?action=pswForget" class="btn btn-warning" id='btn_detail'> Mot de passe oublié</a>
 
     </form>
 </div>

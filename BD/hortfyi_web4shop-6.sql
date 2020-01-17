@@ -229,7 +229,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `cat_id`, `name`, `description`, `image`, `price`, `quantity`) VALUES
 (2, 1, 'Jus d’Orange de Floride', 'Bouteille d’un litre.', 'bestorange-juice.jpg', '2.95', 5),
 (3, 1, 'Dosette Café', 'Mélange goût italien', 'dosetteCafe.jpg', '3.75', 2),
-(4, 2, 'Assortiment de biscuits secs', 'Boîte de 20 biscuits composée de galettes, cookies, crêpes dentelles et sablés', 'assortimentBiscuitsSec.jpg', '12.90', 0),
+(4, 2, 'Assortiment de biscuits secs', 'Boîte de 20 biscuits composée de galettes, cookies, crêpes dentelles et sablés', 'assortimentBiscuitsSecs.jpg', '12.90', 0),
 (5, 2, 'Biscuits de Noël', 'Biscuits à la cannelle, au chocolat, sablés', 'biscuitNoel.jpg', '10.50', 12),
 (6, 2, 'Biscuits aux raisins ', 'Biscuits aux raisins secs', 'biscuitRaisin.jpg', '6.90', 3),
 (7, 3, 'Pruneaux secs bio ', 'Sachet de 500g. Pruneaux issus d agricultures biologiques', 'pruneauxSecs.jpg', '7.90', 6),

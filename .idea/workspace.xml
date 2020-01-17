@@ -2,56 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f0c0c-cedf-4a18-9e71-6e6b42d1841a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/images/pruneauxSecs.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/images/assortimentBiscuitsSecs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/images/biscuitNoel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/images/biscuitRaisin.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/user/changePsw.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/hortfyi_web4shop-6.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BD/hortfyi_web4shop-6.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerAdress.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerAdress.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/controllerCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerCart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerConnexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/routeur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/fpdf/FAQ.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/Web4SHOP.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fpdf/Web4SHOP.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/fpdf/install.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/fpdf/license.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/fpdf/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/20k_c1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/20k_c2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/calligra.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/calligra.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/calligra.z" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/index.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/makefont.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/pays.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto1.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto1.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto2.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto3.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto3.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto4.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto5.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto5.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto6.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto6.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto7.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fpdf/tutorial/tuto7.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/CSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/Web4SHOP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/bill.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/bill.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/detailOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/detailOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/files_users/addStock.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/aside1.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/utilitaire/aside1.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/aside2.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/utilitaire/aside2.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/fonctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/utilitaire/fonctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/footer.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/utilitaire/footer.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/header.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/utilitaire/header.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/headerAdmin.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/utilitaire/headerAdmin.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/addStock.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/addStock.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/viewAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/viewAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/aside1.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/aside2.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/fonctions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/footer.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/functionsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/functionsJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/header.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/headerAdmin.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/images/assortimentBiscuitsSec.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/images/bestorange-juice.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/images/biscuitNoel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/images/biscuitRaisin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/images/dosetteCafe.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/view/images/dummy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/includeControllers.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/utilitaire/includeControllers.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/aboutUs.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/aboutUs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/produits.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/produits.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/includeControllers.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/choixPanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/choixPanier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/recapOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/recapOrder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,18 +78,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/images" />
+      <recent name="$PROJECT_DIR$/view/utilitaire" />
+      <recent name="$PROJECT_DIR$/view/user" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view" />
       <recent name="$PROJECT_DIR$/view/images" />
       <recent name="$PROJECT_DIR$/lib/fpdf" />
       <recent name="$PROJECT_DIR$/view/admin" />
-      <recent name="$PROJECT_DIR$/view/user" />
-      <recent name="$PROJECT_DIR$/view/admin/files_users" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/view/utilitaire" />
       <recent name="$PROJECT_DIR$/view/user" />
     </key>
   </component>
@@ -152,7 +138,8 @@
       <workItem from="1579006268955" duration="346000" />
       <workItem from="1579019632047" duration="7499000" />
       <workItem from="1579111253321" duration="8060000" />
-      <workItem from="1579208350203" duration="4100000" />
+      <workItem from="1579208350203" duration="4310000" />
+      <workItem from="1579287927215" duration="8551000" />
     </task>
     <task id="LOCAL-00001" summary="Ceci est le commit du fichier testgit.html">
       <created>1576752675465</created>
@@ -210,10 +197,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="421" y="282" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1577975301262" />
-    <state x="538" y="384" key="NewPhpFileDialog" timestamp="1579029237244">
+    <state x="538" y="384" key="NewPhpFileDialog" timestamp="1579290615596">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1579029237244" />
+    <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1579290615596" />
     <state x="374" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1578476716508">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

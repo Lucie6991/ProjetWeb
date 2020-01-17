@@ -104,23 +104,42 @@ class controllerConnexion
         $view='deconnexion';
         $page_title='Deconnexion';
         $controller = "user";
-
-        if (empty($_SESSION["admin"])){
-            // Suppression du panier lorsque le client se deconnecte de son compte
-            if (!empty($_SESSION['username'])){
-                $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
-            }
-            else{
-                $id_customer=session_id();
-            }
-            $id_order = Orders::getOrderID($id_customer);
-            //Cart::emptyCart($id_order);
-        }
-
         // Suppression des variables de session
         $_SESSION['username'] = "";
         $_SESSION['customer_id'] = "";
         $_SESSION['admin'] = "";
+        $path2 = File::build_path(array('view',$controller,'view.php'));
+        require_once ($path2);
+    }
+
+    public static function pswForget(){
+        $view='changePsw';
+        $page_title='Mot de passe oublié';
+        $controller = "user";
+        $path2 = File::build_path(array('view',$controller,'view.php'));
+        require_once ($path2);
+    }
+
+    public static function changePsw(){
+        $view='changePsw';
+        $page_title='Mot de passe oublié';
+        $controller = "user";
+        if (isset($_POST['login'])){
+            $username=$_POST['login'];
+            $user=Login::getUsername($username);
+            if (!empty($user)){
+                if ($_POST['psw1']==$_POST['psw2']){
+                    Login::changePsw(sha1($_POST['psw1']),$username);
+                    controllerCategorie::readCategories();
+                }
+                else{
+                    $erreur="Veuillez rentrer les mêmes mots de passe";
+                }
+            }
+            else{
+                $erreur = "Ce login n'existe pas !";
+            }
+        }
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }

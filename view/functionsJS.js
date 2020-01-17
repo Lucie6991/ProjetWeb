@@ -1,9 +1,8 @@
 function clic_plus(){
     var quantityProduct = document.getElementById("quantity").value;
-
     var quantite = document.getElementById("quantite");
     var qte = parseInt(quantite.value);
-    if (qte < quantityProduct){
+    if(qte<quantityProduct){
         qte = 1 + qte;
         quantite.value = qte;
     }
@@ -17,6 +16,14 @@ function clic_moins(){
         quantite.value = qte;
     }
 }
+
+function clic_plusA(){
+    var quantite = document.getElementById("quantite");
+    var qte = parseInt(quantite.value);
+    qte = 1 + qte;
+    quantite.value = qte;
+}
+
 
 function masquer_div(){
     var coche = document.getElementById("addLivraison").checked;
@@ -46,4 +53,8 @@ function pay() {
         document.getElementById("paypalAmasquer").style.visibility = "visible";
         document.getElementById("chequeAmasquer").style.visibility = "hidden";
     }
+}
+
+function bill() {
+    document.getElementById("confirmer").style.visibility = "visible";
 }

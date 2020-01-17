@@ -1,6 +1,6 @@
 <h3> Votre commande a bien été enregistré </h3>
 <p> La livraison est de 3 à 5 jours. Nous mettons tout en oeuvre afin d'envoyer votre commande le plus rapidement !</p>
-<h4>Total du panier (sans prendre en compte les frais de livraison) : </h4>
+<h4>Total du panier : </h4>
 <?php
 
 $totalprice =0;
@@ -50,7 +50,7 @@ foreach ($tab_order_item as $ligne):
     <div class="tabCart">
         <span class ='row' >
             <div class ='col-lg-3'>
-                <?php echo "<img class ='image_produit_RecapOrder' src='view/images/$image'>"; ?>
+                <?php echo "<img class ='image_produit' src='view/images/$image'>"; ?>
             </div>
             <span class ='col-lg-4'>
                 <?php echo "<h4><br><br> $name</h4>";?>

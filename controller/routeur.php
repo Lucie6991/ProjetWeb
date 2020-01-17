@@ -17,7 +17,7 @@ else if ($action== 'readAllProducts' || $action == 'readProductsCat' || $action 
 else if ( $action == 'readCategories' ||$action=="addedCat" ){
     controllerCategorie::$action();
 }
-else if ($action == 'readCustomer' || $action == "connect" || $action=='readLogin'  || $action=='deconnect'){
+else if ($action == 'readCustomer' || $action == "connect" || $action=='readLogin'  || $action=='deconnect' || $action=='pswForget' || $action=='changePsw'){
     controllerConnexion::$action();
 }
 else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewProduct" || $action=="readOrder" || $action=="confirmOrder"
