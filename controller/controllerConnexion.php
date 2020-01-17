@@ -117,7 +117,6 @@ class controllerConnexion
             //Cart::emptyCart($id_order);
         }
 
-
         // Suppression des variables de session
         $_SESSION['username'] = "";
         $_SESSION['customer_id'] = "";

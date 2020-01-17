@@ -41,8 +41,25 @@ if (!empty($tab_order_cheque)){
         $date = $ligne->get('date');
         $status = $ligne->get('status');
         $total = $ligne->get('total');
+         ?>
+        <div class="tabCart">
+        <span class ='row' >
+            <div class ='col-lg-10'>
+                <?php
+                echo " <strong> Date de commande : </strong> $date <br>";
+                echo " <strong> Total de la commande : </strong> $total €<br>";
+                echo " <strong> Type de paiement : </strong> $payment_type <br>";
+                ?>
+            </div>
+            <span class ='col-lg-2'>
+                <?php echo "<br><a style='color: grey; font-size: 50px'> <span class='glyphicon glyphicon-list-alt'></span></a> "?>
+            </span>
+        </span>
+        </div>
+<?php
     }
 }
+
 if (!empty($tab_order_prep)){
     echo "<h3> Vos commandes en cours de préparation :  </h3>";
     foreach($tab_order_prep as $ligne){
@@ -50,8 +67,22 @@ if (!empty($tab_order_prep)){
         $date = $ligne->get('date');
         $status = $ligne->get('status');
         $total = $ligne->get('total');
-        echo "$date <br>";
-        echo "$status";
+        ?>
+        <div class="tabCart">
+        <span class ='row' >
+            <div class ='col-lg-10'>
+                <?php
+                echo " <strong> Date de commande : </strong> $date <br>";
+                echo " <strong> Total de la commande : </strong> $total €<br>";
+                echo " <strong> Type de paiement : </strong> $payment_type <br>";
+                ?>
+            </div>
+            <span class ='col-lg-2'>
+                <?php echo "<br><a style='color: grey; font-size: 50px'> <span class='glyphicon glyphicon-list-alt'></span></a> "?>
+            </span>
+        </span>
+        </div>
+<?php
     }
 }
 if (!empty($tab_order_liv)){
@@ -61,8 +92,22 @@ if (!empty($tab_order_liv)){
         $date = $ligne->get('date');
         $status = $ligne->get('status');
         $total = $ligne->get('total');
-        echo "$date <br>";
-        echo "$status";
+        ?>
+        <div class="tabCart">
+                <span class ='row' >
+                    <div class ='col-lg-10'>
+                        <?php
+                        echo " <strong> Date de commande : </strong> $date <br>";
+                        echo " <strong> Total de la commande : </strong> $total €<br>";
+                        echo " <strong> Type de paiement : </strong> $payment_type <br>";
+                        ?>
+                    </div>
+                    <span class ='col-lg-2'>
+                        <?php echo "<br><a style='color: grey; font-size: 50px'> <span class='glyphicon glyphicon-list-alt'></span></a> "?>
+                    </span>
+                </span>
+        </div>
+        <?php
     }
 }
 

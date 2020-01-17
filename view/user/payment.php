@@ -15,7 +15,7 @@
 <br>
 <div id="paypalAmasquer" class="paypalAmasquer">
     Voici le lien paypal :
-    <a href="https://www.paypal.com/fr/home">Paypal</a>
+    <a href="https://www.paypal.com/fr/home" target="_blank">Paypal</a>
 </div>
 <div id="chequeAmasquer" class="chequeAmasquer">
     <p>Voici nos coordonnées pour envoyer le chèque :</p>

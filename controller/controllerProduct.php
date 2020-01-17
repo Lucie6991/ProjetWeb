@@ -59,8 +59,6 @@ class controllerProduct
         require_once ($path2);
     }
 
-
-
     public static function addedProd(){
         if (isset($_POST["name"])){
             $name =$_POST["name"];

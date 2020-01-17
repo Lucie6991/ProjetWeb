@@ -109,6 +109,12 @@ class controllerCart
             //var_dump($order);
             $order[0]->lastUpdate(date ("Y/m/d") ,$_POST['paiement'],$status);
         }
+
+        $tab_customer = Customer::getCustomer($id_order);
+        $tab_order_item = Orders::getOrderItems($id_order);
+        $tab_order= Orders::getOrder($id_order);
+        $tab_cart = Cart::getProducts($id_order);
+
         $view ='recapOrder';
         $page_title='Commande validée';
         $controller = "user";

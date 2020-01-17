@@ -1,6 +1,10 @@
 
 <?php if (empty($_SESSION['username'])){ ?>
 <form method="post" action="?action=addLivDiff">
+    <div class="alert alert-info">
+        <strong>Info!</strong> Votre adresse de facturation et de livraison seront les mêmes. Si vous souhaitez en avoir deux adresses différentes, veuillez
+        vous créer un compte.
+    </div>
     <?php }
     else { ?>
     <form method="post" action="?action=addAdrFact">
