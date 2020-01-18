@@ -8,6 +8,7 @@ class Admin
     private $username;
     private $password;
 
+    // Permet de récupérer l'admin en connaissant son login et son mot de passe
     public static function getAdmin($log, $mdp){
         try {
             $sql = "SELECT * FROM admin WHERE username=? and password=? ";
@@ -15,7 +16,6 @@ class Admin
             $rep->execute(array($log, $mdp));
             $rep->setFetchMode(PDO::FETCH_CLASS,'Admin');
             $tab_admin = $rep->fetchAll();
-
             return $tab_admin;
         }
         catch(PDOException $e){
@@ -28,6 +28,7 @@ class Admin
         }
     }
 
+    // Permet d'ajouter un nouvel administrateur
     public static function addAdmin($un, $pw){
         try {
             $sql = 'INSERT INTO admin ( `username`, `password`) VALUES (?,?)';

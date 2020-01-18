@@ -4,6 +4,7 @@
 class Cart
 {
 
+    // Permet d'ajouter au panier un produit avec une certaine quantité
     public static function addToCart($order_id,$id, $quantity){
         try {
             $sql = "INSERT INTO orderitems VALUES (NULL,?,?,?) ";
@@ -20,6 +21,7 @@ class Cart
         }
     }
 
+    // Permet de vider les produits qui'il y a dans le panier
     public static function emptyCart($orderID){
         try {
             $sql = "DELETE FROM orderitems WHERE order_id = ? ";
@@ -36,6 +38,7 @@ class Cart
         }
     }
 
+    // Permet d'enlever un produit du panier
     public static function delete($orderID,$product){
         try {
             $sql = "DELETE FROM orderitems WHERE order_id = ? AND id =? ";
@@ -52,7 +55,7 @@ class Cart
         }
     }
 
-
+    // Permet de recupérer les produits d'une commande
     public static function getProducts($orderID){
         try {
             $sql = "SELECT p.* , o.quantity 'qte' , o.id 'order' FROM products p, orderitems o, orders ord WHERE o.order_id = ? AND p.id =o.product_id AND o.order_id = ord.id AND ord.status = 0";
@@ -70,6 +73,7 @@ class Cart
             die();
         }
     }
+
 
     public static function getProductsStock($orderID){
         try {

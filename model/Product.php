@@ -13,6 +13,7 @@ class Product
     private $price;
     private $quantity;
 
+    // Récupère tous les produits
     public static function getAllProducts() {
         try {
             $sql = "SELECT * FROM products";
@@ -32,6 +33,7 @@ class Product
         }
     }
 
+    // Récupère le produit à partir de son ID
     public static function getProduit($id_Produit){
         try {
             $sql = "SELECT * FROM products WHERE id= ? ";
@@ -51,6 +53,7 @@ class Product
         }
     }
 
+    // Récupère tous les produits d'une cetaine catégorie
     public static function getAllProductsCat($id_Cat)
     {
         try {
@@ -71,6 +74,7 @@ class Product
         }
     }
 
+    // Ajoute un produit
     public static function addProduct($cat,$name,$desc,$img,$price,$qte){
         try {
             $sql = 'INSERT INTO products VALUES (NULL,?,?,?,?,?,?)';
@@ -86,6 +90,7 @@ class Product
         }
     }
 
+    // Met à jour un stock
     public function updateStock($n){
         $id = $this->id;
         try {

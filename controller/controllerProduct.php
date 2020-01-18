@@ -59,6 +59,7 @@ class controllerProduct
         require_once ($path2);
     }
 
+    // Produit ajouté a la base de données par un administrateur
     public static function addedProd(){
         if (isset($_POST["name"])){
             $name =$_POST["name"];

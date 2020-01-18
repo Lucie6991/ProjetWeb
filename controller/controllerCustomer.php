@@ -1,4 +1,5 @@
 <?php
+// On charge les différents modèles nécéssaires
 $path= File::build_path(array('model','Login.php'));
 require_once ($path);
 $path3= File::build_path(array('model','Customer.php'));
@@ -9,20 +10,17 @@ require_once ($path4);
 class controllerCustomer
 {
 
+    // Ajout d'un client
     public static function add(){
         $view='FormCustomer';
-        $page_title='Ajout d\'un client';
+        $page_title="Ajout d'un client";
         $controller = "user";
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }
 
     public static function addedCustomer(){
-        $view='addedCustomer';
-        $controller="user";
-        $page_title='Client ajouté';
-        if (isset($_POST["forname"]) && isset($_POST["surname"])){
-
+        if (isset($_POST["login"]) && isset($_POST["password"])){
             $fn = $_POST["forname"];
             $sn = $_POST["surname"];
             $ad1 = $_POST["add1"];
@@ -47,12 +45,11 @@ class controllerCustomer
                 Login::addLogin($customer_id,$un, sha1($pw));
             }
         }
-
-        $path2 = File::build_path(array('view',$controller,'view.php'));
-        require ($path2);
+        controllerConnexion::readCustomer();
     }
 
 
+    // Accès à la page mon compte
     public static function myAccount(){
         $view ="myAccount";
         $page_title="Mon compte";
@@ -65,18 +62,5 @@ class controllerCustomer
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }
-
-    public static function seeBillUser(){
-        $view = "bill";
-        $controller = "user";
-        if (isset ($_GET['order'])){
-            $id_order=$_GET["order"];
-            $nameFile= "order".$id_order;
-        }
-        $page_title="Facture de la commande";
-        $path2 = File::build_path(array('view', $controller,'bill.php'));
-        require_once ($path2);
-    }
-    
 
 }

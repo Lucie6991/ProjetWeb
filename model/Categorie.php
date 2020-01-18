@@ -10,6 +10,7 @@ class Categorie
     private $description;
     private $image;
 
+    // Permet de récupérer toute les catégories
     public static function getAllCategories() {
         try {
             $sql = "SELECT * FROM categories ";

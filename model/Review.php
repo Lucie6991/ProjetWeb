@@ -10,6 +10,7 @@ class Review
     private $title;
     private $description;
 
+    // Récupère les avis d'un produit
     public static function getReviewProduct($id){
         try {
             $sql = "SELECT * FROM reviews WHERE id_product = ? ";

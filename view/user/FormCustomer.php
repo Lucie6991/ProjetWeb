@@ -4,7 +4,7 @@ if (empty($_SESSION['username'])){ ?>
     <fieldset>
         <legend>Renseigner les informations suivantes :</legend>
         <p>
-            <label for="id_surname">Prenom</label> :
+            <label for="id_forname">Prenom</label> :
             <input type="text" name="forname" id="id_forname" required/>
         </p>
         <p>
@@ -12,11 +12,11 @@ if (empty($_SESSION['username'])){ ?>
             <input type="text" name="surname" id="id_surname" required/>
         </p>
         <p>
-            <label for="id_add1">Adresse 1</label> :
+            <label for="id_add1">Adresse</label> :
             <input type="text" name="add1" id="id_add1" required/>
         </p>
         <p>
-            <label for="id_add2">Adresse 2</label> :
+            <label for="id_add2">Complément d'adresse</label> :
             <input type="text" name="add2" id="id_add2" />
         </p>
         <p>
@@ -35,11 +35,11 @@ if (empty($_SESSION['username'])){ ?>
             <label for="id_email">Email</label> :
             <input type="email" name="email" id="id_email" required/>
         </p>
-        <label for="champNom">Login :</label>
+        <label for="username">Login :</label>
         <input type="text" name="login" id="username" required />
         <p></p>
 
-        <label for="champMdp">Mot de passe :</label>
+        <label for="password">Mot de passe :</label>
         <input type="password" name="password" id="password" required />
         <p></p>
         <input type="submit" value="Créer">

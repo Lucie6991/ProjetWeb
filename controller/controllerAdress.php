@@ -78,16 +78,20 @@ class controllerAdress
         $p = $_POST["phone"];
         $e = $_POST["email"];
 
-        DeliveryAdress::addAdress($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
-        Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e,0);
-        $id_c = Customer::getCustomerID($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
-        $id=DeliveryAdress::getAdressID($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
-
-        Orders::updateDeliveryAdId($_SESSION['customer_id'], $id);
         $id_order = Orders::getOrderID($_SESSION['customer_id']);
+        DeliveryAdress::addAdress($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
+        $id=DeliveryAdress::getAdressID($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
+        Orders::updateDeliveryAdId($_SESSION['customer_id'], $id);
+
+        // si pas client on crée un customer non enregistré
+        if (empty($_SESSION['username'])){
+            Customer::addCustomer($fn,$sn,$ad1,$ad2,$c,$pc,$p,$e,0);
+            $id_c = Customer::getCustomerID($fn, $sn, $ad1, $ad2, $c, $pc, $p, $e);
+            Orders::updateCustomerId($id_c, 0, $id_order);
+            $_SESSION['customer_id'] =$id_c;
+        }
+
         Orders::updateStatus(1,$id_order);
-        Orders::updateCustomerId($id_c, 0, $id_order);
-        $_SESSION['customer_id'] =$id_c;
         $path2 = File::build_path(array('view',$controller,'view.php'));
         require_once ($path2);
     }

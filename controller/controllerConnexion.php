@@ -15,9 +15,10 @@ class controllerConnexion
         $page_title='Connexion';
         $controller = "user";
 
+        if (isset ($_POST['login']) && isset ($_POST['password'])){
         //On récupère les identifiants
         $log = $_POST['login'];
-        $mdp = sha1($_POST['password']);
+        $mdp = sha1($_POST['password']);}
 
         //On cherche si un login customer correspond
         $tab_log = Login::getLoginUser($log, $mdp);
@@ -63,8 +64,6 @@ class controllerConnexion
         }
         require_once ($path2);
     }
-
-
 
     public static function readLogin(){
         $view='TestConnexion';
@@ -129,9 +128,11 @@ class controllerConnexion
             $username=$_POST['login'];
             $user=Login::getUsername($username);
             if (!empty($user)){
-                if ($_POST['psw1']==$_POST['psw2']){
-                    Login::changePsw(sha1($_POST['psw1']),$username);
-                    controllerCategorie::readCategories();
+                if ($_POST['password']==$_POST['psw2']){
+                    Login::changePsw(sha1($_POST['psw2']),$username);
+                    $log= $_POST['login'];
+                    $mdp= $_POST['password'];
+                    self::readCustomer();
                 }
                 else{
                     $erreur="Veuillez rentrer les mêmes mots de passe";

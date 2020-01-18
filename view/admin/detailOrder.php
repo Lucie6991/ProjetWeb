@@ -1,8 +1,6 @@
 <h1> Détail de la commande : </h1>
 <h2> Récapitulatif de la commande : </h2>
 <?php
-//$directoryPath = File::build_path(array('view',"admin"));
-//chmod(File::build_path(array('view',"admin","files_users")), 777);
 $filePath = File::build_path(array('view',"admin","files_users",$nameFile.'.txt'));
 $fileUser = fopen($filePath, 'c+b');
 $col_customers = array("forname","surname","add1","add2","add3","postcode","phone","email");
@@ -145,9 +143,6 @@ endforeach ?>
 <?php
 fputs($fileUser,$texte);
 fclose($fileUser);
-if (isset($facture)){
-    echo 'oui';
-}
 
 echo "<a href='?action=seeBill&order=".$id_order."' target='_blank' class='btn btn-info' onclick='bill();'> <span class='glyphicon glyphicon-save'></span>  Générer la facture </a><br><br>";
 echo '<div id="confirmer" class="confirmer"> ';

@@ -1,3 +1,8 @@
+<?php
+if (isset($retour))
+    echo "<h3 class='gratuit' >$retour </h3>";
+?>
+
 <h1 > Où nous trouver ? </h1>
 <div class="FormConnexion">
     <div class="row">
@@ -19,7 +24,7 @@
     </div>
 </div>
 <h1 > Envoyez nous un message : </h1>
-<form class="FormConnexion" action="?action=readCategories" method="post">
+<form class="FormConnexion" action="?action=contact" method="post">
     <label for="champNom"> Votre email</label>
     <input type="text" name="nom" id="email" required />
     <p></p>
@@ -28,9 +33,8 @@
     <input type="text" name="objet" id="objet" required />
     <p></p>
     <label for="message">Votre message</label>
-    <textarea type="text" id="message" placeholder="Votre message ici ..."></textarea>
-    <input type="submit"  value="Envoyer le message"/>
-
+    <textarea type="text" name="message" id="message" placeholder="Votre message ici ..."></textarea>
+    <input type="submit"  value="Envoyer le message" required/>
 </form>
 
 

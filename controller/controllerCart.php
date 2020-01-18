@@ -1,4 +1,5 @@
 <?php
+// Chargement des modèles nécéssaires pour ce controlleur
 $path= File::build_path(array('model','Cart.php'));
 require_once ($path);
 $path= File::build_path(array('model','Login.php'));
@@ -6,6 +7,7 @@ require_once ($path);
 
 class controllerCart
 {
+    // Ajout d'un produit au panier
     public static function addToCart(){
         $view='addedToCart';
         $page_title='Ajouté au panier';
@@ -33,6 +35,8 @@ class controllerCart
         require ($path2);
     }
 
+
+    // Vide le panier d'un client
     public static function emptyCart(){
         $view ='cart';
         $page_title='Panier vidé';
@@ -49,6 +53,7 @@ class controllerCart
         require ($path2);
     }
 
+    // Permet de regarder le panier du client
     public static function seeCart(){
         $view ='cart';
         $page_title='Mon panier';
@@ -72,27 +77,26 @@ class controllerCart
 
     }
 
+    // Enlève un produit au panier d'un client
     public static function delete(){
         $product = $_GET["prod"];
-        if (!empty($_SESSION['username'])){
+        if (!empty($_SESSION['username']))
             $id_customer= Login::getCustomerIdOfUser($_SESSION['username']);
-        }
-        else{
+        else
             $id_customer=session_id();
-        }
         $id_order = Orders::getOrderID($id_customer);
         Cart::delete($id_order,$product);
         self::seeCart();
     }
 
+
+    // Fonction appelée a la fin quand le client clique sur "Payer"
     public static function toPay(){
         if (isset($_POST['paiement'])){
-            if ($_POST['paiement'] == 'paypal'){
+            if ($_POST['paiement'] == 'paypal')
                 $status = 3;
-            }
             else
                 $status = 2;
-
             $id_order = Orders::getOrderID($_SESSION['customer_id'],1);
             $tabCart = Cart::getProductsStock($id_order);
             // on enleve du stock à chacun des produits
@@ -106,11 +110,11 @@ class controllerCart
             $order[0]->lastUpdate(date ("Y/m/d") ,$_POST['paiement'],$status);
         }
 
+        // On fait le récapitulatif de la commande du client
         $tab_customer = Customer::getCustomer($id_order);
         $tab_order_item = Orders::getOrderItems($id_order);
         $tab_order= Orders::getOrder($id_order);
         $tab_cart = Cart::getProducts($id_order);
-
         $view ='recapOrder';
         $page_title='Commande validée';
         $controller = "user";

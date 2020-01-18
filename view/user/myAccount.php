@@ -1,8 +1,11 @@
-<?php
-echo "<h1>Mon compte</h1>";
 
-echo "<h3>Vos informations personnelles : </h3>";
-//var_dump($tab_adress);
+<h1>Mon compte</h1>
+<h3>Vos informations personnelles : </h3>
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+<div class="FormConnexion">
+    <?php
 foreach ($tab_adress as $ligne) {
     $prenom = $ligne->get('forname');
     $nom = $ligne->get('surname');
@@ -19,9 +22,11 @@ foreach ($tab_adress as $ligne) {
     echo "<label name='CoordLabel'>  Adresse : </label> ";
     echo $add1;
     echo "<br />";
-    echo "<label name='CoordLabel'></label>";
-    echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$add2;
-    echo "<br />";
+    if (!empty($add2)){
+        echo "<label name='CoordLabel'></label>";
+        echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$add2;
+        echo "<br />";
+    }
     echo "<label name='CoordLabel'></label>";
     echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$postcode . " " . $city;
     echo "<br />";
@@ -30,9 +35,9 @@ foreach ($tab_adress as $ligne) {
     echo "<br />";
     echo "<label name='CoordLabel'>  Email : </label> ";
     echo $email;
-    echo "<br />";
-    echo "<br />";
-
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
 }
 
 if (!empty($tab_order_cheque)){
@@ -131,7 +136,7 @@ if (!empty($tab_order_fini)){
                         ?>
                     </div>
                     <span class ='col-lg-3'>
-                        <?php echo "<br><a href='?action=seeBillUser&order=".$id_order."' target='_blank' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Télécharger la facture </a><br><br>"; ?>
+                        <?php echo "<br><a href='?action=seeBill&order=".$id_order."' target='_blank' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Télécharger la facture </a><br><br>"; ?>
                     </span>
                 </span>
         </div>

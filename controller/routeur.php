@@ -1,13 +1,16 @@
 <?php
-
+// chargement de tous les controleurs
 $path = File::build_path(array('view',"utilitaire",'includeControllers.inc.php'));
 require_once ($path);
 
+//Par défaut on appel la page d'accueil
 if (!isset($_GET['action'])){
     $action='readCategories';
 }else{
     $action =$_GET['action'];
 }
+
+// On redirige l'action au bon controlleur
 if ($action == "addToCart" || $action == "emptyCart" || $action == "seeCart" || $action =="delete" || $action=="toPay"){
     controllerCart::$action();
 }
@@ -28,10 +31,10 @@ else if ($action == "readAllOrders" || $action=="addNewCat" || $action=="addNewP
 else if ($action == "readAdress" || $action == "newAdressFact" || $action == "sameAdd" || $action == "addLivDiff" || $action == "addAdrFact"){
     controllerAdress::$action();
 }
-else if($action == "recrut" || $action == "contact" || $action=="us" ){
+else if($action == "recrut" || $action == "contact" || $action=="us" || $action=="testMail" ){
     controllerHome::$action();
 }
-else if ($action == "myAccount" || $action=="addedCustomer" || $action=="add" || $action=="seeBillUser"){
+else if ($action == "myAccount" || $action=="addedCustomer" || $action=="add"){
     controllerCustomer::$action();
 }
 else{

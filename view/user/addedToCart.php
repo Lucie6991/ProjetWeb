@@ -43,14 +43,14 @@ foreach ($tab_product as $ligne){
     <div class="col-lg-1"></div>
     <?php
     $tab_product = Product::getAllProducts();
-    for ($i=0;$i<3;$i++) {
+    for ($i=1;$i<4;$i++) {
         if($id+$i >= count($tab_product) ){
-            $image= $tab_product[$id+$i-10]->getImage();
-            $id_prod = $id+$i-8;
+            $image= $tab_product[$id+$i-14]->getImage();
+            $id_prod = $id+$i-10;
         }
         else{
-            $image= $tab_product[$id+$i]->getImage();
-            $id_prod = $id+$i+2;
+            $image= $tab_product[$id+$i-4]->getImage();
+            $id_prod = $id+$i;
         }
         echo "<div class='col-lg-3'>";
         echo "<a href='?action=read&id=".$id_prod."'><img class ='image_produit_consult'  src='view/images/$image' > </a>";

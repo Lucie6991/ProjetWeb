@@ -9,7 +9,7 @@ if (isset($erreur))
     <p></p>
 
     <label for="password">Nouveau mot de passe :</label>
-    <input type="password" name="psw1" id="password" required />
+    <input type="password" name="password" id="password" required />
     <p></p>
     <label for="password">Confirmer mot de passe :</label>
     <input type="password" name="psw2" id="password" required />
