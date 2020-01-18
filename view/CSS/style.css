@@ -218,3 +218,8 @@ h4 .titlePrice{
     font-size: 30px;
     margin-left: 60px;
 }
+
+/*Page detailOrder */
+.confirmer{
+    visibility: hidden;
+}

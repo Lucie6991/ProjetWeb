@@ -11,7 +11,7 @@ class controllerAdress
     public static function readAdress(){
         $view='adress';
         $page_title='Adresse';
-        $controller = "user";;
+        $controller = "user";
         $tab_adress = Customer::getAdress($_SESSION['customer_id']);
         $id_order = Orders::getOrderID($_SESSION['customer_id']);
         $order = Orders::getOrder($id_order);

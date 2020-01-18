@@ -3,7 +3,7 @@ $lesCategories = Categorie::getAllCategories();?>
 <aside class='col-lg-3'>
 
     <?php if (!empty($_SESSION['username'])){
-        echo "Bonjour ". $_SESSION['username'];
+        echo "<br><strong><center>Bonjour ". $_SESSION['username']."</strong></center>";
     }?>
 
     <h3 class='textePanier'> Découvrez nos produits par catégorie : </h3>

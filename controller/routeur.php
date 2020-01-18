@@ -31,7 +31,7 @@ else if ($action == "readAdress" || $action == "newAdressFact" || $action == "sa
 else if($action == "recrut" || $action == "contact" || $action=="us" ){
     controllerHome::$action();
 }
-else if ($action == "myAccount" || $action=="addedCustomer" || $action=="add"){
+else if ($action == "myAccount" || $action=="addedCustomer" || $action=="add" || $action=="seeBillUser"){
     controllerCustomer::$action();
 }
 else{

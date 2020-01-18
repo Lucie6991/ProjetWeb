@@ -12,19 +12,18 @@ foreach($customer as $ligne){
     $forname = $ligne->get('forname');
     $surname = $ligne->get('surname');
 
-    echo "Bonjour " . $forname. " ". $surname;
+    echo "<h3>Bonjour " . $forname. " ". $surname. " !</h3>";
     echo "<br />";
-    echo "Votre identifiant client est : " . $customId;
-    echo "<br/>";
+    echo "Vous êtes bien connecté. <br> Vous pouvez maintenant procéder à vos achats et accéder à vos informations en cliquant, dans le menu, sur <strong>Mon Compte</strong>. ";
 }
 
 foreach($admin as $ligne){
     $username = $ligne->getUsername();
     $id = $ligne->getId();
-    echo "Bonjour " . $username;
+    echo "<h3>Bonjour " . $username." ! </h3>";
     echo "<br />";
+    echo "Vous êtes connecté en tant qu'administrateur. <br> 
+        Vous avez la possibilité d'accéder à toutes les options de ce statut en cliquant, dans le menu, sur <strong>Session Admin</strong>.  ";
 
-    $_SESSION['customer_id'] = $id;
 }
-
 ?>

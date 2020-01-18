@@ -19,8 +19,10 @@ foreach ($tab_adress as $ligne) {
     echo "<label name='CoordLabel'>  Adresse : </label> ";
     echo $add1;
     echo "<br />";
+    echo "<label name='CoordLabel'></label>";
     echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$add2;
     echo "<br />";
+    echo "<label name='CoordLabel'></label>";
     echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$postcode . " " . $city;
     echo "<br />";
     echo "<label name='CoordLabel'>  Téléphone : </label> ";
@@ -34,8 +36,7 @@ foreach ($tab_adress as $ligne) {
 }
 
 if (!empty($tab_order_cheque)){
-    echo "<h3> Vos commandes payées par chèques en attente de reception du chèque </h3>";
-    echo "<p> A reforumuler je sais pas quoi dire mdr  </p>";
+    echo "<h3> Vos commandes en attente de confirmation de la réception du chèque</h3>";
     foreach($tab_order_cheque as $ligne) {
         $payment_type = $ligne->get('payment_type');
         $date = $ligne->get('date');
@@ -119,10 +120,23 @@ if (!empty($tab_order_fini)){
         $status = $ligne->get('status');
         $total = $ligne->get('total');
         $id_order= $ligne->get('id');
-        echo "$date <br>";
-        echo "$status";
+?>
+        <div class="tabCart">
+                <span class ='row' >
+                    <div class ='col-lg-9'>
+                        <?php
+                        echo " <strong> Date de commande : </strong> $date <br>";
+                        echo " <strong> Total de la commande : </strong> $total €<br>";
+                        echo " <strong> Type de paiement : </strong> $payment_type <br>";
+                        ?>
+                    </div>
+                    <span class ='col-lg-3'>
+                        <?php echo "<br><a href='?action=seeBillUser&order=".$id_order."' target='_blank' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Télécharger la facture </a><br><br>"; ?>
+                    </span>
+                </span>
+        </div>
 
-        echo "<a href='?action=seeBillUser&order=".$id_order."' class='btn btn-info' > <span class='glyphicon glyphicon-save'></span>  Télécharger la facture </a><br><br>";
+<?php
     }
 }
 if (empty($tab_order_cheque) && empty($tab_order_prep) && empty($tab_order_liv) && empty($tab_order_fini) ){

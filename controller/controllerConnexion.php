@@ -50,6 +50,7 @@ class controllerConnexion
         else if (empty($tab_log) && !empty($admin)){
             $_SESSION['admin'] = $log;
             $_SESSION['username'] = $log;
+            $_SESSION['customer_id'] = $admin[0]->getId();
             $path2 = File::build_path(array('view',$controller,'view.php'));
         }
 

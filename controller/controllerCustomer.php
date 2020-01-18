@@ -65,6 +65,18 @@ class controllerCustomer
         $path2= File::build_path(array('view',$controller,'view.php'));
         require ($path2);
     }
+
+    public static function seeBillUser(){
+        $view = "bill";
+        $controller = "user";
+        if (isset ($_GET['order'])){
+            $id_order=$_GET["order"];
+            $nameFile= "order".$id_order;
+        }
+        $page_title="Facture de la commande";
+        $path2 = File::build_path(array('view', $controller,'bill.php'));
+        require_once ($path2);
+    }
     
 
 }
